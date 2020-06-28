@@ -1,0 +1,64 @@
+@use 'variables' as *;
+
+#title {
+  font: 700 48px/1 $serif;
+
+  span {
+    display: block;
+    font: 700 96px/1 $expanded;
+  }
+}
+
+#subtitle {
+  font: 36px $sans;
+}
+
+.columns {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.col {
+  width: 276px;
+  margin-bottom: 0;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+form {
+  margin-bottom: 0;
+
+  input[type=text] {
+    background-color: $background;
+    border: 2px solid $text;
+    color: $text;
+    height: 55px;
+    width: 408px;
+    padding: 12px;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  input[type=submit] {
+    display: block;
+    background-color: $text;
+    border: 0;
+    border-radius: 12px;
+    color: $background;
+    font: 700 24px/1 $sans;
+    text-transform: uppercase;
+    margin-top: 16px;
+    padding: 16px 48px;
+    box-shadow: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@use 'variables' as *;
+
+body {
+  background-color: $background;
+  color: $text;
+  font: $body;
+  line-height: $lh;
+}
+
+.container {
+  margin: 156px auto;
+  width: 600px;
+
+  @media screen and (max-width: 850px) {
+    width: 70%;
+  }
+}
+
+div {
+  margin-bottom: 48px;
+}
+
+h1 {
+  font: $serif-header;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font: $mono-header;
+  margin-bottom: 12px;
+}
+
+p {
+  margin-bottom: 24px;
+}
+
+a {
+  color: $text;
+  text-decoration: none;
+}
