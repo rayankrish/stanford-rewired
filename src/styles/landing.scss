@@ -7,6 +7,15 @@
     display: block;
     font: 700 96px/1 $expanded;
   }
+
+  @media screen and (max-width: 850px) {
+    font: 700 36px/1 $serif;
+
+    span {
+      display: block;
+      font: 700 72px/1 $expanded;
+    }
+  }
 }
 
 #subtitle {
@@ -18,11 +27,19 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   margin-bottom: 8px;
+
+  @media screen and (max-width: 850px) {
+    flex-flow: column nowrap;
+  }
 }
 
 .col {
   width: 276px;
   margin-bottom: 0;
+
+  @media screen and (max-width: 850px) {
+    width: 100%;
+  }
 }
 
 p a {
@@ -30,7 +47,7 @@ p a {
 }
 
 form {
-  margin-bottom: 0;
+  margin-bottom: 32px;
 
   input[type=text] {
     background-color: $background;
@@ -42,6 +59,10 @@ form {
 
     &:focus {
       outline: 0;
+    }
+
+    @media screen and (max-width: 850px) {
+      width: 100%;
     }
   }
 
@@ -60,5 +81,110 @@ form {
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+#graphics {
+  svg {
+    position: absolute;
+    z-index: -1;
+
+    @media screen and (max-width: 850px) {
+      transform: scale(.7);
+    }
+  }
+}
+
+#parent {
+  position: absolute;
+}
+
+#dots1 {
+  left: -270px;
+  top: -204px;
+
+  @media screen and (max-width: 850px) {
+    left: -140px;
+    top: -196px;
+  }
+}
+
+#squiggles1 {
+  left: -300px;
+  top: -115px;
+
+  @media screen and (max-width: 850px) {
+    left: -110px;
+    top: -148px;
+  }
+}
+
+#dots2 {
+  right: 117px;
+  top: 128px;
+
+  @media screen and (max-width: 850px) {
+    right: 52.4px;
+    top: 68px;
+  }
+}
+
+#dots3 {
+  left: -142px;
+  top: 112px;
+
+  @media screen and (max-width: 850px) {
+    left: -100px;
+    top: 500px;
+  }
+}
+
+#squiggles2 {
+  left: -300px;
+  top: 224px;
+
+  @media screen and (max-width: 850px) {
+    left: -110px;
+    top: 105px;
+  }
+}
+
+#squiggles3 {
+  right: 83px;
+  top: 800px;
+
+  @media screen and (max-width: 850px) {
+    right: 20px;
+    top: 1275px;
+  }
+}
+
+#dots4 {
+  right: 220px;
+  top: 1400px;
+
+  @media screen and (max-width: 850px) {
+    right: 100px;
+    top: 1720px;
+  }
+}
+
+#dots5 {
+  right: 90px;
+  top: 1400px;
+
+  @media screen and (max-width: 850px) {
+    right: 25px;
+    top: 1754px;
+  }
+}
+
+#squiggles4 {
+  right: 83px;
+  top: 1610px;
+
+  @media screen and (max-width: 850px) {
+    right: 0px;
+    top: 1870px;
   }
 }

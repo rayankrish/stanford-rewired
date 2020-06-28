@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
+import Landing from "../components/landing"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
@@ -12,14 +13,17 @@ const IndexPage = () => {
   const data = useStaticQuery(pageQuery); // graphql query, see below
 
   return (
-    <Layout>
-      <SEO title="Home" />
-      <Title />
-      <Subtitle />
-      <Description />
-      <GetInvolved />
-      <SubmitForm />
-    </Layout>
+    <>
+      <Layout>
+        <SEO title="Home" />
+        <Landing />
+        <Title />
+        <Subtitle />
+        <Description />
+        <GetInvolved />
+        <SubmitForm />
+      </Layout>
+    </>
   )
 }
 
