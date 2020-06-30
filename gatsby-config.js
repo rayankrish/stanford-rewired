@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Stanford Rewired`,
-    description: `[insert description here]`,
+    description: `Stanford Rewired is a digital magazine where technology and society meet. We’re committed to curating stories that amplify diverse perspectives and bridge disciplines.`,
     author: `Stanford Rewired`,
   },
   plugins: [
@@ -28,10 +28,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#FF4908`,
+        theme_color: `#FF4908`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
       },
     },
     {
