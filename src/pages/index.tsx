@@ -58,7 +58,7 @@ function GetInvolved() {
       <h1>Get Involved</h1>
       <div className="columns">
         <div className="col">
-          <a href="https://docs.google.com/document/d/17q2w7iXs8aO_L1t4pogcmfjsytSWxGzwW3rP0l8zjsg/edit?usp=sharing" target="_blank">
+          <a href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a" target="_blank">
             <h2>submit writing &rarr;</h2>
           </a>
           <p>We’re currently accepting submissions for our Fall 2020 issue. The theme is Governance. <a href="https://docs.google.com/document/d/17q2w7iXs8aO_L1t4pogcmfjsytSWxGzwW3rP0l8zjsg/edit?usp=sharing" target="_blank">You can learn more about our submission process here.</a></p>
