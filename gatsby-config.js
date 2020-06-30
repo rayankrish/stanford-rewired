@@ -9,7 +9,7 @@ module.exports = {
       resolve: `gatsby-plugin-gtag`,
       options: {
 	trackingId: `UA-171298201-1`, // should this be on the repo?
-	head: true,
+	head: false,
 	anonymize: false,
       },
     },
