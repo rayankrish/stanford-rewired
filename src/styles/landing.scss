@@ -1,44 +1,48 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 #title {
-  font: 700 48px/1 $serif;
+  font: 700 $base*1.5/1 $serif;
 
   span {
     display: block;
-    font: 700 96px/1 $expanded;
+    font: 700 $base*3/1 $expanded;
   }
 
-  @media screen and (max-width: 850px) {
-    font: 700 36px/1 $serif;
+  @media screen and (min-width: $breakpoint) {
+    font-size: $base*3;
 
     span {
-      display: block;
-      font: 700 72px/1 $expanded;
+      font-size: $base*6;
     }
   }
 }
 
 #subtitle {
-  font: 36px $sans;
+  font: $base*9/8 $sans;
+
+  @media screen and (min-width: $breakpoint) {
+    font-size: $base*9/4;
+  }
 }
 
 .columns {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: $base/2;
 
-  @media screen and (max-width: 850px) {
-    flex-flow: column nowrap;
+  @media screen and (min-width: $breakpoint) {
+    flex-flow: row nowrap;
   }
 }
 
 .col {
-  width: 276px;
+  width: 100%;
   margin-bottom: 0;
 
-  @media screen and (max-width: 850px) {
-    width: 100%;
+  @media screen and (min-width: $breakpoint) {
+    width: 276px;
   }
 }
 
@@ -47,22 +51,21 @@ p a {
 }
 
 form {
-  margin-bottom: 32px;
+  padding-bottom: $base*3;
 
   input[type=text] {
     background-color: $background;
     border: 2px solid $text;
     color: $text;
-    height: 55px;
-    width: 408px;
-    padding: 12px;
+    width: 100%;
+    @include responsive-sizing(padding, $base/2);
 
     &:focus {
       outline: 0;
     }
 
-    @media screen and (max-width: 850px) {
-      width: 100%;
+    @media screen and (min-width: $breakpoint) {
+      width: 408px;
     }
   }
 
@@ -70,121 +73,98 @@ form {
     display: block;
     background-color: $text;
     border: 0;
-    border-radius: 12px;
+    border-radius: $base/2;
     color: $background;
-    font: 700 24px/1 $sans;
+    font: 700 $base/1 $sans;
     text-transform: uppercase;
-    margin-top: 16px;
-    padding: 16px 48px;
+    margin-top: $base*2/3;
+    padding: $base*2/3 $base*2;
     box-shadow: none;
 
     &:hover {
       cursor: pointer;
     }
-  }
-}
 
-#graphics {
-  svg {
-    position: absolute;
-    z-index: -1;
-
-    @media screen and (max-width: 850px) {
-      transform: scale(.7);
+    @media screen and (min-width: $breakpoint) {
+      font-size: $base*$device-scaling;
+      padding: $base $base*3;
     }
   }
 }
 
-#parent {
+#graphics {
   position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    position: absolute;
+    transform: scale(.4);
+
+    circle {
+      fill: $poppy-red;
+    }
+
+    @media screen and (min-width: $breakpoint) {
+      transform: scale(.7);
+    }
+
+    @media screen and (min-width: 1200px) {
+      transform: scale(1);
+    }
+  }
+}
+
+#dots1,
+#dots3,
+#dots4 {
+  circle {
+    fill-opacity: 0.3;
+  }
 }
 
 #dots1 {
-  left: -270px;
-  top: -204px;
-
-  @media screen and (max-width: 850px) {
-    left: -140px;
-    top: -196px;
-  }
+  @include landing-graphics(left, -200px, -170px, -270px);
+  @include landing-graphics(top, -150px, -195px, -204px);
 }
 
 #squiggles1 {
-  left: -300px;
-  top: -115px;
-
-  @media screen and (max-width: 850px) {
-    left: -110px;
-    top: -148px;
-  }
+  @include landing-graphics(left, -110px, -138px, -17.5vw);
+  @include landing-graphics(top, -140px, -146px, -115px);
 }
 
 #dots2 {
-  right: 117px;
-  top: 128px;
-
-  @media screen and (max-width: 850px) {
-    right: 52.4px;
-    top: 68px;
-  }
+  @include landing-graphics(right, -50px, -80px, -15vw);
+  @include landing-graphics(top, -100px, -120px, -50px);
 }
 
 #dots3 {
-  left: -142px;
-  top: 112px;
-
-  @media screen and (max-width: 850px) {
-    left: -100px;
-    top: 500px;
-  }
+  @include landing-graphics(left, -77px, -110px, -142px);
+  @include landing-graphics(top, 300px, 534px, 112px);
 }
 
 #squiggles2 {
-  left: -300px;
-  top: 224px;
-
-  @media screen and (max-width: 850px) {
-    left: -110px;
-    top: 105px;
-  }
+  @include landing-graphics(left, -110px, -138px, -17.5vw);
+  @include landing-graphics(top, 35px, 105px, 224px);
 }
 
 #squiggles3 {
-  right: 83px;
-  top: 800px;
-
-  @media screen and (max-width: 850px) {
-    right: 20px;
-    top: 1275px;
-  }
+  @include landing-graphics(right, -76px, -124px, -20vw);
+  @include landing-graphics(bottom, -70px, 200px, 520px);
 }
 
 #dots4 {
-  right: 220px;
-  top: 1400px;
-
-  @media screen and (max-width: 850px) {
-    right: 100px;
-    top: 1720px;
-  }
+  @include landing-graphics(right, -20px, -30px, -10vw);
+  @include landing-graphics(bottom, -150px, -30px, 147px);
 }
 
 #dots5 {
-  right: 90px;
-  top: 1400px;
-
-  @media screen and (max-width: 850px) {
-    right: 25px;
-    top: 1754px;
-  }
+  @include landing-graphics(right, -70px, -117px, -20vw);
+  @include landing-graphics(bottom, 7px, 161px, 372px);
 }
 
 #squiggles4 {
-  right: 83px;
-  top: 1610px;
-
-  @media screen and (max-width: 850px) {
-    right: 0px;
-    top: 1870px;
-  }
+  @include landing-graphics(right, -124px, -150px, -20vw);
+  @include landing-graphics(bottom, -220px, -162px, -46px);
 }

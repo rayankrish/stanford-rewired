@@ -1,0 +1,21 @@
+@use 'variables';
+
+@mixin responsive-sizing($property, $mobile-size) {
+  #{$property}: $mobile-size;
+
+  @media screen and (min-width: variables.$breakpoint) {
+    #{$property}: $mobile-size * variables.$device-scaling;
+  }
+}
+
+@mixin landing-graphics($property, $mobile, $tablet, $desktop) {
+  #{$property}: $mobile;
+
+  @media screen and (min-width: variables.$breakpoint) {
+    #{$property}: $tablet;
+  }
+
+  @media screen and (min-width: 1200px) {
+    #{$property}: $desktop;
+  }
+}

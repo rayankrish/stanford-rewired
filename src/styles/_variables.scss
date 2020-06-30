@@ -19,7 +19,10 @@ $sans: 'Source Sans Pro', sans-serif;
 
 $lh: 1.4; // line height
 
-$body: 24px $sans;
-$sans-header: 36px $sans;
-$serif-header: 36px $serif;
-$mono-header: 32px $monospace;
+$base: 16px;
+$header: $base*1.5;
+$mono-header: $base*4/3;
+
+// Responsive Scaling
+$device-scaling: 1.5;
+$breakpoint: 850px;

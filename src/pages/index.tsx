@@ -64,10 +64,10 @@ function GetInvolved() {
           <p>We’re currently accepting submissions for our Fall 2020 issue. The theme is Governance. <a href="https://docs.google.com/document/d/17q2w7iXs8aO_L1t4pogcmfjsytSWxGzwW3rP0l8zjsg/edit?usp=sharing">You can learn more about our submission process here.</a></p>
         </div>
         <div className="col">
-          <a href="bit.ly/rewired-design">
+          <a href="https://bit.ly/rewired-design">
             <h2>design with us &rarr;</h2>
           </a>
-          <p>We’re looking for a graphic and/or product designer to join our team. <a href="bit.ly/rewired-design">You can learn more details about the position here.</a></p>
+          <p>We’re looking for a graphic and/or product designer to join our team. <a href="https://bit.ly/rewired-design">You can learn more details about the position here.</a></p>
         </div>
       </div>
     </div>
@@ -83,6 +83,7 @@ class SubmitForm extends React.Component {
 
   submitForm(e) {
     this.setState({isSubmitted: true});
+    return false;
   }
 
   render() {
@@ -106,7 +107,7 @@ class SubmitForm extends React.Component {
           <a href="https://docs.google.com/document/d/17q2w7iXs8aO_L1t4pogcmfjsytSWxGzwW3rP0l8zjsg/edit?usp=sharing">
             <h2>submit writing &rarr;</h2>
           </a>
-          <a href="bit.ly/rewired-design">
+          <a href="https://bit.ly/rewired-design">
             <h2>design with us &rarr;</h2>
           </a>
         </div>

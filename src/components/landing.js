@@ -5,12 +5,10 @@ import "../styles/landing.scss"
 const Landing = () => {
   return (
     <div id="graphics">
-      <div id="parent">
-        <Dots1 />
-        <Dots3 />
-        <Squiggles1 />
-        <Squiggles2 />
-      </div>
+      <Dots1 />
+      <Dots3 />
+      <Squiggles1 />
+      <Squiggles2 />
       <Dots2 />
       <Dots4 />
       <Dots5 />
@@ -24,42 +22,42 @@ const Landing = () => {
 function Dots1() {
   return (
     <svg id="dots1" width="482" height="201" viewBox="0 0 482 201" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="186" cy="184.451" r="16" transform="rotate(-180 186 184.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="184.451" r="16" transform="rotate(-180 16 184.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="298" cy="184.451" r="16" transform="rotate(-180 298 184.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="128" cy="184.451" r="16" transform="rotate(-180 128 184.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="410" cy="184.451" r="16" transform="rotate(-180 410 184.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="186" cy="128.451" r="16" transform="rotate(-180 186 128.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="128.451" r="16" transform="rotate(-180 16 128.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="298" cy="128.451" r="16" transform="rotate(-180 298 128.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="128" cy="128.451" r="16" transform="rotate(-180 128 128.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="410" cy="128.451" r="16" transform="rotate(-180 410 128.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="242" cy="184.451" r="16" transform="rotate(-180 242 184.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="184.451" r="16" transform="rotate(-180 72 184.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="354" cy="184.451" r="16" transform="rotate(-180 354 184.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="466" cy="184.451" r="16" transform="rotate(-180 466 184.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="242" cy="128.451" r="16" transform="rotate(-180 242 128.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="128.451" r="16" transform="rotate(-180 72 128.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="354" cy="128.451" r="16" transform="rotate(-180 354 128.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="466" cy="128.451" r="16" transform="rotate(-180 466 128.451)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="186" cy="72.4507" r="16" transform="rotate(-180 186 72.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="72.4507" r="16" transform="rotate(-180 16 72.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="298" cy="72.4507" r="16" transform="rotate(-180 298 72.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="128" cy="72.4507" r="16" transform="rotate(-180 128 72.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="410" cy="72.4507" r="16" transform="rotate(-180 410 72.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="186" cy="16.4507" r="16" transform="rotate(-180 186 16.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="16.4507" r="16" transform="rotate(-180 16 16.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="298" cy="16.4507" r="16" transform="rotate(-180 298 16.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="128" cy="16.4507" r="16" transform="rotate(-180 128 16.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="410" cy="16.4507" r="16" transform="rotate(-180 410 16.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="242" cy="72.4507" r="16" transform="rotate(-180 242 72.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="72.4507" r="16" transform="rotate(-180 72 72.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="354" cy="72.4507" r="16" transform="rotate(-180 354 72.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="466" cy="72.4507" r="16" transform="rotate(-180 466 72.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="242" cy="16.4507" r="16" transform="rotate(-180 242 16.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="16.4507" r="16" transform="rotate(-180 72 16.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="354" cy="16.4507" r="16" transform="rotate(-180 354 16.4507)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="466" cy="16.4507" r="16" transform="rotate(-180 466 16.4507)" fill="#FF4908" fill-opacity="0.3"/>
+    <circle cx="186" cy="184.451" r="16"/>
+    <circle cx="16" cy="184.451" r="16"/>
+    <circle cx="298" cy="184.451" r="16"/>
+    <circle cx="128" cy="184.451" r="16"/>
+    <circle cx="410" cy="184.451" r="16"/>
+    <circle cx="186" cy="128.451" r="16"/>
+    <circle cx="16" cy="128.451" r="16"/>
+    <circle cx="298" cy="128.451" r="16"/>
+    <circle cx="128" cy="128.451" r="16"/>
+    <circle cx="410" cy="128.451" r="16"/>
+    <circle cx="242" cy="184.451" r="16"/>
+    <circle cx="72" cy="184.451" r="16"/>
+    <circle cx="354" cy="184.451" r="16"/>
+    <circle cx="466" cy="184.451" r="16"/>
+    <circle cx="242" cy="128.451" r="16"/>
+    <circle cx="72" cy="128.451" r="16"/>
+    <circle cx="354" cy="128.451" r="16"/>
+    <circle cx="466" cy="128.451" r="16"/>
+    <circle cx="186" cy="72.4507" r="16"/>
+    <circle cx="16" cy="72.4507" r="16"/>
+    <circle cx="298" cy="72.4507" r="16"/>
+    <circle cx="128" cy="72.4507" r="16"/>
+    <circle cx="410" cy="72.4507" r="16"/>
+    <circle cx="186" cy="16.4507" r="16"/>
+    <circle cx="16" cy="16.4507" r="16"/>
+    <circle cx="298" cy="16.4507" r="16"/>
+    <circle cx="128" cy="16.4507" r="16"/>
+    <circle cx="410" cy="16.4507" r="16"/>
+    <circle cx="242" cy="72.4507" r="16"/>
+    <circle cx="72" cy="72.4507" r="16"/>
+    <circle cx="354" cy="72.4507" r="16"/>
+    <circle cx="466" cy="72.4507" r="16"/>
+    <circle cx="242" cy="16.4507" r="16"/>
+    <circle cx="72" cy="16.4507" r="16"/>
+    <circle cx="354" cy="16.4507" r="16"/>
+    <circle cx="466" cy="16.4507" r="16"/>
     </svg>
   )
 }
@@ -67,10 +65,10 @@ function Dots1() {
 function Dots2() {
   return (
     <svg id="dots2" width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="16" cy="16" r="16" transform="rotate(-90 16 16)" fill="#FF4908"/>
-    <circle cx="72" cy="16" r="16" transform="rotate(-90 72 16)" fill="#FF4908"/>
-    <circle cx="16" cy="72" r="16" transform="rotate(-90 16 72)" fill="#FF4908"/>
-    <circle cx="72" cy="72" r="16" transform="rotate(-90 72 72)" fill="#FF4908"/>
+    <circle cx="16" cy="16" r="16"/>
+    <circle cx="72" cy="16" r="16"/>
+    <circle cx="16" cy="72" r="16"/>
+    <circle cx="72" cy="72" r="16"/>
     </svg>
   )
 }
@@ -78,30 +76,30 @@ function Dots2() {
 function Dots3() {
   return (
     <svg id="dots3" width="88" height="643" viewBox="0 0 88 643" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="72" cy="296" r="16" transform="rotate(90 72 296)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="184" r="16" transform="rotate(90 72 184)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="72" r="16" transform="rotate(90 72 72)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="296" r="16" transform="rotate(90 16 296)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="184" r="16" transform="rotate(90 16 184)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="72" r="16" transform="rotate(90 16 72)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="240" r="16" transform="rotate(90 72 240)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="128" r="16" transform="rotate(90 72 128)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="16" r="16" transform="rotate(90 72 16)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="240" r="16" transform="rotate(90 16 240)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="128" r="16" transform="rotate(90 16 128)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="16" r="16" transform="rotate(90 16 16)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="627" r="16" transform="rotate(90 72 627)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="515" r="16" transform="rotate(90 72 515)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="403" r="16" transform="rotate(90 72 403)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="627" r="16" transform="rotate(90 16 627)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="515" r="16" transform="rotate(90 16 515)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="403" r="16" transform="rotate(90 16 403)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="571" r="16" transform="rotate(90 72 571)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="459" r="16" transform="rotate(90 72 459)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="72" cy="347" r="16" transform="rotate(90 72 347)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="571" r="16" transform="rotate(90 16 571)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="459" r="16" transform="rotate(90 16 459)" fill="#FF4908" fill-opacity="0.3"/>
-    <circle cx="16" cy="347" r="16" transform="rotate(90 16 347)" fill="#FF4908" fill-opacity="0.3"/>
+    <circle cx="72" cy="296" r="16"/>
+    <circle cx="72" cy="184" r="16"/>
+    <circle cx="72" cy="72" r="16"/>
+    <circle cx="16" cy="296" r="16"/>
+    <circle cx="16" cy="184" r="16"/>
+    <circle cx="16" cy="72" r="16"/>
+    <circle cx="72" cy="240" r="16"/>
+    <circle cx="72" cy="128" r="16"/>
+    <circle cx="72" cy="16" r="16"/>
+    <circle cx="16" cy="240" r="16"/>
+    <circle cx="16" cy="128" r="16"/>
+    <circle cx="16" cy="16" r="16"/>
+    <circle cx="72" cy="627" r="16"/>
+    <circle cx="72" cy="515" r="16"/>
+    <circle cx="72" cy="403" r="16"/>
+    <circle cx="16" cy="627" r="16"/>
+    <circle cx="16" cy="515" r="16"/>
+    <circle cx="16" cy="403" r="16"/>
+    <circle cx="72" cy="571" r="16"/>
+    <circle cx="72" cy="459" r="16"/>
+    <circle cx="72" cy="347" r="16"/>
+    <circle cx="16" cy="571" r="16"/>
+    <circle cx="16" cy="459" r="16"/>
+    <circle cx="16" cy="347" r="16"/>
     </svg>
   )
 }
@@ -109,18 +107,18 @@ function Dots3() {
 function Dots4() {
   return (
     <svg id="dots4" width="88" height="312" viewBox="0 0 88 312" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="72" cy="296" r="16" transform="rotate(90 72 296)" fill="#FF4908" fill-opacity="0.3"/>
-      <circle cx="72" cy="184" r="16" transform="rotate(90 72 184)" fill="#FF4908" fill-opacity="0.3"/>
-      <circle cx="72" cy="72" r="16" transform="rotate(90 72 72)" fill="#FF4908" fill-opacity="0.3"/>
-      <circle cx="16" cy="296" r="16" transform="rotate(90 16 296)" fill="#FF4908" fill-opacity="0.3"/>
-      <circle cx="16" cy="184" r="16" transform="rotate(90 16 184)" fill="#FF4908" fill-opacity="0.3"/>
-      <circle cx="16" cy="72" r="16" transform="rotate(90 16 72)" fill="#FF4908" fill-opacity="0.3"/>
-      <circle cx="72" cy="240" r="16" transform="rotate(90 72 240)" fill="#FF4908" fill-opacity="0.3"/>
-      <circle cx="72" cy="128" r="16" transform="rotate(90 72 128)" fill="#FF4908" fill-opacity="0.3"/>
-      <circle cx="72" cy="16" r="16" transform="rotate(90 72 16)" fill="#FF4908" fill-opacity="0.3"/>
-      <circle cx="16" cy="240" r="16" transform="rotate(90 16 240)" fill="#FF4908" fill-opacity="0.3"/>
-      <circle cx="16" cy="128" r="16" transform="rotate(90 16 128)" fill="#FF4908" fill-opacity="0.3"/>
-      <circle cx="16" cy="16" r="16" transform="rotate(90 16 16)" fill="#FF4908" fill-opacity="0.3"/>
+      <circle cx="72" cy="296" r="16"/>
+      <circle cx="72" cy="184" r="16"/>
+      <circle cx="72" cy="72" r="16"/>
+      <circle cx="16" cy="296" r="16"/>
+      <circle cx="16" cy="184" r="16"/>
+      <circle cx="16" cy="72" r="16"/>
+      <circle cx="72" cy="240" r="16"/>
+      <circle cx="72" cy="128" r="16"/>
+      <circle cx="72" cy="16" r="16"/>
+      <circle cx="16" cy="240" r="16"/>
+      <circle cx="16" cy="128" r="16"/>
+      <circle cx="16" cy="16" r="16"/>
     </svg>
   )
 }
@@ -128,10 +126,10 @@ function Dots4() {
 function Dots5() {
   return (
     <svg id="dots5" width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="16" cy="16" r="12" transform="rotate(-90 16 16)" fill="#FF4908" stroke="#FF4908" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="72" cy="16" r="12" transform="rotate(-90 72 16)" fill="#FF4908" stroke="#FF4908" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="16" cy="72" r="12" transform="rotate(-90 16 72)" fill="#FF4908" stroke="#FF4908" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="72" cy="72" r="12" transform="rotate(-90 72 72)" fill="#FF4908" stroke="#FF4908" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="16" cy="16" r="16"/>
+    <circle cx="72" cy="16" r="16"/>
+    <circle cx="16" cy="72" r="16"/>
+    <circle cx="72" cy="72" r="16"/>
     </svg>
   )
 }
