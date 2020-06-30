@@ -132,6 +132,10 @@ form {
 #squiggles1 {
   @include landing-graphics(left, -110px, -138px, -17.5vw);
   @include landing-graphics(top, -140px, -146px, -115px);
+
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 2.5s linear forwards;
 }
 
 #dots2 {
@@ -147,6 +151,11 @@ form {
 #squiggles2 {
   @include landing-graphics(left, -110px, -138px, -17.5vw);
   @include landing-graphics(top, 35px, 105px, 224px);
+
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: dash 1.5s linear forwards;
+  animation-delay: 2.4s;
 }
 
 #squiggles3 {
@@ -167,4 +176,10 @@ form {
 #squiggles4 {
   @include landing-graphics(right, -124px, -150px, -20vw);
   @include landing-graphics(bottom, -220px, -162px, -46px);
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
