@@ -98,7 +98,7 @@ form {
   width: 100%;
   height: 100%;
 
-  svg {
+  .svgContainer {
     position: absolute;
     transform: scale(.4);
 
@@ -135,7 +135,6 @@ form {
 
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: dash 2.5s linear forwards;
 }
 
 #dots2 {
@@ -154,13 +153,13 @@ form {
 
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
-  animation: dash 1.5s linear forwards;
-  animation-delay: 2.4s;
 }
 
 #squiggles3 {
   @include landing-graphics(right, -76px, -124px, -20vw);
   @include landing-graphics(bottom, -70px, 200px, 520px);
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
 }
 
 #dots4 {
@@ -176,6 +175,8 @@ form {
 #squiggles4 {
   @include landing-graphics(right, -124px, -150px, -20vw);
   @include landing-graphics(bottom, -220px, -162px, -46px);
+  stroke-dasharray: 1820;
+  stroke-dashoffset: 1820;
 }
 
 @keyframes dash {
@@ -197,6 +198,10 @@ form {
 
 .fadeInUp {
   animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.draw {
+  animation: dash 1.4s linear forwards;
 }
 
 // react-animate-on-scroll adds an extra div around 
