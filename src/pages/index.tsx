@@ -140,7 +140,7 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
     super(props)
     this.submitForm = this.submitForm.bind(this)
     this.updateEmail = this.updateEmail.bind(this)
-    this.state = { isSubmitted: false, email: "", err_msg: "" }
+    this.state = { isSubmitted: false, email: "", err_msg: "&emsp;&emsp;&emsp;&emsp;" }
   }
 
   submitForm(e) {
@@ -176,10 +176,11 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
             onSubmit={e => {
               e.preventDefault()
               return false
-            }}>
+            }}
+          >
+            <a type="warning" dangerouslySetInnerHTML={{ __html: this.state.err_msg }} />
             <input type="text" name="email" onChange={this.updateEmail} />
             <input type="submit" value="Sign Up" onClick={this.submitForm} />
-            <div dangerouslySetInnerHTML={{ __html: this.state.err_msg }} />
           </form>
         </div>
       )
@@ -191,7 +192,10 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
             We’re excited for news about our publication to hit your inbox soon.
             In the meantime, check out more ways to get involved:
           </p>
-          <a href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a" target="_blank">
+          <a
+            href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
+            target="_blank"
+          >
             <h2>submit writing &rarr;</h2>
           </a>
           <a href="https://bit.ly/rewired-design" target="_blank">

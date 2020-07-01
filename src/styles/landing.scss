@@ -56,6 +56,7 @@ form {
   input[type=text] {
     background-color: $background;
     border: 2px solid $text;
+    margin-top: 12px;
     color: $text;
     width: 100%;
     @include responsive-sizing(padding, $base/2);
@@ -67,6 +68,13 @@ form {
     @media screen and (min-width: $breakpoint) {
       width: 408px;
     }
+  }
+
+  a[type=warning] {
+    color: $poppy-red;
+    font-style: italic;
+    min-width: 100%;
+    display: block;
   }
 
   input[type=submit] {
