@@ -140,7 +140,7 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
     super(props)
     this.submitForm = this.submitForm.bind(this)
     this.updateEmail = this.updateEmail.bind(this)
-    this.state = { isSubmitted: false, email: "", err_msg: "&emsp;&emsp;&emsp;&emsp;" }
+    this.state = { isSubmitted: false, email: "", err_msg: "" }
   }
 
   submitForm(e) {
