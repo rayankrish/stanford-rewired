@@ -6,6 +6,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://stanfordrewired.us10.list-manage.com/subscribe/post?u=d88e15c4976a473795e1c813f&amp;id=768ce30326",
+        timeout: 3500, // time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+      },
+    },
+    {
       resolve: `gatsby-plugin-sass`,
       options: {
         implementation: require("sass"),
@@ -43,8 +51,8 @@ module.exports = {
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
-        useACF: false
-      }
+        useACF: false,
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
