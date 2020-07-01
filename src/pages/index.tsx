@@ -70,7 +70,7 @@ function Description() {
       {fadeInUp(
         <p>
           We’re a community of Stanford undergrads and postdocs in fields
-          ranging from philosophy, to anthropology, to political science.
+          ranging from philosophy to anthropology to political science.
           Together, we’re leading a cultural shift in the way Stanford thinks
           about technology.
         </p>
