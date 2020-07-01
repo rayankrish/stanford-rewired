@@ -6,6 +6,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+	trackingId: `UA-171298201-1`, // should this be on the repo?
+	head: false,
+	anonymize: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-mailchimp",
       options: {
         endpoint:
