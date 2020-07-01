@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&family=Noto+Serif:ital,wght@0,700;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+// Colors
+$poppy-red: #FF4908;
+$poppy-30: rgba(255,73,8,.3);
+$background: #FFFAF2;
+$text: #434343;
+
+// Fonts
+$monospace: 'Inconsolata', monospace;
+$expanded: 'Inconsolata Expanded', monospace;
+$serif: 'Noto Serif', serif;
+$sans: 'Source Sans Pro', sans-serif;
+
+@font-face {
+  font-family: 'Inconsolata Expanded';
+  src: url(../fonts/Inconsolata-ExpandedExtraBold.ttf);
+}
+
+$lh: 1.4; // line height
+
+$base: 16px;
+$header: $base*1.5;
+$mono-header: $base*4/3;
+
+// Responsive Scaling
+$device-scaling: 1.5;
+$breakpoint: 850px;

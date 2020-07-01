@@ -1,0 +1,217 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+#title {
+  font: 700 $base*1.5/1 $serif;
+
+  span {
+    display: block;
+    font: 700 $base*3/1 $expanded;
+  }
+
+  @media screen and (min-width: $breakpoint) {
+    font-size: $base*3;
+
+    span {
+      font-size: $base*6;
+    }
+  }
+}
+
+#subtitle {
+  font: $base*9/8 $sans;
+
+  @media screen and (min-width: $breakpoint) {
+    font-size: $base*9/4;
+  }
+}
+
+.columns {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin-bottom: $base/2;
+
+  @media screen and (min-width: $breakpoint) {
+    flex-flow: row nowrap;
+  }
+}
+
+.col {
+  width: 100%;
+  margin-bottom: 0;
+
+  @media screen and (min-width: $breakpoint) {
+    width: 276px;
+  }
+}
+
+p a {
+  text-decoration: underline;
+}
+
+form {
+  padding-bottom: $base*3;
+
+  input[type=text] {
+    background-color: $background;
+    border: 2px solid $text;
+    margin-top: 12px;
+    color: $text;
+    width: 100%;
+    @include responsive-sizing(padding, $base/2);
+
+    &:focus {
+      outline: 0;
+    }
+
+    @media screen and (min-width: $breakpoint) {
+      width: 408px;
+    }
+  }
+
+  a[type=warning] {
+    color: $poppy-red;
+    font-style: italic;
+  }
+
+  input[type=submit] {
+    display: block;
+    background-color: $text;
+    border: 0;
+    border-radius: $base/2;
+    color: $background;
+    font: 700 $base/1 $sans;
+    text-transform: uppercase;
+    margin-top: $base*2/3;
+    padding: $base*2/3 $base*2;
+    box-shadow: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media screen and (min-width: $breakpoint) {
+      font-size: $base*$device-scaling;
+      padding: $base $base*3;
+    }
+  }
+}
+
+#graphics {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+
+  .svgContainer {
+    position: absolute;
+    transform: scale(.4);
+
+    circle {
+      fill: $poppy-red;
+    }
+
+    @media screen and (min-width: $breakpoint) {
+      transform: scale(.7);
+    }
+
+    @media screen and (min-width: 1200px) {
+      transform: scale(1);
+    }
+  }
+}
+
+#dots1,
+#dots3,
+#dots4 {
+  circle {
+    fill-opacity: 0.3;
+  }
+}
+
+#dots1 {
+  @include landing-graphics(left, -200px, -170px, -270px);
+  @include landing-graphics(top, -150px, -195px, -204px);
+}
+
+#squiggles1 {
+  @include landing-graphics(left, -110px, -138px, -17.5vw);
+  @include landing-graphics(top, -140px, -146px, -115px);
+
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+#dots2 {
+  @include landing-graphics(right, -50px, -80px, -15vw);
+  @include landing-graphics(top, -100px, -120px, -50px);
+}
+
+#dots3 {
+  @include landing-graphics(left, -77px, -110px, -142px);
+  @include landing-graphics(top, 300px, 534px, 112px);
+}
+
+#squiggles2 {
+  @include landing-graphics(left, -110px, -138px, -17.5vw);
+  @include landing-graphics(top, 35px, 105px, 224px);
+
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+}
+
+#squiggles3 {
+  @include landing-graphics(right, -76px, -124px, -20vw);
+  @include landing-graphics(bottom, -70px, 200px, 520px);
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
+}
+
+#dots4 {
+  @include landing-graphics(right, -20px, -30px, -10vw);
+  @include landing-graphics(bottom, -150px, -30px, 147px);
+}
+
+#dots5 {
+  @include landing-graphics(right, -70px, -117px, -20vw);
+  @include landing-graphics(bottom, 7px, 161px, 372px);
+}
+
+#squiggles4 {
+  @include landing-graphics(right, -124px, -150px, -20vw);
+  @include landing-graphics(bottom, -220px, -162px, -46px);
+  stroke-dasharray: 1820;
+  stroke-dashoffset: 1820;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY($base);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.draw {
+  animation: dash 1.4s linear forwards;
+}
+
+// react-animate-on-scroll adds an extra div around 
+// elements, this removes the extra styling from that.
+.animated {
+  margin: 0;
+}
