@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import Landing from "../components/landing"
 import Layout from "../components/layout"
@@ -27,27 +28,40 @@ const IndexPage = () => {
   )
 }
 
-function Title() {
+function fadeInUp(elem: JSX.Element): JSX.Element {
   return (
+    <ScrollAnimation
+      animateIn="fadeInUp"
+      duration={0.5}
+      animateOnce={true}
+      offset={200}
+    >
+      {elem}
+    </ScrollAnimation>
+  )
+}
+
+function Title() {
+  return fadeInUp(
     <div>
       <h1 id="title">Stanford<span>Rewired</span></h1>
-    </div>
+    </div>,
   )
 }
 
 function Subtitle() {
-  return (
+  return fadeInUp(
     <div>
       <p id="subtitle">Stanford Rewired is a digital magazine where <strong>technology and society meet</strong>. We’re committed to curating stories that amplify diverse perspectives and bridge disciplines.</p>
-    </div>
+    </div>,
   )
 }
 
 function Description() {
   return (
     <div>
-      <p>We’re a community of Stanford undergrads and postdocs in fields ranging from philosophy, to anthropology, to political science. Together, we’re leading a cultural shift in the way Stanford thinks about technology.</p>
-      <p>Challenging the dichotomy between unbounded optimism and cynical pessimism, we invite readers to thoughtful conversations that transcend the echo chambers of today’s attention economy. We’re committed to amplifying marginalized voices, challenging unjust power structures, and re-enchanting technology as a force for civic progress. Ultimately, we strive to engender a more conscious stance towards technology and instill a sense of agency in shaping its future.</p>
+      {fadeInUp(<p>We’re a community of Stanford undergrads and postdocs in fields ranging from philosophy, to anthropology, to political science. Together, we’re leading a cultural shift in the way Stanford thinks about technology.</p>)}
+      {fadeInUp(<p>Challenging the dichotomy between unbounded optimism and cynical pessimism, we invite readers to thoughtful conversations that transcend the echo chambers of today’s attention economy. We’re committed to amplifying marginalized voices, challenging unjust power structures, and re-enchanting technology as a force for civic progress. Ultimately, <strong>we strive to engender a more conscious stance towards technology and instill a sense of agency in shaping its future.</strong></p>)}
     </div>
   )
 }
@@ -55,8 +69,8 @@ function Description() {
 function GetInvolved() {
   return (
     <div>
-      <h1>Get Involved</h1>
-      <div className="columns">
+      {fadeInUp(<h1>Get Involved</h1>)}
+      {fadeInUp(<div className="columns">
         <div className="col">
           <a href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a" target="_blank">
             <h2>submit writing &rarr;</h2>
@@ -69,12 +83,12 @@ function GetInvolved() {
           </a>
           <p>We’re looking for a graphic and/or product designer to join our team. <a href="https://bit.ly/rewired-design" target="_blank">You can learn more details about the position here.</a></p>
         </div>
-      </div>
+      </div>)}
     </div>
   )
 }
 
-class SubmitForm extends React.Component {
+class SubmitForm extends React.Component<{}, {isSubmitted: boolean}> {
   constructor(props) {
     super(props);
     this.submitForm = this.submitForm.bind(this);
@@ -88,7 +102,7 @@ class SubmitForm extends React.Component {
 
   render() {
     if (!this.state.isSubmitted) {
-      return (
+      return fadeInUp(
         <div>
           <h1>Keep In Touch</h1>
           <p>Sign up to receive updates about upcoming issues and submission openings via email.</p>
@@ -100,7 +114,7 @@ class SubmitForm extends React.Component {
       )
     }
     else {
-      return (
+      return fadeInUp(
         <div>
           <h1>&#10004; Thanks for signing up</h1>
           <p>We’re excited for news about our publication to hit your inbox soon. In the meantime, check out more ways to get involved:</p>
