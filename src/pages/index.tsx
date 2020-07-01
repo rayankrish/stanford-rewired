@@ -135,10 +135,7 @@ function GetInvolved() {
   )
 }
 
-class SubmitForm extends React.Component<
-  {},
-  { isSubmitted: boolean; email: string; err_msg: string }
-> {
+class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: string; err_msg: string }> {
   constructor(props) {
     super(props)
     this.submitForm = this.submitForm.bind(this)
@@ -179,8 +176,7 @@ class SubmitForm extends React.Component<
             onSubmit={e => {
               e.preventDefault()
               return false
-            }}
-          >
+            }}>
             <input type="text" name="email" onChange={this.updateEmail} />
             <input type="submit" value="Sign Up" onClick={this.submitForm} />
             <div dangerouslySetInnerHTML={{ __html: this.state.err_msg }} />
@@ -195,10 +191,7 @@ class SubmitForm extends React.Component<
             We’re excited for news about our publication to hit your inbox soon.
             In the meantime, check out more ways to get involved:
           </p>
-          <a
-            href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
-            target="_blank"
-          >
+          <a href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a" target="_blank">
             <h2>submit writing &rarr;</h2>
           </a>
           <a href="https://bit.ly/rewired-design" target="_blank">
