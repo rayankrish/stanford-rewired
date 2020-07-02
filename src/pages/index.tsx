@@ -28,13 +28,14 @@ const IndexPage = () => {
   )
 }
 
-function fadeInUp(elem: JSX.Element): JSX.Element {
+function fadeInUp(elem: JSX.Element, delay=0): JSX.Element {
   return (
     <ScrollAnimation
       animateIn="fadeInUp"
       duration={0.5}
       animateOnce={true}
       offset={200}
+      delay={delay}
     >
       {elem}
     </ScrollAnimation>
@@ -82,11 +83,13 @@ function Description() {
           transcend the echo chambers of today’s attention economy. We’re
           committed to amplifying marginalized voices, challenging unjust power
           structures, and re-enchanting technology as a force for civic
-          progress. Ultimately,{" "}
-          <strong>
-            we strive to engender a more conscious stance towards technology and
-            instill a sense of agency in shaping its future.
-          </strong>
+          progress.
+        </p>
+      )}
+      {fadeInUp(
+        <p>
+          Ultimately, we strive to engender a more conscious stance towards
+          technology and instill a sense of agency in shaping its future.
         </p>
       )}
     </div>
@@ -97,8 +100,8 @@ function GetInvolved() {
   return (
     <div>
       {fadeInUp(<h1>Get Involved</h1>)}
-      {fadeInUp(
-        <div className="columns">
+      <div className="columns">
+        {fadeInUp(
           <div className="col">
             <a
               href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
@@ -117,20 +120,22 @@ function GetInvolved() {
               </a>
             </p>
           </div>
-          <div className="col">
+      , 250)}
+      {fadeInUp(
+        <div className="col">
+          <a href="https://bit.ly/rewired-design" target="_blank">
+            <h2>design with us &rarr;</h2>
+          </a>
+          <p>
+            We’re looking for a graphic and/or product designer to join our
+            team.{" "}
             <a href="https://bit.ly/rewired-design" target="_blank">
-              <h2>design with us &rarr;</h2>
+              You can learn more details about the position here.
             </a>
-            <p>
-              We’re looking for a graphic and/or product designer to join our
-              team.{" "}
-              <a href="https://bit.ly/rewired-design" target="_blank">
-                You can learn more details about the position here.
-              </a>
-            </p>
-          </div>
+          </p>
         </div>
-      )}
+      , 500)}
+      </div>
     </div>
   )
 }

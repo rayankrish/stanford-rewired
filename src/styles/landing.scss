@@ -19,10 +19,10 @@
 }
 
 #subtitle {
-  font: $base*9/8 $sans;
+  font: $base*9/6 $sans;
 
   @media screen and (min-width: $breakpoint) {
-    font-size: $base*9/4;
+    font-size: $base*9/5;
   }
 }
 
