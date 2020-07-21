@@ -1,0 +1,32 @@
+.post-title {
+    /* serif header */
+
+    font-family: Noto Serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 49px;
+    text-align: center;
+
+    /* Black */
+
+    color: #434343;
+}
+
+.post-byline {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 29px;
+    line-height: 36px;
+    text-align: center;
+    font-variant: small-caps;
+
+    /* Black */
+
+    color: #434343;
+}
+
+.post-category {
+    text-decoration: underline;
+}

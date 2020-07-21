@@ -1,8 +1,11 @@
 import React, { Component } from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 
 import Layout from "../components/layout";
+import Navbar from "../components/navbar"
+
+import "../styles/post.scss";
 
 // VERY BASIC WP POST example
 // TODO: make it better in every way
@@ -13,10 +16,14 @@ class Post extends Component {
     const post = this.props.data.wordpressPost
 
     return (
-      <Layout>
-        <h1>{post.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
-      </Layout>
+      <>
+        <Navbar/>
+        <Layout>
+          <h1 className="post-title">{post.title}</h1>
+          <div className="post-byline">by {post.author.name.toLowerCase()} • in <Link className="post-category" to="/">{post.categories[0].name.toLowerCase()}</Link></div>
+          <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+        </Layout>
+      </>
     )
   }
 }
@@ -33,6 +40,12 @@ export const postQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       title
       content
+      author {
+        first_name
+      }
+      categories {
+        name
+      }
     }
     site {
       siteMetadata {
