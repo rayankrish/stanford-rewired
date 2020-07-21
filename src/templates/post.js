@@ -13,14 +13,26 @@ import "../styles/post.scss";
 
 class Post extends Component {
   render() {
-    const post = this.props.data.wordpressPost
+    const post = this.props.data.wpPost
+    let author = {}
+    author.firstName = this.props.data.wpPost?.author?.node?.firstName ? this.props.data.wpPost?.author?.node?.firstName : ""
+    author.lastName = this.props.data.wpPost?.author?.node?.lastName ? this.props.data.wpPost?.author?.node?.lastName : ""
+
+    const category = this.props.data.wpPost?.categories?.nodes?.length ? this.props.data.wpPost?.categories?.nodes[0].name : "uncategorized"
+    const featuredImage = post?.featuredImage?.node?.sourceUrl
+
+    console.log(post)
+    console.log(author)
 
     return (
       <>
         <Navbar/>
         <Layout>
           <h1 className="post-title">{post.title}</h1>
-          <div className="post-byline">by {post.author.name.toLowerCase()} • in <Link className="post-category" to="/">{post.categories[0].name.toLowerCase()}</Link></div>
+          <div className="post-byline">by {`${author.firstName} ${author.lastName}`.toLowerCase()} • in <Link className="post-category" to="/">{category}</Link></div>
+          { featuredImage &&
+            <img src={featuredImage}></img>
+          }
           <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
         </Layout>
       </>
@@ -37,14 +49,24 @@ export default Post
 
 export const postQuery = graphql`
   query($id: String!) {
-    wordpressPost(id: { eq: $id }) {
+    wpPost(id: { eq: $id }) {
       title
       content
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
       author {
-        first_name
+        node {
+          firstName
+          lastName
+        }
       }
       categories {
-        name
+        nodes {
+          name
+        }
       }
     }
     site {
