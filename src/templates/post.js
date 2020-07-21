@@ -29,7 +29,7 @@ class Post extends Component {
         <Navbar/>
         <Layout>
           <h1 className="post-title">{post.title}</h1>
-          <div className="post-byline">by {`${author.firstName} ${author.lastName}`.toLowerCase()} • in <Link className="post-category" to="/">{category}</Link></div>
+          <div className="post-byline">by {`${author.firstName} ${author.lastName}`.toLowerCase()} • in <Link className="post-category" to="/">{category.toLowerCase()}</Link></div>
           { featuredImage &&
             <img src={featuredImage}></img>
           }
