@@ -2,118 +2,118 @@
 @use 'mixins' as *;
 
 .navbar {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    border: 1px solid #FFFAF2;
-    box-sizing: border-box;
-    padding: 1rem 2rem;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  border: 1px solid #fffaf2;
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  margin-bottom: 0px;
 
-    @media screen and (min-width: $breakpoint) {
-        padding: 1rem 6rem;
-    }
+  @media screen and (min-width: $breakpoint) {
+    padding: 1rem 6rem;
+  }
 }
 
 .navbar-brand {
-    display: flex;
-    flex-direction: column;
-    padding: 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
 }
 
 #navbar-brand-stanford {
-    position: static;
+  position: static;
 
-    font-family: $serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 33px;
+  font-family: $serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
 
-    /* Black */
+  /* Black */
 
-    color: #434343;
+  color: #434343;
 
-    /* Inside Auto Layout */
+  /* Inside Auto Layout */
 
-    flex: none;
-    order: 0;
-    align-self: flex-start;
-    margin: 0px 0px;
+  flex: none;
+  order: 0;
+  align-self: flex-start;
+  margin: 0px 0px;
 }
 
 #navbar-brand-rewired {
-    position: static;
-    width: 202px;
-    height: 46px;
-    left: 0px;
-    top: 24px;
+  position: static;
+  width: 202px;
+  height: 46px;
+  left: 0px;
+  top: 24px;
 
-    font-family: $monospace;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 48px;
-    line-height: 50%;
-    /* identical to box height, or 46px */
+  font-family: $monospace;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 50%;
+  /* identical to box height, or 46px */
 
+  /* Black */
 
-    /* Black */
+  color: #434343;
 
-    color: #434343;
+  /* Inside Auto Layout */
 
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    align-self: flex-start;
-    margin: 0px 0px;
+  flex: none;
+  order: 1;
+  align-self: flex-start;
+  margin: 0px 0px;
 }
 
 .navbar-element-wrap {
-    display: flex;
+  display: flex;
 }
 
 .navbar-elements {
-    float: right;
-    align-self: flex-end;
-    margin-bottom: 6px;
+  float: right;
+  align-self: flex-end;
+  margin-bottom: 6px;
 }
 
 .navbar-link-bold {
-    margin-right: 2rem;
-    font-family: $sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 29px;
-    line-height: 36px;
-    font-variant: small-caps;
-    
-    color: #434343;
+  margin-right: 2rem;
+  font-family: $sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 29px;
+  line-height: 36px;
+  font-variant: small-caps;
 
-    /* Inside Auto Layout */
+  color: #434343;
 
-    flex: none;
-    order: 0;
-    align-self: center;
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  align-self: center;
 }
 
-.navbar-link-regular{
-    /* sans serif caps */
-    margin-right: 2rem;
-    font-family: $sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 29px;
-    line-height: 36px;
-    font-variant: small-caps;
+.navbar-link-regular {
+  /* sans serif caps */
+  margin-right: 2rem;
+  font-family: $sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 29px;
+  line-height: 36px;
+  font-variant: small-caps;
 
-    /* Black */
+  /* Black */
 
-    color: #434343;
+  color: #434343;
 
-    /* Inside Auto Layout */
+  /* Inside Auto Layout */
 
-    flex: none;
-    order: 0;
-    align-self: center;
+  flex: none;
+  order: 0;
+  align-self: center;
 }

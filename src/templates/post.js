@@ -33,7 +33,9 @@ class Post extends Component {
           { featuredImage &&
             <img src={featuredImage}></img>
           }
-          <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+          <div className="post-excerpt" dangerouslySetInnerHTML={{__html: post.excerpt}}></div>
+          <hr/>
+          <div className="post-body" dangerouslySetInnerHTML={{ __html: post.content }}></div>
         </Layout>
       </>
     )
@@ -52,6 +54,7 @@ export const postQuery = graphql`
     wpPost(id: { eq: $id }) {
       title
       content
+      excerpt
       featuredImage {
         node {
           sourceUrl
