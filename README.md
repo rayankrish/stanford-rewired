@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/636d1d60-a8ce-4c0c-8991-e1a27452eace/deploy-status)](https://app.netlify.com/sites/modest-stonebraker-861905/deploys)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
