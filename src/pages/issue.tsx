@@ -1,29 +1,69 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-
+// eventually use gatsby-image
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import temp_article_thumbnail from '..\\images\\temp_article_thumbnail.png'
+import temp_issue_cover from '..\\images\\temp_issue_cover.jpg'
+import "../styles/issue.scss"
 
 const IssuePage = () => {
 
-    const data = useStaticQuery(pageQuery); // graphql query, see below
 
     return (
-        <Layout>
-            <SEO title="Home" />
+        <>
+            <Layout>
+                <SEO title="Issue" />
+                <Title />
+                <Articles />
+            </Layout>
+        </>
+    )
+}
 
-            <h2 style={{ marginTop: "12px" }}> Wordpress Posts </h2>
+function Title() {
+    const data = useStaticQuery(pageQuery); // graphql query, see below
+    return (
+        <div>
+            <img id="issue-image" src={temp_issue_cover} alt="issue cover image" />
+            <h1 id="issue-title">
+                {data.allWordpressPost.edges[0].node.categories[0].name}
+            </h1>
+            <h1 id="issue-subtitle">
+                Issue One &#9679; July 1, 2020
+            </h1>
+            <p id="description">
+                {data.allWordpressPost.edges[0].node.categories[0].description}
+            </p>
+            <p id="description">
+                Read the editor's note here &rarr;
+            </p>
+        </div>
+    )
+}
+
+function Articles() {
+    const data = useStaticQuery(pageQuery); // graphql query, see below
+    return (
+        <Layout>
             <div>
                 {data.allWordpressPost.edges.map(({ node }) => (
                     <div key={node.slug}>
-                        <h2>Issue Name - {node.categories[0].name}</h2>
-                        <h2>Issue Desc - {node.categories[0].description}</h2>
-                        <Link to={node.slug}>
-                            <h2>Title - {node.title}</h2>
-                            <h2>Date - {node.date}</h2>
-                            <h2>Excerpt - {node.excerpt}</h2>
-                        </Link>
+
+                        <div className="columns">
+                            <div className="col-a">
+                                <img id="article-thumbnail" src={temp_article_thumbnail} alt="article image" />
+                            </div>
+                            <div className="col-b">
+                                <h1 id="article-title">
+                                    {node.title}
+                                </h1>
+                                <a id="tag">tag one</a>
+                                <a id="tag">tag two</a>
+                                <p id="article-description">{node.excerpt}></p>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
