@@ -4,8 +4,8 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import temp_article_thumbnail from '..\\images\\temp_article_thumbnail.png'
-import temp_issue_cover from '..\\images\\temp_issue_cover.jpg'
+import temp_article_thumbnail from '../images/temp_article_thumbnail.png'
+import temp_issue_cover from '../images/temp_issue_cover.jpg'
 import "../styles/issue.scss"
 
 const IssuePage = () => {
