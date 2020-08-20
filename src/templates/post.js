@@ -206,6 +206,8 @@ class Post extends Component {
       : "uncategorized"
     const featuredImage = post?.featuredImage?.node?.sourceUrl
 
+    const subtitle = post?.articleFields?.articleSubtitle
+
     console.log(post)
     console.log(author)
 
@@ -214,6 +216,7 @@ class Post extends Component {
         <Navbar />
         <Layout>
           <h1 className="post-title">{post.title}</h1>
+          {subtitle && <h2 className="post-subtitle">{subtitle}</h2>}
           <div className="post-byline">
             by {`${author.firstName} ${author.lastName}`.toLowerCase()} • in{" "}
             <Link className="post-category" to="/">
@@ -251,6 +254,9 @@ export const postQuery = graphql`
       title
       content
       excerpt
+      articleFields {
+        articleSubtitle
+      }
       featuredImage {
         node {
           sourceUrl
