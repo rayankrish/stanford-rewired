@@ -20,6 +20,34 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  // hard coded the "Issue Heading" as category applied for Issue Pages
+  const issue_result = await graphql(`
+    query {
+      allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Issue Heading"}}}}}) {
+        edges {
+          node {
+            id
+            slug
+            title
+            excerpt
+            date
+            featuredImage {
+              node {
+                localFile {
+                  childImageSharp {
+                    fixed {
+                      src
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  console.log(issue_result)
   const postTemplate = path.resolve(`./src/templates/post.js`)
   result.data.allWpPost.edges.forEach(edge => {
     createPage({
@@ -32,6 +60,21 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         id: edge.node.id,
       },
+    })
+  })
+
+  const issueTemplate = path.resolve(`./src/templates/issue.tsx`)
+  issue_result.data.allWpPost.edges.forEach(edge => {
+    createPage({
+      path: `/issue-page/${edge.node.slug}`,
+      component: slash(issueTemplate),
+      context: {
+        id: edge.node.id,
+        title: edge.node.title,
+        excerpt: edge.node.excerpt,
+        date: edge.node.date,
+        featuredImage: edge.node.featuredImage
+      }
     })
   })
 }

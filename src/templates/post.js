@@ -15,26 +15,26 @@ class Post extends Component {
   render() {
     const post = this.props.data.wpPost
     let author = {}
-    author.firstName = this.props.data.wpPost?.author?.node?.firstName ? this.props.data.wpPost?.author?.node?.firstName : ""
-    author.lastName = this.props.data.wpPost?.author?.node?.lastName ? this.props.data.wpPost?.author?.node?.lastName : ""
+    author.firstName = this.props.data.wpPost ?.author ?.node ?.firstName ? this.props.data.wpPost ?.author ?.node ?.firstName : ""
+    author.lastName = this.props.data.wpPost ?.author ?.node ?.lastName ? this.props.data.wpPost ?.author ?.node ?.lastName : ""
 
-    const category = this.props.data.wpPost?.categories?.nodes?.length ? this.props.data.wpPost?.categories?.nodes[0].name : "uncategorized"
-    const featuredImage = post?.featuredImage?.node?.sourceUrl
+    const category = this.props.data.wpPost ?.categories ?.nodes ?.length ? this.props.data.wpPost ?.categories ?.nodes[0].name : "uncategorized"
+    const featuredImage = post ?.featuredImage ?.node ?.sourceUrl
 
     console.log(post)
     console.log(author)
 
     return (
       <>
-        <Navbar/>
+        <Navbar />
         <Layout>
           <h1 className="post-title">{post.title}</h1>
           <div className="post-byline">by {`${author.firstName} ${author.lastName}`.toLowerCase()} • in <Link className="post-category" to="/">{category.toLowerCase()}</Link></div>
-          { featuredImage &&
+          {featuredImage &&
             <img src={featuredImage}></img>
           }
-          <div className="post-excerpt" dangerouslySetInnerHTML={{__html: post.excerpt}}></div>
-          <hr/>
+          <div className="post-excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>
+          <hr />
           <div className="post-body" dangerouslySetInnerHTML={{ __html: post.content }}></div>
         </Layout>
       </>
