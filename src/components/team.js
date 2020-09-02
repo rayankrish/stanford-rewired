@@ -9,7 +9,7 @@ const teamArray = [
   ["Enya Lu", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/EnyaLu.png"],
   ["Avery Rogers", "Content", "http://52.12.8.45/wp-content/uploads/2020/08/temp_issue_cover.jpg"],
   ["Alessandro Vecchiato", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/AlessandroVecchiato.jpg"],
-  ["Emily Zhong", "Design", "http://52.12.8.45/wp-content/uploads/2020/09/temp_issue_cover.jpg"],
+  ["Emily Zhong", "Design", "http://52.12.8.45/wp-content/uploads/2020/08/temp_issue_cover.jpg"],
   ["Kaylie Mings", "Design", "http://52.12.8.45/wp-content/uploads/2020/09/KaylieMings.jpg"],
   ["Crystal Nattoo", "Design", "http://52.12.8.45/wp-content/uploads/2020/09/CrystalNattoo.jpg"],
   ["Braedon Silvers", "Design", "http://52.12.8.45/wp-content/uploads/2020/08/temp_issue_cover.jpg"],
