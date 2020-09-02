@@ -29,13 +29,13 @@ const AboutPage = () => {
   )
 }
 
-function fadeInUp(elem: JSX.Element, delay=0): JSX.Element {
+function fadeInUp(elem: JSX.Element, delay=0, offset=200): JSX.Element {
   return (
     <ScrollAnimation
       animateIn="fadeInUp"
       duration={0.5}
       animateOnce={true}
-      offset={200}
+      offset={offset}
       delay={delay}
     >
       {elem}
@@ -46,7 +46,7 @@ function fadeInUp(elem: JSX.Element, delay=0): JSX.Element {
 function Description() {
   return (
     <div>
-      {fadeInUp(<h1>About</h1>)}
+      {fadeInUp(<h1>About</h1>, 0, 0)}
       {fadeInUp(
         <p>
           Stanford Rewired is a digital magazine where technology and society meet. We’re committed to curating stories that amplify diverse perspectives and bridge disciplines.
