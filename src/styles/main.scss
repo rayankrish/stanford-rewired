@@ -29,14 +29,20 @@ div {
   @include responsive-sizing(margin-bottom, $base*2);
 }
 
-h1 {
+.monospace {
+  font-family: $monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: $serif;
+}
+
+h1 {
   @include responsive-sizing(font-size, $header);
-  @include responsive-sizing(margin-bottom, $base*2/3);
+  @include responsive-sizing(margin-bottom, $base);
 }
 
 h2 {
-  font-family: $monospace;
   @include responsive-sizing(font-size, $mono-header);
   @include responsive-sizing(margin-bottom, $base/2);
 }

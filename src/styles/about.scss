@@ -1,28 +1,38 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-#title {
-  font: 700 $base*1.5/1 $serif;
+#team {
+  display: flex;
+  flex-flow: row wrap;
+  @include responsive-sizing(font-size, $base/1.25);
+  text-align: center;
 
-  span {
-    display: block;
-    font: 700 $base*3/1 $expanded;
+  h3 {
+    font-family: $sans;
+    font-weight: 700;
+    @include responsive-sizing(font-size, $base/1.25);
+    @include responsive-sizing(margin-bottom, $base/4);
   }
 
-  @media screen and (min-width: $breakpoint) {
-    font-size: $base*3;
-
-    span {
-      font-size: $base*6;
+  .member {
+    flex-basis: 50%;
+    @media screen and (min-width: 540px) {
+      flex-basis: 33%;
     }
-  }
-}
+    @media screen and (min-width: 740px) {
+      flex-basis: 25%;
+    }
 
-#subtitle {
-  font: $base*9/6 $sans;
+    @include responsive-sizing(margin-bottom, $base*1.25);
 
-  @media screen and (min-width: $breakpoint) {
-    font-size: $base*9/5;
+    img {
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid black;
+      width: 100px;
+      height: 100px;
+      @include responsive-sizing(margin-bottom, $base/2);
+    }
   }
 }
 
@@ -98,7 +108,7 @@ form {
   }
 }
 
-#landing-graphics {
+#about-graphics {
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -108,8 +118,17 @@ form {
     position: absolute;
     transform: scale(.4);
 
-    circle {
-      fill: $poppy-red;
+    line, path {
+      stroke: $poppy-red;
+    }
+
+    line {
+      stroke-width: 3;
+    }
+
+    path {
+      stroke-width: 6;
+      stroke-linecap: round;
     }
 
     @media screen and (min-width: $breakpoint) {
@@ -122,67 +141,29 @@ form {
   }
 }
 
-#dots1,
-#dots3,
-#dots4 {
-  circle {
-    fill-opacity: 0.3;
-  }
+#group1 {
+  @include graphics(left, -170px, -212px, -270px);
+  @include graphics(top, -220px, -100px, 10px);
 }
 
-#dots1 {
-  @include graphics(left, -200px, -170px, -270px);
-  @include graphics(top, -150px, -195px, -204px);
+#group2 {
+  @include graphics(right, -50px, -124px, -15vw);
+  @include graphics(top, 100px, 100px, 100px);
 }
 
-#squiggles1 {
-  @include graphics(left, -110px, -138px, -17.5vw);
-  @include graphics(top, -140px, -146px, -115px);
-
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
+#group3 {
+  @include graphics(right, -50px, -124px, -15vw);
+  @include graphics(top, 840px, 640px, 800px);
 }
 
-#dots2 {
-  @include graphics(right, -50px, -80px, -15vw);
-  @include graphics(top, -100px, -120px, -50px);
+#group4 {
+  @include graphics(left, -60px, -80px, -10vw);
+  @include graphics(bottom, 750px, 770px, 765px);
 }
 
-#dots3 {
-  @include graphics(left, -77px, -110px, -142px);
-  @include graphics(top, 300px, 534px, 112px);
-}
-
-#squiggles2 {
-  @include graphics(left, -110px, -138px, -17.5vw);
-  @include graphics(top, 35px, 105px, 224px);
-
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
-}
-
-#squiggles3 {
-  @include graphics(right, -76px, -124px, -20vw);
-  @include graphics(bottom, -70px, 200px, 520px);
-  stroke-dasharray: 1300;
-  stroke-dashoffset: 1300;
-}
-
-#dots4 {
-  @include graphics(right, -20px, -30px, -10vw);
-  @include graphics(bottom, -150px, -30px, 147px);
-}
-
-#dots5 {
-  @include graphics(right, -70px, -117px, -20vw);
-  @include graphics(bottom, 7px, 161px, 372px);
-}
-
-#squiggles4 {
-  @include graphics(right, -124px, -150px, -20vw);
-  @include graphics(bottom, -220px, -162px, -46px);
-  stroke-dasharray: 1820;
-  stroke-dashoffset: 1820;
+#group5 {
+  @include graphics(right, -130px, -170px, -20vw);
+  @include graphics(bottom, -300px, -80px, 0px);
 }
 
 @keyframes dash {
