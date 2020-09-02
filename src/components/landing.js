@@ -5,7 +5,7 @@ import "../styles/landing.scss"
 
 const Landing = () => {
   return (
-    <div id="graphics">
+    <div id="landing-graphics">
       <Dots1 />
       <Dots3 />
       <Squiggles1 />

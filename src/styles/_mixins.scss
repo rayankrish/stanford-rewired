@@ -8,7 +8,7 @@
   }
 }
 
-@mixin landing-graphics($property, $mobile, $tablet, $desktop) {
+@mixin graphics($property, $mobile, $tablet, $desktop) {
   #{$property}: $mobile;
 
   @media screen and (min-width: variables.$breakpoint) {
