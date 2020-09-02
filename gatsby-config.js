@@ -62,6 +62,12 @@ module.exports = {
         useACF: false,
       },
     },
+    {
+      resolve: `gatsby-source-wordpress-experimental`,
+      options: {
+        url: `http://52.12.8.45/graphql`
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
