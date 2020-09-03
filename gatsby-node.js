@@ -66,7 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const issueTemplate = path.resolve(`./src/templates/issue.tsx`)
   issue_result.data.allWpPost.edges.forEach(edge => {
     createPage({
-      path: `/issue-page/${edge.node.slug}`,
+      path: `/issue/${edge.node.slug}`,
       component: slash(issueTemplate),
       context: {
         id: edge.node.id,

@@ -24,8 +24,8 @@ function navbar(props) {
             </Link>
             <div className="navbar-element-wrap">
                 <div className="navbar-elements">
-                    <Navlink to="/" bold>Issue One: Governance</Navlink>
-                    <Navlink to="/">About</Navlink>
+                    <Navlink to="/issue/governance" bold>Issue One: Governance</Navlink>
+                    <Navlink to="/about">About</Navlink>
                 </div>
             </div>
         </div>

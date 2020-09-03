@@ -33,27 +33,31 @@ class Issue extends Component {
                         </h1>
 			<div dangerouslySetInnerHTML={{ __html: this.props.pageContext.excerpt }}></div>
                         <p id="description">
-                            Read the editor's note here &rarr;
+			    <Link to={"/post/"+this.props.pageContext.title.toLowerCase()}>
+                                Read the editor's note here &rarr;
+			    </Link>
                         </p>
                     </div>
                     <div>
                         {articles.edges.map(({ node }) => (
                             <div key={node.slug}>
-                                <div className="columns">
-                                    <div className="col-a">
-                                        <img id="article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
-                                    </div>
-                                    <div className="col-b">
-                                        <h1 id="article-title">
-                                            {node.title}
-                                        </h1>
+				<Link to={"/post/"+node.slug}>
+				<div className="columns">
+				    <div className="col-a">
+					<img id="article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+				    </div>
+				    <div className="col-b">
+					<h1 id="article-title">
+					    {node.title}
+					</h1>
 					{console.log(node.tags.nodes)}
 					{node.tags.nodes.map(tag_node => (
 						<a id="tag">{tag_node.name}</a>
 					))}
 					<div dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
-                                    </div>
-                                </div>
+				    </div>
+				</div>
+				</Link>
                             </div>
                         ))}
                     </div>

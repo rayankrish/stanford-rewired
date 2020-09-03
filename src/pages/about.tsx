@@ -10,12 +10,14 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 
 import "../styles/about.scss"
+import Navbar from "../components/navbar"
 
 const AboutPage = () => {
   const data = useStaticQuery(pageQuery) // graphql query, see below
 
   return (
     <>
+      <Navbar />
       <Layout>
         <SEO title="Home" />
         <About />
