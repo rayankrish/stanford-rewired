@@ -144,68 +144,6 @@ p a {
   }
 }
 
-#dots1 {
-  @include landing-graphics(left, -200px, -170px, -270px);
-  @include landing-graphics(top, -150px, -195px, -204px);
-}
-
-#squiggles1 {
-  @include landing-graphics(left, -110px, -138px, -17.5vw);
-  @include landing-graphics(top, -140px, -146px, -115px);
-
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-}
-
-#dots2 {
-  @include landing-graphics(right, -50px, -80px, -15vw);
-  @include landing-graphics(top, -100px, -120px, -50px);
-}
-
-#dots3 {
-  @include landing-graphics(left, -77px, -110px, -142px);
-  @include landing-graphics(top, 300px, 534px, 112px);
-}
-
-#squiggles2 {
-  @include landing-graphics(left, -110px, -138px, -17.5vw);
-  @include landing-graphics(top, 35px, 105px, 224px);
-
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
-}
-
-#squiggles3 {
-  @include landing-graphics(right, -76px, -124px, -20vw);
-  @include landing-graphics(bottom, -70px, 200px, 520px);
-  stroke-dasharray: 1300;
-  stroke-dashoffset: 1300;
-}
-
-#dots4 {
-  @include landing-graphics(right, -20px, -30px, -10vw);
-  @include landing-graphics(bottom, -150px, -30px, 147px);
-}
-
-#dots5 {
-  @include landing-graphics(right, -70px, -117px, -20vw);
-  @include landing-graphics(bottom, 7px, 161px, 372px);
-}
-
-#squiggles4 {
-  @include landing-graphics(right, -124px, -150px, -20vw);
-  @include landing-graphics(bottom, -220px, -162px, -46px);
-  stroke-dasharray: 1820;
-  stroke-dashoffset: 1820;
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
