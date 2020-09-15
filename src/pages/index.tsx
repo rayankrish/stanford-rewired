@@ -46,7 +46,7 @@ function Title() {
   return fadeInUp(
     <div>
       <h1 id="title">
-        Stanford<span>Rewired</span>
+        <span>Rewired</span>
       </h1>
     </div>
   )
@@ -56,7 +56,7 @@ function Subtitle() {
   return fadeInUp(
     <div>
       <p id="subtitle">
-        Stanford Rewired is a digital magazine where{" "}
+        Rewired is a digital magazine where{" "}
         <strong>technology and society meet</strong>. We’re committed to
         curating stories that amplify diverse perspectives and bridge
         disciplines.
