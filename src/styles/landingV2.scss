@@ -1,7 +1,7 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-#issue-title {
+#landing-title {
   font: 700 $base*1.5/1 $serif;
   text-align: left;
 
@@ -20,7 +20,7 @@
   }
 }
 
-#description {
+#landing-description {
   font: $base*9/6 $sans;
   text-align: left;
 
@@ -55,9 +55,9 @@
   margin-right: 10px;
 }
 
-#issue-image {
-  width: 400px;
-  height: 400px;
+#landing-image {
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   display: block;
   margin-left: 0px;
@@ -225,7 +225,7 @@ p a {
   animation: dash 1.4s linear forwards;
 }
 
-// react-animate-on-scroll adds an extra div around 
+// react-animate-on-scroll adds an extra div around
 // elements, this removes the extra styling from that.
 .animated {
   margin: 0;
