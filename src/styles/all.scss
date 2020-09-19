@@ -1,0 +1,71 @@
+.all-header {
+  font-family: Noto Serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 49px;
+  /* identical to box height */
+
+  color: #000000;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  align-self: flex-start;
+}
+
+.all-datestring {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 36px;
+  font-variant: small-caps;
+
+  /* Black */
+
+  color: #434343;
+}
+
+.all-articlebox {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  height: 96px;
+
+  position: static;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    margin-right: 32px;
+  }
+}
+
+.all-articlebox-title {
+  font-family: Noto Serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  margin-bottom: 4px;
+  color: #434343;
+}
+
+.all-articlebox-excerpt {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
+  /* or 28px */
+
+  /* Black */
+
+  color: #434343;
+  text-overflow: ellipsis;
+}
