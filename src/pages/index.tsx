@@ -15,7 +15,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <Layout>
+      <Layout noSquiggles>
         <SEO title="Home" />
         <Landing />
         <Title />
@@ -28,7 +28,7 @@ const IndexPage = () => {
   )
 }
 
-function fadeInUp(elem: JSX.Element, delay=0): JSX.Element {
+function fadeInUp(elem: JSX.Element, delay = 0): JSX.Element {
   return (
     <ScrollAnimation
       animateIn="fadeInUp"
@@ -119,28 +119,33 @@ function GetInvolved() {
                 You can learn more about our submission process here.
               </a>
             </p>
-          </div>
-      , 250)}
-      {fadeInUp(
-        <div className="col">
-          <a href="https://bit.ly/rewired-design" target="_blank">
-            <h2>design with us &rarr;</h2>
-          </a>
-          <p>
-            We’re looking for a graphic and/or product designer to join our
-            team.{" "}
+          </div>,
+          250
+        )}
+        {fadeInUp(
+          <div className="col">
             <a href="https://bit.ly/rewired-design" target="_blank">
-              You can learn more details about the position here.
+              <h2>design with us &rarr;</h2>
             </a>
-          </p>
-        </div>
-      , 500)}
+            <p>
+              We’re looking for a graphic and/or product designer to join our
+              team.{" "}
+              <a href="https://bit.ly/rewired-design" target="_blank">
+                You can learn more details about the position here.
+              </a>
+            </p>
+          </div>,
+          500
+        )}
       </div>
     </div>
   )
 }
 
-class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: string; err_msg: string }> {
+class SubmitForm extends React.Component<
+  {},
+  { isSubmitted: boolean; email: string; err_msg: string }
+> {
   constructor(props) {
     super(props)
     this.submitForm = this.submitForm.bind(this)
@@ -183,7 +188,10 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
               return false
             }}
           >
-            <a type="warning" dangerouslySetInnerHTML={{ __html: this.state.err_msg }} />
+            <a
+              type="warning"
+              dangerouslySetInnerHTML={{ __html: this.state.err_msg }}
+            />
             <input type="text" name="email" onChange={this.updateEmail} />
             <input type="submit" value="Sign Up" onClick={this.submitForm} />
           </form>
