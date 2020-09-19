@@ -39,6 +39,19 @@
   padding-top: 5px;
 }
 
+.landing-article-excerpt {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
+  /* or 28px */
+
+  /* Black */
+  color: #434343;
+  text-overflow: ellipsis;
+}
+
 #tag {
   display: inline-block;
   font-size: 16px;
@@ -106,6 +119,8 @@
 
   @media screen and (min-width: $breakpoint) {
     width: 500px;
+    height: 100px;
+    overflow: hidden;
   }
 }
 
@@ -135,4 +150,55 @@ p a {
       transform: scale(1);
     }
   }
+}
+
+#group1 {
+  @include graphics(left, -170px, -212px, -270px);
+  @include graphics(top, -220px, -100px, 10px);
+}
+
+#group6 {
+  @include graphics(left, 606px, 606px, 205px);
+  @include graphics(top, 10px, 10px, 0px);
+}
+
+#group7 {
+  @include graphics(left, 606px, 606px, 0px);
+  @include graphics(top, 10px, 10px, 1211px);
+}
+
+#group5 {
+  @include graphics(right, -130px, -170px, -20vw);
+  @include graphics(bottom, -300px, -80px, 0px);
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY($base);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.draw {
+  animation: dash 1.4s linear forwards;
+}
+
+// react-animate-on-scroll adds an extra div around
+// elements, this removes the extra styling from that.
+.animated {
+  margin: 0;
 }

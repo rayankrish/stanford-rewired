@@ -1,40 +1,39 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+// eventually use gatsby-image
 import ScrollAnimation from "react-animate-on-scroll"
-import addToMailchimp from "gatsby-plugin-mailchimp"
-
-import Landing from "../components/landing"
 import Layout from "../components/layout"
+import Navbar from "../components/navbar"
+import LandingSquiggles from "../components/landing-squiggles"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import temp_article_thumbnail from '../images/temp_article_thumbnail.png'
+import temp_issue_cover from '../images/temp_issue_cover.jpg'
+import "../styles/landingV2.scss"
+import { useLandingQuery } from "../hooks/landing_top_query"
 
-import "../styles/landing.scss"
-
-const IndexPage = () => {
-  const data = useStaticQuery(pageQuery) // graphql query, see below
-
-  return (
-    <>
-      <Layout noSquiggles>
-        <SEO title="Home" />
-        <Landing />
-        <Title />
-        <Subtitle />
-        <Description />
-        <GetInvolved />
-        <SubmitForm />
-      </Layout>
-    </>
-  )
+const LandingPage = () => {
+    return (
+        <>
+            <Navbar />
+            <Layout noSquiggles>
+                <SEO title="Landing" />
+                <LandingSquiggles />
+                <Title />
+                <Articles />
+                <SubmitForm />
+            </Layout>
+        </>
+    )
 }
 
-function fadeInUp(elem: JSX.Element, delay = 0): JSX.Element {
+function fadeInUp(elem: JSX.Element, delay=0, offset=200): JSX.Element {
   return (
     <ScrollAnimation
       animateIn="fadeInUp"
       duration={0.5}
       animateOnce={true}
-      offset={200}
+      offset={offset}
       delay={delay}
     >
       {elem}
@@ -43,109 +42,76 @@ function fadeInUp(elem: JSX.Element, delay = 0): JSX.Element {
 }
 
 function Title() {
-  return fadeInUp(
-    <div>
-      <h1 id="title">
-        Stanford<span>Rewired</span>
-      </h1>
-    </div>
-  )
-}
+    const selected_article = useLandingQuery()
+    var num_articles = selected_article.allWpPost.edges.length
+    var index = Math.floor(Math.random()*num_articles)
+    var selected_article_name = selected_article.allWpPost.edges[index].node.title
+    var selected_article_slug = "/post/" + selected_article.allWpPost.edges[index].node.slug
+    var issue_name = selected_article.allWpPost.edges[index].node.categories.nodes[0].name
+    var other_articles = []
+    for (let i = 0; i <= 3; i++) {
+      if (i != index) {
+        other_articles.push(selected_article.allWpPost.edges[i].node.title)
+      }
+    }
+    var title_variation = Math.floor(Math.random()*2)
 
-function Subtitle() {
-  return fadeInUp(
-    <div>
-      <p id="subtitle">
-        Stanford Rewired is a digital magazine where{" "}
-        <strong>technology and society meet</strong>. We’re committed to
-        curating stories that amplify diverse perspectives and bridge
-        disciplines.
-      </p>
-    </div>
-  )
-}
-
-function Description() {
-  return (
-    <div>
-      {fadeInUp(
-        <p>
-          We’re a community of Stanford undergrads and postdocs in fields
-          ranging from philosophy to anthropology to political science.
-          Together, we’re leading a cultural shift in the way Stanford thinks
-          about technology.
-        </p>
-      )}
-      {fadeInUp(
-        <p>
-          Challenging the dichotomy between unbounded optimism and cynical
-          pessimism, we invite readers to thoughtful conversations that
-          transcend the echo chambers of today’s attention economy. We’re
-          committed to amplifying marginalized voices, challenging unjust power
-          structures, and re-enchanting technology as a force for civic
-          progress.
-        </p>
-      )}
-      {fadeInUp(
-        <p>
-          Ultimately, we strive to engender a more conscious stance towards
-          technology and instill a sense of agency in shaping its future.
-        </p>
-      )}
-    </div>
-  )
-}
-
-function GetInvolved() {
-  return (
-    <div>
-      {fadeInUp(<h1>Get Involved</h1>)}
-      <div className="columns">
-        {fadeInUp(
-          <div className="col">
-            <a
-              href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
-              target="_blank"
-            >
-              <h2>submit writing &rarr;</h2>
-            </a>
-            <p>
-              We’re currently accepting submissions for our Fall 2020 issue. The
-              theme is Governance.{" "}
-              <a
-                href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
-                target="_blank"
-              >
-                You can learn more about our submission process here.
-              </a>
+    return (
+        <div>
+            <Link to={selected_article_slug}>
+              <img id="landing-image" src={selected_article.allWpPost.edges[index].node.featuredImage ? selected_article.allWpPost.edges[index].node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+            </Link>
+            {title_variation == 0 &&
+              <h1 id="landing-title">
+                  Read about <Link to={selected_article_slug} style={{textDecoration: "underline"}}>{selected_article_name}</Link> in our {issue_name} issue
+              </h1>
+            }
+            {title_variation == 1 &&
+              <h1 id="landing-title">
+                  <Link to={selected_article_slug} style={{textDecoration: "underline"}}>{selected_article_name}</Link> is a story in our {issue_name} issue
+              </h1>
+            }
+            <p id="landing-description">
+                Our latest issue, <i>{issue_name}</i>, is released on our website now,
+                and includes article such as {other_articles[0]}, {other_articles[1]}, and {other_articles[2]}. &nbsp;
+                <Link to={"/issue/"+issue_name.toLowerCase()}>Read the issue here &rarr;</Link>
             </p>
-          </div>,
-          250
-        )}
-        {fadeInUp(
-          <div className="col">
-            <a href="https://bit.ly/rewired-design" target="_blank">
-              <h2>design with us &rarr;</h2>
-            </a>
-            <p>
-              We’re looking for a graphic and/or product designer to join our
-              team.{" "}
-              <a href="https://bit.ly/rewired-design" target="_blank">
-                You can learn more details about the position here.
-              </a>
-            </p>
-          </div>,
-          500
-        )}
-      </div>
-    </div>
-  )
+        </div>
+    )
 }
 
-class SubmitForm extends React.Component<
-  {},
-  { isSubmitted: boolean; email: string; err_msg: string }
-> {
+function Articles() {
+    const data = useStaticQuery(pageQuery); // graphql query, see below
+    return (
+        <Layout noSquiggles>
+            <div>
+                <div>
+                    <h1>Recent Stories</h1>
+                </div>
+                {data.allWpPost.edges.map(({ node }) => (
+                    <div key={node.slug}>
+                      <Link to={"/post/"+node.slug}>
+                        <div className="columns">
+                            <div className="landing-col-a">
+                                <img id="landing-article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+                            </div>
+                            <div className="landing-col-b">
+                                <h1 id="article-title">
+                                    {node.title}
+                                </h1>
+                                <div className="landing-article-excerpt"
+                                     dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
+                            </div>
+                        </div>
+                      </Link>
+                    </div>
+                ))}
+            </div>
+        </Layout>
+    )
+}
+
+class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: string; err_msg: string }> {
   constructor(props) {
     super(props)
     this.submitForm = this.submitForm.bind(this)
@@ -177,7 +143,12 @@ class SubmitForm extends React.Component<
     if (!this.state.isSubmitted) {
       return fadeInUp(
         <div>
-          <h1>Keep In Touch</h1>
+          <p>
+          Rewired is a digital magazine where technology and society meet.
+          We're committed to curating stories that amplify diverse perspectives
+          and bridge disciplines. <Link to="/about">Learn more about us &rarr;</Link>
+          </p>
+          <p>You can reach us by email at hello@stanfordrewired.com.</p>
           <p>
             Sign up to receive updates about upcoming issues and submission
             openings via email.
@@ -188,10 +159,7 @@ class SubmitForm extends React.Component<
               return false
             }}
           >
-            <a
-              type="warning"
-              dangerouslySetInnerHTML={{ __html: this.state.err_msg }}
-            />
+            <a type="warning" dangerouslySetInnerHTML={{ __html: this.state.err_msg }} />
             <input type="text" name="email" onChange={this.updateEmail} />
             <input type="submit" value="Sign Up" onClick={this.submitForm} />
           </form>
@@ -220,18 +188,31 @@ class SubmitForm extends React.Component<
   }
 }
 
-export default IndexPage
+export default LandingPage
 
+// Query to get list of articles - random recently published articles not necessarily by issue
 export const pageQuery = graphql`
   query {
-    allWordpressPost {
-      edges {
-        node {
-          title
-          excerpt
-          slug
+    allWpPost(sort: {fields: date, order: DESC}, limit: 4) {
+        edges {
+          node {
+            title
+            featuredImage {
+              node {
+                localFile {
+                  childImageSharp {
+                    fixed {
+                      src
+                    }
+                  }
+                }
+                date
+              }
+            }
+            excerpt
+            slug
+          }
         }
       }
     }
-  }
 `

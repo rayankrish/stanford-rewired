@@ -220,7 +220,7 @@ class Post extends Component {
           {subtitle && <h2 className="post-subtitle">{subtitle}</h2>}
           <div className="post-byline">
             by {`${author_list}`.toLowerCase()} • in{" "}
-            <Link className="post-category" to="/">
+            <Link className="post-category" to={"/issue/"+category.toLowerCase()}>
               {category.toLowerCase()}
             </Link>
           </div>

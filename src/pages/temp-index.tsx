@@ -3,41 +3,38 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import ScrollAnimation from "react-animate-on-scroll"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 
-import About from "../components/about"
-import Team from "../components/team"
+import Landing from "../components/landing"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-import "../styles/about.scss"
-import Navbar from "../components/navbar"
+import "../styles/landing.scss"
 
-const AboutPage = () => {
+const IndexPage = () => {
   const data = useStaticQuery(pageQuery) // graphql query, see below
 
   return (
     <>
-      <Navbar />
       <Layout noSquiggles>
         <SEO title="Home" />
-        <About />
+        <Landing />
+        <Title />
+        <Subtitle />
         <Description />
-        <Team />
         <GetInvolved />
-        <Sponsors />
         <SubmitForm />
       </Layout>
     </>
   )
 }
 
-function fadeInUp(elem: JSX.Element, delay=0, offset=200): JSX.Element {
+function fadeInUp(elem: JSX.Element, delay = 0): JSX.Element {
   return (
     <ScrollAnimation
       animateIn="fadeInUp"
       duration={0.5}
       animateOnce={true}
-      offset={offset}
+      offset={200}
       delay={delay}
     >
       {elem}
@@ -45,15 +42,32 @@ function fadeInUp(elem: JSX.Element, delay=0, offset=200): JSX.Element {
   )
 }
 
+function Title() {
+  return fadeInUp(
+    <div>
+      <h1 id="title">
+        Stanford<span>Rewired</span>
+      </h1>
+    </div>
+  )
+}
+
+function Subtitle() {
+  return fadeInUp(
+    <div>
+      <p id="subtitle">
+        Stanford Rewired is a digital magazine where{" "}
+        <strong>technology and society meet</strong>. We’re committed to
+        curating stories that amplify diverse perspectives and bridge
+        disciplines.
+      </p>
+    </div>
+  )
+}
+
 function Description() {
   return (
     <div>
-      {fadeInUp(<h1>About</h1>, 0, 0)}
-      {fadeInUp(
-        <p>
-          Stanford Rewired is a digital magazine where technology and society meet. We’re committed to curating stories that amplify diverse perspectives and bridge disciplines.
-        </p>
-      )}
       {fadeInUp(
         <p>
           We’re a community of Stanford undergrads and postdocs in fields
@@ -93,7 +107,7 @@ function GetInvolved() {
               href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
               target="_blank"
             >
-              <h2 className="monospace">submit writing &rarr;</h2>
+              <h2>submit writing &rarr;</h2>
             </a>
             <p>
               We’re currently accepting submissions for our Fall 2020 issue. The
@@ -105,96 +119,33 @@ function GetInvolved() {
                 You can learn more about our submission process here.
               </a>
             </p>
-          </div>
-      , 250)}
-      {fadeInUp(
-        <div className="col">
-          <a href="https://bit.ly/rewired-design" target="_blank">
-            <h2 className="monospace">design with us &rarr;</h2>
-          </a>
-          <p>
-            We’re looking for a graphic and/or product designer to join our
-            team.{" "}
-            <a href="https://bit.ly/rewired-design" target="_blank">
-              You can learn more details about the position here.
-            </a>
-          </p>
-        </div>
-      , 500)}
-      </div>
-    </div>
-  )
-}
-
-function Sponsors() {
-  return (
-    <div>
-      {fadeInUp(<h1>Our Sponsors</h1>)}
-      {fadeInUp(
-        <p>
-          Stanford Rewired is a digital magazine where technology and society meet. We’re committed to curating stories that amplify diverse perspectives and bridge disciplines.
-        </p>
-      )}
-      <div className="columns">
+          </div>,
+          250
+        )}
         {fadeInUp(
           <div className="col">
-            <p>
-              <a
-                href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
-                target="_blank"
-              >
-                McCoy Center &rarr;
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
-                target="_blank"
-              >
-                EST &rarr;
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
-                target="_blank"
-              >
-                Google &rarr;
-              </a>
-            </p>
-          </div>
-      , 250)}
-      {fadeInUp(
-        <div className="col">
-          <p>
-            <a
-              href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
-              target="_blank"
-            >
-              Project Include &rarr;
+            <a href="https://bit.ly/rewired-design" target="_blank">
+              <h2>design with us &rarr;</h2>
             </a>
-          </p>
-          <p>
-            <a
-              href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
-              target="_blank"
-            >
-              Oski's Coalition &rarr;
-            </a>
-          </p>
-        </div>
-      , 500)}
+            <p>
+              We’re looking for a graphic and/or product designer to join our
+              team.{" "}
+              <a href="https://bit.ly/rewired-design" target="_blank">
+                You can learn more details about the position here.
+              </a>
+            </p>
+          </div>,
+          500
+        )}
       </div>
-      {fadeInUp(
-        <p>
-        If you’re interested in becoming a sponsor, send us an email at business@stanfordrewired.
-        </p>
-      )}
     </div>
   )
 }
 
-class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: string; err_msg: string }> {
+class SubmitForm extends React.Component<
+  {},
+  { isSubmitted: boolean; email: string; err_msg: string }
+> {
   constructor(props) {
     super(props)
     this.submitForm = this.submitForm.bind(this)
@@ -227,7 +178,6 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
       return fadeInUp(
         <div>
           <h1>Keep In Touch</h1>
-          <p>You can reach us by email at hello@stanfordrewired.com.</p>
           <p>
             Sign up to receive updates about upcoming issues and submission
             openings via email.
@@ -238,7 +188,10 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
               return false
             }}
           >
-            <a type="warning" dangerouslySetInnerHTML={{ __html: this.state.err_msg }} />
+            <a
+              type="warning"
+              dangerouslySetInnerHTML={{ __html: this.state.err_msg }}
+            />
             <input type="text" name="email" onChange={this.updateEmail} />
             <input type="submit" value="Sign Up" onClick={this.submitForm} />
           </form>
@@ -267,7 +220,7 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
   }
 }
 
-export default AboutPage
+export default IndexPage
 
 export const pageQuery = graphql`
   query {
