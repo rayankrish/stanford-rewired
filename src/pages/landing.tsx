@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 // eventually use gatsby-image
 import Layout from "../components/layout"
+import Navbar from "../components/navbar"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import temp_article_thumbnail from '../images/temp_article_thumbnail.png'
@@ -12,6 +13,7 @@ import { useLandingQuery } from "../hooks/landing_top_query"
 const IssuePage = () => {
     return (
         <>
+            <Navbar />
             <Layout>
                 <SEO title="Landing" />
                 <Title />
@@ -70,10 +72,10 @@ function Articles() {
                     <div key={node.slug}>
 
                         <div className="columns">
-                            <div className="col-a">
-                                <img id="article-thumbnail" src={temp_article_thumbnail} alt="article image" />
+                            <div className="landing-col-a">
+                                <img id="landing-article-thumbnail" src={temp_article_thumbnail} alt="article image" />
                             </div>
-                            <div className="col-b">
+                            <div className="landing-col-b">
                                 <h1 id="article-title">
                                     {node.title}
                                 </h1>
