@@ -16,7 +16,7 @@ const LandingPage = () => {
     return (
         <>
             <Navbar />
-            <Layout noSquiggles>
+                <Layout noSquiggles>
                 <SEO title="Landing" />
                 <LandingSquiggles />
                 <Title />

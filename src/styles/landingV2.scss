@@ -7,6 +7,7 @@
 
   @media screen and (min-width: $breakpoint) {
     font-size: $base*2.5;
+    padding-top: 0px;
   }
 }
 
@@ -154,12 +155,12 @@ p a {
 
 #group1 {
   @include graphics(left, -170px, -212px, -270px);
-  @include graphics(top, -220px, -100px, 10px);
+  @include graphics(top, -220px, -100px, 100px);
 }
 
 #group6 {
-  @include graphics(left, 606px, 606px, 205px);
-  @include graphics(top, 10px, 10px, 0px);
+  @include graphics(left, 606px, 606px, 260px);
+  @include graphics(top, 10px, 10px, -35px);
 }
 
 #group7 {
