@@ -1,0 +1,232 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+#landing-title {
+  font: 700 $base*1.5/1 $serif;
+  text-align: left;
+
+  @media screen and (min-width: $breakpoint) {
+    font-size: $base*2.5;
+  }
+}
+
+#issue-subtitle {
+  font: $base*9/6 $sans;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $breakpoint) {
+    font-size: 29px;
+  }
+}
+
+#landing-description {
+  font: $base*9/6 $sans;
+  text-align: left;
+
+  @media screen and (min-width: $breakpoint){
+    font-size: $base*7/5
+  }
+}
+
+#article-title {
+  font: 24px $serif;
+}
+
+#article-description {
+  font: 20px $sans;
+  line-height: 140%;
+  padding-top: 5px;
+}
+
+#tag {
+  display: inline-block;
+  font-size: 16px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $text;
+  border-radius: 20px;
+  align-items: flex-end;
+  text-align: center;
+  font-variant: small-caps;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+#landing-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+#landing-article-thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.columns {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin-bottom: $base/4;
+
+  @media screen and (min-width: $breakpoint) {
+    flex-flow: row nowrap;
+  }
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.landing-col-a {
+  width: 100px;
+  height:100px;
+  margin-bottom: 0;
+
+  @media screen and (min-width: $breakpoint) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.landing-col-b {
+  width: 100%;
+  margin-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media screen and (min-width: $breakpoint) {
+    width: 500px;
+  }
+}
+
+p a {
+  text-decoration: underline;
+}
+
+#graphics {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+
+  .svgContainer {
+    position: absolute;
+    transform: scale(.4);
+
+    circle {
+      fill: $poppy-red;
+    }
+
+    @media screen and (min-width: $breakpoint) {
+      transform: scale(.7);
+    }
+
+    @media screen and (min-width: 1200px) {
+      transform: scale(1);
+    }
+  }
+}
+
+#dots1,
+#dots3,
+#dots4 {
+  circle {
+    fill-opacity: 0.3;
+  }
+}
+
+#dots1 {
+  @include landing-graphics(left, -200px, -170px, -270px);
+  @include landing-graphics(top, -150px, -195px, -204px);
+}
+
+#squiggles1 {
+  @include landing-graphics(left, -110px, -138px, -17.5vw);
+  @include landing-graphics(top, -140px, -146px, -115px);
+
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+#dots2 {
+  @include landing-graphics(right, -50px, -80px, -15vw);
+  @include landing-graphics(top, -100px, -120px, -50px);
+}
+
+#dots3 {
+  @include landing-graphics(left, -77px, -110px, -142px);
+  @include landing-graphics(top, 300px, 534px, 112px);
+}
+
+#squiggles2 {
+  @include landing-graphics(left, -110px, -138px, -17.5vw);
+  @include landing-graphics(top, 35px, 105px, 224px);
+
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+}
+
+#squiggles3 {
+  @include landing-graphics(right, -76px, -124px, -20vw);
+  @include landing-graphics(bottom, -70px, 200px, 520px);
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
+}
+
+#dots4 {
+  @include landing-graphics(right, -20px, -30px, -10vw);
+  @include landing-graphics(bottom, -150px, -30px, 147px);
+}
+
+#dots5 {
+  @include landing-graphics(right, -70px, -117px, -20vw);
+  @include landing-graphics(bottom, 7px, 161px, 372px);
+}
+
+#squiggles4 {
+  @include landing-graphics(right, -124px, -150px, -20vw);
+  @include landing-graphics(bottom, -220px, -162px, -46px);
+  stroke-dasharray: 1820;
+  stroke-dashoffset: 1820;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY($base);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+.draw {
+  animation: dash 1.4s linear forwards;
+}
+
+// react-animate-on-scroll adds an extra div around
+// elements, this removes the extra styling from that.
+.animated {
+  margin: 0;
+}
