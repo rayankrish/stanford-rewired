@@ -10,7 +10,7 @@ import temp_issue_cover from '../images/temp_issue_cover.jpg'
 import "../styles/landingV2.scss"
 import { useLandingQuery } from "../hooks/landing_top_query"
 
-const IssuePage = () => {
+const LandingPage = () => {
     return (
         <>
             <Navbar />
@@ -40,7 +40,9 @@ function Title() {
 
     return (
         <div>
-            <img id="landing-image" src={temp_issue_cover} alt="issue cover image" />
+            <Link to={selected_article_slug}>
+              <img id="landing-image" src={selected_article.allWpPost.edges[index].node.featuredImage ? selected_article.allWpPost.edges[index].node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+            </Link>
             {title_variation == 0 &&
               <h1 id="landing-title">
                   Read about <Link to={selected_article_slug} style={{textDecoration: "underline"}}>{selected_article_name}</Link> in our {issue_name} issue
@@ -53,8 +55,8 @@ function Title() {
             }
             <p id="landing-description">
                 Our latest issue, <i>{issue_name}</i>, is released on our website now,
-                and includes article such as {other_articles[0]}, {other_articles[1]}, and {other_articles[2]}.
-                Read the editor's note here &rarr;
+                and includes article such as {other_articles[0]}, {other_articles[1]}, and {other_articles[2]}. &nbsp;
+                <Link to={"/issue/"+issue_name.toLowerCase()}>Read the issue here &rarr;</Link>
             </p>
         </div>
     )
@@ -70,10 +72,10 @@ function Articles() {
                 </div>
                 {data.allWpPost.edges.map(({ node }) => (
                     <div key={node.slug}>
-
+                      <Link to={"/post/"+node.slug}>
                         <div className="columns">
                             <div className="landing-col-a">
-                                <img id="landing-article-thumbnail" src={temp_article_thumbnail} alt="article image" />
+                                <img id="landing-article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
                             </div>
                             <div className="landing-col-b">
                                 <h1 id="article-title">
@@ -82,6 +84,7 @@ function Articles() {
                                 <div dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
                             </div>
                         </div>
+                      </Link>
                     </div>
                 ))}
             </div>
@@ -89,7 +92,7 @@ function Articles() {
     )
 }
 
-export default IssuePage
+export default LandingPage
 
 // Query to get list of articles - random recently published articles not necessarily by issue
 export const pageQuery = graphql`
