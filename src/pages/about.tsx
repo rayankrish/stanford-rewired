@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import ScrollAnimation from "react-animate-on-scroll"
 import addToMailchimp from "gatsby-plugin-mailchimp"
+import { fadeInUp } from "../components/util";
 
 import About from "../components/about"
 import Team from "../components/team"
@@ -18,9 +18,8 @@ const AboutPage = () => {
   return (
     <>
       <Navbar />
-      <Layout noSquiggles>
+      <Layout>
         <SEO title="Home" />
-        <About />
         <Description />
         <Team />
         <GetInvolved />
@@ -31,24 +30,10 @@ const AboutPage = () => {
   )
 }
 
-function fadeInUp(elem: JSX.Element, delay=0, offset=200): JSX.Element {
-  return (
-    <ScrollAnimation
-      animateIn="fadeInUp"
-      duration={0.5}
-      animateOnce={true}
-      offset={offset}
-      delay={delay}
-    >
-      {elem}
-    </ScrollAnimation>
-  )
-}
-
 function Description() {
   return (
     <div>
-      {fadeInUp(<h1>About</h1>, 0, 0)}
+      {fadeInUp(<h1>About</h1>, undefined, 0, 0)}
       {fadeInUp(
         <p>
           Rewired is a digital magazine where technology and society meet. We’re committed to curating stories that amplify diverse perspectives and bridge disciplines.

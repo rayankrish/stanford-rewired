@@ -22,8 +22,10 @@ body {
     margin-left: 156px auto;
     margin-right: 156px auto;
     margin-top: 0px;
+    top: 164px;
     /* was 156px auto */
   }
+
 }
 
 .page-wrapper {
@@ -81,4 +83,9 @@ p {
 a {
   color: $text;
   text-decoration: none;
+
+  // Personally conflicted about this lol - Emily
+  // &:hover {
+  //   color: $poppy-red;
+  // }
 }

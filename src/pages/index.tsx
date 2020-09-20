@@ -1,44 +1,31 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 // eventually use gatsby-image
 import ScrollAnimation from "react-animate-on-scroll"
 import Layout from "../components/layout"
 import Navbar from "../components/navbar"
-import LandingSquiggles from "../components/landing-squiggles"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import temp_article_thumbnail from '../images/temp_article_thumbnail.png'
 import temp_issue_cover from '../images/temp_issue_cover.jpg'
 import "../styles/landingV2.scss"
 import { useLandingQuery } from "../hooks/landing_top_query"
+import { BoxX } from "../components/squiggles"
+import { fadeInUp } from "../components/util"
 
 const LandingPage = () => {
     return (
         <>
             <Navbar />
-                <Layout noSquiggles>
+            <Layout squiggleTopOffset={1/3}> 
                 <SEO title="Landing" />
-                <LandingSquiggles />
                 <Title />
                 <Articles />
+                <div className="boxX-divider"><BoxX /></div>
                 <SubmitForm />
             </Layout>
         </>
     )
-}
-
-function fadeInUp(elem: JSX.Element, delay=0, offset=200): JSX.Element {
-  return (
-    <ScrollAnimation
-      animateIn="fadeInUp"
-      duration={0.5}
-      animateOnce={true}
-      offset={offset}
-      delay={delay}
-    >
-      {elem}
-    </ScrollAnimation>
-  )
 }
 
 function Title() {
@@ -56,11 +43,14 @@ function Title() {
     }
     var title_variation = Math.floor(Math.random()*2)
 
-    return (
+    return fadeInUp(
         <div>
-            <Link to={selected_article_slug}>
-              <img id="landing-image" src={selected_article.allWpPost.edges[index].node.featuredImage ? selected_article.allWpPost.edges[index].node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
-            </Link>
+          <div className="landing-image-container">
+            <div className="landing-image-decoration"><BoxX /></div>
+              <Link to={selected_article_slug}>
+                <img id="landing-image" src={selected_article.allWpPost.edges[index].node.featuredImage ? selected_article.allWpPost.edges[index].node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+              </Link>
+            </div>
             {title_variation == 0 &&
               <h1 id="landing-title">
                   Read about <Link to={selected_article_slug} style={{textDecoration: "underline"}}>{selected_article_name}</Link> in our {issue_name} issue
@@ -84,32 +74,30 @@ function Articles() {
     const data = useStaticQuery(pageQuery); // graphql query, see below
      //                                dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
     return (
-        <Layout noSquiggles>
-            <div>
-                <div className="landing-columns">
+          <div>
+               {fadeInUp(<div className="landing-columns">
                     <h1 id="float-left">Recent Stories</h1>
                     <p id="float-right"><Link to="/all">See all &rarr;</Link></p>
-                </div>
-                {data.allWpPost.edges.map(({ node }) => (
-                    <div key={node.slug}>
-                      <Link to={"/post/"+node.slug}>
-                        <div className="landing-columns">
-                            <div className="landing-col-a">
-                                <img id="landing-article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
-                            </div>
-                            <div className="landing-col-b">
-                                <h1 id="article-title">
-                                    {node.title}
-                                </h1>
-                                <p className="landing-article-excerpt">
-                                      {node.article_fields.articleAuthors}</p>
-                            </div>
-                        </div>
-                      </Link>
-                    </div>
-                ))}
-            </div>
-        </Layout>
+                </div>)}
+              {data.allWpPost.edges.map(({ node, i }) => (
+                  fadeInUp(<div key={node.slug}>
+                    <Link to={"/post/"+node.slug}>
+                      <div className="landing-columns">
+                          <div className="landing-col-a">
+                              <img id="landing-article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+                          </div>
+                          <div className="landing-col-b">
+                              <h1 id="article-title">
+                                  {node.title}
+                              </h1>
+                              <div className="landing-article-excerpt"
+                                    dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
+                          </div>
+                      </div>
+                    </Link>
+                  </div>, i)
+              ))}
+          </div>
     )
 }
 
@@ -143,7 +131,7 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
   render() {
     if (!this.state.isSubmitted) {
       return fadeInUp(
-        <div>
+        <div className="landing-form">
           <p id="first-info-text">
           Rewired is a digital magazine where technology and society meet.
           We're committed to curating stories that amplify diverse perspectives

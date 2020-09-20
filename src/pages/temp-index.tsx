@@ -15,7 +15,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <Layout noSquiggles>
+      <Layout>
         <SEO title="Home" />
         <Landing />
         <Title />

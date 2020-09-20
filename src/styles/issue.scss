@@ -9,12 +9,17 @@
 #issue-subtitle {
   @extend .sans-serif-caps;
   text-align: center;
-  text-transform: uppercase;
+  margin: 0;
 }
 
 #description {
   @extend .body;
   text-align: center;
+  padding: 24px 0 48px;
+}
+
+.issue-article-tile {
+  margin-bottom: 72px;
 }
 
 #article-title {
@@ -36,7 +41,7 @@
   border-radius: 20px;
   align-items: flex-end;
   text-align: center;
-  padding-bottom: 0px;
+  padding-bottom: 2px;
   padding-left: 10px;
   padding-right: 10px;
   margin-right: 10px;
@@ -56,6 +61,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 48px;
 }
 
 #article-thumbnail {

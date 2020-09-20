@@ -18,6 +18,10 @@
   text-align: center;
 }
 
+.featured-img {
+  margin-top: 32px;
+}
+
 .post-category {
   text-decoration: underline;
 }
@@ -63,12 +67,4 @@
   @extend .body;
   font-style: italic;
   text-align: center;
-}
-
-.post-divider {
-  text-align: center;
-}
-
-.post-divider-svg {
-  max-width: 100%;
 }
