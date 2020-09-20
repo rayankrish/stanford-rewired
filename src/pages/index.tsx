@@ -149,7 +149,8 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
           We're committed to curating stories that amplify diverse perspectives
           and bridge disciplines. <Link to="/about">Learn more about us &rarr;</Link>
           </p>
-          <p>You can reach us by email at hello@stanfordrewired.com.</p>
+          <p>You can reach us by email at &nbsp;
+            <a href="mailto:hello@stanfordrewired.com">hello@stanfordrewired.com</a>.</p>
           <p>
             Sign up to receive updates about upcoming issues and submission
             openings via email.

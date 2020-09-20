@@ -90,33 +90,33 @@ function GetInvolved() {
         {fadeInUp(
           <div className="col">
             <a
-              href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
+              href="http://stanfordrewired.com/apply"
               target="_blank"
             >
-              <h2 className="monospace">submit writing &rarr;</h2>
+              <h2 className="monospace">join us &rarr;</h2>
             </a>
             <p>
-              We’re currently accepting submissions for our Fall 2020 issue. The
-              theme is Governance.{" "}
+              We’re currently looking for designers, developers, writers,
+              and marketing gurus to join our team.{" "}
               <a
-                href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
+                href="http://stanfordrewired.com/apply"
                 target="_blank"
               >
-                You can learn more about our submission process here.
+                 Learn more about each role and apply here.
               </a>
             </p>
           </div>
       , 250)}
       {fadeInUp(
         <div className="col">
-          <a href="https://bit.ly/rewired-design" target="_blank">
-            <h2 className="monospace">design with us &rarr;</h2>
+          <a href="http://stanfordrewired.com/rsvp" target="_blank">
+            <h2 className="monospace">learn about us &rarr;</h2>
           </a>
           <p>
-            We’re looking for a graphic and/or product designer to join our
-            team.{" "}
-            <a href="https://bit.ly/rewired-design" target="_blank">
-              You can learn more details about the position here.
+            Have more questions? We’re hosting an info session on Monday,
+            9/28 at 5pm PT and we’d love to meet you.{" "}
+            <a href="http://stanfordrewired.com/rsvp" target="_blank">
+                RSVP here.
             </a>
           </p>
         </div>
@@ -140,26 +140,10 @@ function Sponsors() {
           <div className="col">
             <p>
               <a
-                href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
+                href="https://ethicsinsociety.stanford.edu/ethics-society-technology-hub/current-projects/undergraduate-collaborative-projects"
                 target="_blank"
               >
                 McCoy Center &rarr;
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
-                target="_blank"
-              >
-                EST &rarr;
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
-                target="_blank"
-              >
-                Google &rarr;
               </a>
             </p>
           </div>
@@ -168,18 +152,10 @@ function Sponsors() {
         <div className="col">
           <p>
             <a
-              href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
+              href="https://ethicsinsociety.stanford.edu/ethics-society-technology-hub"
               target="_blank"
             >
-              Project Include &rarr;
-            </a>
-          </p>
-          <p>
-            <a
-              href="https://www.notion.so/stanfordrewired/Stanford-Rewired-Open-Submission-932ab29333e34525b2a775e5a0a9fe5a"
-              target="_blank"
-            >
-              Oski's Coalition &rarr;
+              EST &rarr;
             </a>
           </p>
         </div>
@@ -187,7 +163,8 @@ function Sponsors() {
       </div>
       {fadeInUp(
         <p>
-        If you’re interested in becoming a sponsor, send us an email at business@stanfordrewired.
+        If you’re interested in becoming a sponsor, send us an email at &nbsp;
+        <a href="mailto:business@stanfordrewired.com">business@stanfordrewired.com</a>.
         </p>
       )}
     </div>
@@ -226,7 +203,8 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
       return fadeInUp(
         <div>
           <h1>Keep In Touch</h1>
-          <p>You can reach us by email at hello@stanfordrewired.com.</p>
+          <p>You can reach us by email at &nbsp;
+            <a href="mailto:hello@stanfordrewired.com">hello@stanfordrewired.com</a>.</p>
           <p>
             Sign up to receive updates about upcoming issues and submission
             openings via email.

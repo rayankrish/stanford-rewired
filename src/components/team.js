@@ -5,16 +5,14 @@ const teamArray = [
   ["Jason Zhao", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/JasonZhao.jpg"],
   ["Ben Esposito", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/BenEsposito.jpeg"],
   ["Irene Han", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/IreneHan.jpg"],
-  ["Mark Gardiner", "Content", "http://52.12.8.45/wp-content/uploads/2020/08/temp_issue_cover.jpg"],
+  ["Mark Gardiner", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/MarkGardiner.jpg"],
   ["Enya Lu", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/EnyaLu.png"],
-  ["Avery Rogers", "Content", "http://52.12.8.45/wp-content/uploads/2020/08/temp_issue_cover.jpg"],
   ["Alessandro Vecchiato", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/AlessandroVecchiato.jpg"],
-  ["Emily Zhong", "Design", "http://52.12.8.45/wp-content/uploads/2020/08/temp_issue_cover.jpg"],
+  ["Emily Zhong", "Design", "http://52.12.8.45/wp-content/uploads/2020/09/EmilyZhong.png"],
   ["Kaylie Mings", "Design", "http://52.12.8.45/wp-content/uploads/2020/09/KaylieMings.jpg"],
   ["Crystal Nattoo", "Design", "http://52.12.8.45/wp-content/uploads/2020/09/CrystalNattoo.jpg"],
-  ["Braedon Silvers", "Design", "http://52.12.8.45/wp-content/uploads/2020/08/temp_issue_cover.jpg"],
   ["Rayan Krishnan", "Tech", "http://52.12.8.45/wp-content/uploads/2020/09/RayanKrishnan.jpg"],
-  ["Matthew Katz", "Tech", "http://52.12.8.45/wp-content/uploads/2020/08/temp_issue_cover.jpg"],
+  ["Matthew Katz", "Tech", "http://52.12.8.45/wp-content/uploads/2020/09/MatthewKatz.jpg"],
   ["Chris Tan", "Tech", "http://52.12.8.45/wp-content/uploads/2020/09/ChrisTan-scaled.jpeg"]
 ];
 
