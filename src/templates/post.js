@@ -209,9 +209,6 @@ class Post extends Component {
     const subtitle = post?.article_fields?.articleSubtitle
     var author_list = post?.article_fields?.articleAuthors
 
-    console.log(post)
-    console.log(author)
-
     return (
       <>
         <Navbar />

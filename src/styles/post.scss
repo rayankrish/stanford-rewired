@@ -1,45 +1,19 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .post-title {
-  /* serif header */
-
-  font-family: Noto Serif;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 36px;
-  line-height: 49px;
+  @extend .serif-header;
   text-align: center;
-
-  /* Black */
-
-  color: #434343;
 }
 
 .post-subtitle {
-  /* serif header */
-
-  font-family: Noto Serif;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 26px;
-  line-height: 49px;
+  @extend .serif-header-2;
   text-align: center;
-
-  /* Black */
-
-  color: #434343;
 }
 
 .post-byline {
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 29px;
-  line-height: 36px;
+  @extend .sans-serif-caps;
   text-align: center;
-  font-variant: small-caps;
-
-  /* Black */
-
-  color: #434343;
 }
 
 .post-category {
@@ -47,28 +21,12 @@
 }
 
 .post-body {
-  /* body */
-
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 140%;
-  /* or 28px */
-
-  /* Black */
-
-  color: #434343;
+  @extend .body;
 }
 
 .post-excerpt {
-  font-family: Source Sans Pro;
+  @extend .body;
   font-style: italic;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 140%;
-  /* or 28px */
-  align-items: center;
   text-align: center;
 }
 
@@ -78,9 +36,4 @@
 
 .post-divider-svg {
   max-width: 100%;
-}
-
-figcaption {
-  color: #6d6d6d;
-  font-size: 16px;
 }
