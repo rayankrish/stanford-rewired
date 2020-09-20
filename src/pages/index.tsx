@@ -10,15 +10,17 @@ import temp_article_thumbnail from '../images/temp_article_thumbnail.png'
 import temp_issue_cover from '../images/temp_issue_cover.jpg'
 import "../styles/landingV2.scss"
 import { useLandingQuery } from "../hooks/landing_top_query"
+import { BoxX } from "../components/squiggles"
 
 const LandingPage = () => {
     return (
         <>
             <Navbar />
-            <Layout> 
+            <Layout squiggleTopOffset={window.innerHeight / 4}> 
                 <SEO title="Landing" />
                 <Title />
                 <Articles />
+                <div className="boxX-divider"><BoxX /></div>
                 <SubmitForm />
             </Layout>
         </>
@@ -56,9 +58,12 @@ function Title() {
 
     return (
         <div>
-            <Link to={selected_article_slug}>
-              <img id="landing-image" src={selected_article.allWpPost.edges[index].node.featuredImage ? selected_article.allWpPost.edges[index].node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
-            </Link>
+          <div className="landing-image-container">
+            <div className="landing-image-decoration"><BoxX /></div>
+              <Link to={selected_article_slug}>
+                <img id="landing-image" src={selected_article.allWpPost.edges[index].node.featuredImage ? selected_article.allWpPost.edges[index].node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+              </Link>
+            </div>
             {title_variation == 0 &&
               <h1 id="landing-title">
                   Read about <Link to={selected_article_slug} style={{textDecoration: "underline"}}>{selected_article_name}</Link> in our {issue_name} issue
@@ -141,7 +146,7 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
   render() {
     if (!this.state.isSubmitted) {
       return fadeInUp(
-        <div>
+        <div className="landing-form">
           <p id="first-info-text">
           Rewired is a digital magazine where technology and society meet.
           We're committed to curating stories that amplify diverse perspectives

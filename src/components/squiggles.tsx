@@ -26,8 +26,9 @@ const Squiggles = (props: { dark?: boolean, offset?: number }) => {
       stroke: props.dark ? "#434343" : "#FF4908",
     }
 
-    const [sourceColumn, renderedColumn] = (i % 2) ? [RIGHT_COLUMN_SQUIGGLES, rightCol] : [LEFT_COLUMN_SQUIGGLES, leftCol]
-    const randomElement = sourceColumn[Math.floor(Math.random() * sourceColumn.length)]
+    const randomElement = LAYOUT_SQUIGGLES[Math.floor(Math.random() * LAYOUT_SQUIGGLES.length)]
+    const renderedColumn = (i % 2) ? rightCol : leftCol
+
     renderedColumn.push(<div className='svgPositioner' key={i} style={style}>{randomElement()}</div>)
   }
 
@@ -58,9 +59,9 @@ function draw(id, elem, options: { duration?: number, delay?: number } = {}) {
 
 // SQUIGGLES BELOW
 // 2x2 "x"
-export function BoxX() {
+export function BoxX(props: { rotate?: boolean }) {
   return (
-    <svg className="svgContainer" id="boxX" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className="svgContainer" id="boxX" width="70" height="70" viewBox="0 0 70 70" strokeWidth="3" fill="none" xmlns="http://www.w3.org/2000/svg">
       <line x1="61.8092" y1="44.839" x2="44.8386" y2="61.8095"/>
       <line x1="44.8385" y1="44.1317" x2="61.8091" y2="61.1023"/>
       <line x1="25.8092" y1="44.839" x2="8.83862" y2="61.8095"/>
@@ -73,8 +74,8 @@ export function BoxX() {
   )
 }
 
-// Right column squiggles
-function Squiggle1() {
+// 2 Medium-width squiggles, the first being slightly longer than the second
+export function Squiggle1() {
   return <div>
     {draw("squiggle1_1",
       <svg className="svgContainer" width="224" height="858" viewBox="0 0 224 858" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +92,8 @@ function Squiggle1() {
   </div>
 }
 
-function Squiggle2() {
+// Squiggle 1, along with a strip of vertical x's
+export function Squiggle2() {
   return draw("squiggle2",
     <>
     <svg className="svgContainer" width="224" height="858" viewBox="0 0 224 858" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -172,7 +174,8 @@ function Squiggle2() {
     </>
   )}
 
-function Squiggle3() {
+// A thin column squiggle with a 2x2 box of x's at the bottom.
+export function Squiggle3() {
   return draw("squiggle3",
     <svg className="svgContainer" width="81" height="646" viewBox="0 0 81 646" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M78 3L24.375 2.99999C12.5699 2.99999 3 12.5699 3 24.375V24.375C3 36.1801 12.5699 45.75 24.375 45.75L57.293 45.75C68.7291 45.75 78 55.0209 78 66.457V66.457C78 77.8932 68.7291 87.1641 57.293 87.1641L25.043 87.1641C12.869 87.1641 2.99999 97.033 2.99999 109.207V109.207C2.99999 121.381 12.869 131.25 25.043 131.25L57.293 131.25C68.7291 131.25 78 140.521 78 151.957V151.957C78 163.393 68.7291 172.664 57.293 172.664L25.043 172.664C12.869 172.664 2.99998 182.533 2.99998 194.707V194.707C2.99998 206.881 12.869 216.75 25.0429 216.75L56.625 216.75C68.4301 216.75 78 226.32 78 238.125V238.125C78 249.93 68.4301 259.5 56.625 259.5L25.0429 259.5C12.869 259.5 2.99998 269.369 2.99997 281.543V281.543C2.99997 293.717 12.8689 303.586 25.0429 303.586L57.5396 303.586C68.6068 303.586 77.5786 312.558 77.5786 323.625V323.625C77.5786 334.692 68.6068 343.664 57.5396 343.664L27.0469 343.664C13.7661 343.664 2.99997 354.43 2.99997 367.711V367.711C2.99996 380.992 13.7661 391.758 27.0468 391.758L56.8716 391.758C68.3078 391.758 77.5786 401.029 77.5786 412.465V412.465C77.5786 423.901 68.3078 433.172 56.8716 433.172L23.707 433.172C12.2708 433.172 2.99996 442.443 2.99996 453.879V453.879C2.99996 465.315 12.2708 474.586 23.707 474.586L56.8716 474.586C68.3077 474.586 77.5786 483.857 77.5786 495.293V495.293C77.5786 506.729 68.3077 516 56.8716 516L2.99995 516"/>
@@ -191,7 +194,8 @@ function Squiggle3() {
   )
 }
 
-function Squiggle4() {
+// A wider squiggle, overlayed over a rectangle of x's.
+export function Squiggle4() {
   return draw("squiggle4",
     <svg className="svgContainer" width="243" height="519" viewBox="0 0 243 519" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M3.00001 247L217.699 247C230.016 247 240 256.984 240 269.301V269.301C240 281.617 230.016 291.601 217.699 291.601L25.9974 291.601C13.2963 291.601 3 301.897 3 314.598V314.598C3 327.3 13.2963 337.596 25.9974 337.596L217.762 337.596C229.308 337.596 238.669 346.956 238.669 358.503V358.503C238.669 370.049 229.308 379.409 217.762 379.409L28.0881 379.409C14.2323 379.409 3 390.642 3 404.497V404.497C3 418.353 14.2323 429.585 28.0881 429.585L217.065 429.585C228.996 429.585 238.669 439.258 238.669 451.189V451.189C238.669 463.12 228.996 472.793 217.065 472.793L24.6036 472.793C12.6723 472.793 3 482.465 3 494.396V494.396C3 506.328 12.6723 516 24.6036 516L238.669 516"/>
@@ -236,11 +240,189 @@ function Squiggle4() {
       <line y1="-1.5" x2="24" y2="-1.5" transform="matrix(-0.707106 0.707108 -0.707106 -0.707108 55.7485 7.77832)"/>
       <line y1="-1.5" x2="24" y2="-1.5" transform="matrix(0.707106 0.707108 -0.707106 0.707108 38.7778 9.19238)"/>
     </svg>,
-    { duration: 4 }
+    { duration: 2.5 }
   )
 }
 
-const LEFT_COLUMN_SQUIGGLES = [Squiggle1, Squiggle2, Squiggle3, BoxX]
-const RIGHT_COLUMN_SQUIGGLES = [Squiggle3, Squiggle4]
+export function SquiggleDivider() {
+  return (
+    <div className="squiggle-divider">
+      <svg
+        width="520"
+        max-width="100%"
+        height="150"
+        viewBox="0 0 520 150"
+        fill="none"
+        text-align="center" 
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3.5 48L3.5 80.625C3.5 92.4301 13.0699 102 24.875 102V102C36.6801 102 46.25 92.43 46.25 80.6249L46.25 68.707C46.25 57.2708 55.5209 48 66.957 48V48C78.3932 48 87.6641 57.2709 87.6641 68.707L87.6641 79.957C87.6641 92.131 97.533 102 109.707 102V102C121.881 102 131.75 92.131 131.75 79.957L131.75 68.707C131.75 57.2708 141.021 48 152.457 48V48C163.893 48 173.164 57.2709 173.164 68.707L173.164 79.957C173.164 92.131 183.033 102 195.207 102V102C207.381 102 217.25 92.131 217.25 79.957L217.25 69.375C217.25 57.5699 226.82 48 238.625 48V48C250.43 48 260 57.5699 260 69.375L260 79.957C260 92.131 269.869 102 282.043 102V102C294.217 102 304.086 92.131 304.086 79.957L304.086 68.3425C304.086 57.2752 313.058 48.3034 324.125 48.3034V48.3034C335.192 48.3034 344.164 57.2752 344.164 68.3424L344.164 77.9531C344.164 91.2338 354.93 102 368.211 102V102C381.492 102 392.258 91.2338 392.258 77.9531L392.258 69.0104C392.258 57.5742 401.529 48.3034 412.965 48.3034V48.3034C424.401 48.3034 433.672 57.5742 433.672 69.0104L433.672 81.2929C433.672 92.7291 442.943 102 454.379 102V102C465.815 102 475.086 92.7291 475.086 81.2929L475.086 69.0104C475.086 57.5742 484.357 48.3034 495.793 48.3034V48.3034C507.229 48.3034 516.5 57.5742 516.5 69.0104L516.5 102"
+          stroke="#434343"
+          strokeWidth="6"
+          strokeLinecap="round"
+        />
+      </svg>
+    </div>
+  )
+}
+
+export function XDivider() {
+  return (
+    <div className="squiggle-divider">
+      <svg
+        width="286"
+        height="34"
+        viewBox="0 0 286 34"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        max-width="100%"
+      >
+        <g clipPath="url(#clip0)">
+          <line
+            x1="9.07433"
+            y1="8.13172"
+            x2="26.0449"
+            y2="25.1023"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="8.36707"
+            y1="25.1023"
+            x2="25.3376"
+            y2="8.13174"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="45.0148"
+            y1="8.13172"
+            x2="61.9853"
+            y2="25.1023"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="44.3075"
+            y1="25.1023"
+            x2="61.2781"
+            y2="8.13174"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="80.9562"
+            y1="8.13172"
+            x2="97.9267"
+            y2="25.1023"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="80.2489"
+            y1="25.1023"
+            x2="97.2195"
+            y2="8.13174"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="116.898"
+            y1="8.13172"
+            x2="133.868"
+            y2="25.1023"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="116.19"
+            y1="25.1023"
+            x2="133.161"
+            y2="8.13174"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="152.838"
+            y1="8.13172"
+            x2="169.809"
+            y2="25.1023"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="152.131"
+            y1="25.1023"
+            x2="169.101"
+            y2="8.13174"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="188.779"
+            y1="8.13172"
+            x2="205.75"
+            y2="25.1023"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="188.072"
+            y1="25.1023"
+            x2="205.043"
+            y2="8.13174"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="224.721"
+            y1="8.13172"
+            x2="241.691"
+            y2="25.1023"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="224.014"
+            y1="25.1023"
+            x2="240.984"
+            y2="8.13174"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="260.662"
+            y1="8.13172"
+            x2="277.633"
+            y2="25.1023"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+          <line
+            x1="259.955"
+            y1="25.1023"
+            x2="276.926"
+            y2="8.13174"
+            stroke="#434343"
+            strokeWidth="3"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0">
+            <rect
+              width="285.529"
+              height="33.9411"
+              fill="white"
+              transform="translate(0.235352)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  )
+}
+
+const LAYOUT_SQUIGGLES = [Squiggle1, Squiggle2, Squiggle3, Squiggle4, BoxX]
 
 export default Squiggles

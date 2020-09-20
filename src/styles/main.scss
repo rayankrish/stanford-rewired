@@ -81,4 +81,9 @@ p {
 a {
   color: $text;
   text-decoration: none;
+
+  // Personally conflicted about this lol - Emily
+  // &:hover {
+  //   color: $poppy-red;
+  // }
 }

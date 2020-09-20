@@ -81,6 +81,11 @@
     stroke-dashoffset: 1805px;
 }
 
+.squiggle-divider {
+    text-align: center;
+}
+  
+
 // Animation defintions
 @keyframes rotate {
     from {
@@ -116,7 +121,7 @@
   }
 
   .rotate {
-    animation: rotate 6s linear infinite;
+    animation: rotate 10s linear infinite;
     transform-box: fill-box;
     transform-origin: center;
   }
