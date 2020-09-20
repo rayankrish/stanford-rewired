@@ -217,7 +217,7 @@ class Post extends Component {
     return (
       <>
         <Navbar />
-        <Layout>
+        <Layout useDarkSquiggles={true} squiggleTopOffset={window.innerHeight / 2}>
           <h1 className="post-title">{post.title}</h1>
           {subtitle && <h2 className="post-subtitle">{subtitle}</h2>}
           <p className="post-byline">

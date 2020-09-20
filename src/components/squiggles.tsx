@@ -8,7 +8,7 @@ import "../styles/squiggles.scss"
  * We alternate between the left and right sides, and the cadence for squiggles appearing
  * is once per window-height.
  */
-const Squiggles = () => {
+const Squiggles = (props: { dark?: boolean, offset?: number }) => {
   const [numSquiggles, setNumSquiggles] = React.useState(0);
 
   useEffect(() => {
@@ -18,7 +18,10 @@ const Squiggles = () => {
   const leftCol = []
   const rightCol = []
   for (let i = 0; i < numSquiggles; i++) {
-    const style = { top: `${i * window.innerHeight + window.innerHeight / 10}px` }
+    const style = {
+      top: `${i * window.innerHeight + (props.offset || window.innerHeight / 10)}px`,
+      stroke: props.dark ? "#434343" : "#FF4908",
+    }
     if (i % 2) {
       // grab random element
       const elem = RIGHT_COLUMN_SQUIGGLES[Math.floor(Math.random() * RIGHT_COLUMN_SQUIGGLES.length)]
@@ -227,6 +230,6 @@ function Squiggle4() {
 }
 
 const LEFT_COLUMN_SQUIGGLES = [Squiggle1, Squiggle2, Squiggle3, BoxX]
-const RIGHT_COLUMN_SQUIGGLES = [Squiggle3, Squiggle4, BoxX]
+const RIGHT_COLUMN_SQUIGGLES = [Squiggle3, Squiggle4]
 
 export default Squiggles

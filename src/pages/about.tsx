@@ -18,9 +18,8 @@ const AboutPage = () => {
   return (
     <>
       <Navbar />
-      <Layout noSquiggles>
+      <Layout>
         <SEO title="Home" />
-        <About />
         <Description />
         <Team />
         <GetInvolved />
