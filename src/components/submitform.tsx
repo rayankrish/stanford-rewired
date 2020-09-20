@@ -54,7 +54,7 @@ export default class SubmitForm extends React.Component<
       return fadeInUp(
         <div className="submitform-body">
           <div>
-            Stanford Rewired is a digital magazine where technology and society
+            Rewired is a digital magazine where technology and society
             meet. We’re committed to curating stories that amplify diverse
             perspectives and bridge disciplines.
           </div>

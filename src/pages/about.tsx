@@ -51,7 +51,7 @@ function Description() {
       {fadeInUp(<h1>About</h1>, 0, 0)}
       {fadeInUp(
         <p>
-          Stanford Rewired is a digital magazine where technology and society meet. We’re committed to curating stories that amplify diverse perspectives and bridge disciplines.
+          Rewired is a digital magazine where technology and society meet. We’re committed to curating stories that amplify diverse perspectives and bridge disciplines.
         </p>
       )}
       {fadeInUp(
@@ -132,7 +132,7 @@ function Sponsors() {
       {fadeInUp(<h1>Our Sponsors</h1>)}
       {fadeInUp(
         <p>
-          Stanford Rewired is a digital magazine where technology and society meet. We’re committed to curating stories that amplify diverse perspectives and bridge disciplines.
+          Rewired is a digital magazine where technology and society meet. We’re committed to curating stories that amplify diverse perspectives and bridge disciplines.
         </p>
       )}
       <div className="columns">
