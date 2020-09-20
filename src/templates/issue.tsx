@@ -34,9 +34,9 @@ const ArticleTile = ({ article }) => {
                 <h1 id="article-title">
                     {article.title}
                 </h1>
-                <div className="article-tags">{article.tags.nodes.map(tag_node => (
+                {article.tags.nodes.length > 0 && <div className="article-tags">{article.tags.nodes.map(tag_node => (
                     <span key={tag_node.name} id="tag">{tag_node.name}</span>
-                ))}</div>
+                ))}</div>}
                 <div id="article-description" ref={descriptionRef}>{stripHTML(article.excerpt)}</div>
                 </div>
             </div>
