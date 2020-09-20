@@ -122,7 +122,6 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
   submitForm(e) {
     addToMailchimp(this.state.email)
       .then(({ msg, result }) => {
-        console.log("msg", `${result}: ${msg}`)
         if (result !== "success") {
           this.setState({ err_msg: msg })
           throw msg

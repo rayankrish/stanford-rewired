@@ -2,67 +2,42 @@
 @use 'mixins' as *;
 
 #landing-title {
-  font: 700 $base*1.5/1 $serif;
+  @extend .serif-header;
   text-align: left;
 
   @media screen and (min-width: $breakpoint) {
-    font-size: $base*2.5;
     padding-top: 0px;
   }
 }
 
-#issue-subtitle {
-  font: $base*9/6 $sans;
-  text-align: center;
-  text-transform: uppercase;
-
-  @media screen and (min-width: $breakpoint) {
-    font-size: 29px;
-  }
-}
-
 #landing-description {
-  font: $base*9/6 $sans;
+  @extend .body;
   text-align: left;
-
-  @media screen and (min-width: $breakpoint){
-    font-size: $base*7/5
-  }
 }
 
 #article-title {
-  font: 24px $serif;
+  @extend .serif-header-2;
 }
 
 #article-description {
-  font: 20px $sans;
+  @extend .body;
   line-height: 140%;
   padding-top: 5px;
 }
 
 .landing-article-excerpt {
-  font-family: Source Sans Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 140%;
-  /* or 28px */
-
-  /* Black */
-  color: #434343;
   text-overflow: ellipsis;
 }
 
 #tag {
+  @extend .sans-serif-label;
   display: inline-block;
-  font-size: 16px;
   border-style: solid;
   border-width: 1px;
   border-color: $text;
   border-radius: 20px;
   align-items: flex-end;
   text-align: center;
-  font-variant: small-caps;
   padding-bottom: 0px;
   padding-left: 10px;
   padding-right: 10px;
