@@ -36,6 +36,10 @@
   min-height: 0;
 }
 
+.article-tags {
+  margin: 8px 0px;
+}
+
 #tag {
   @extend .sans-serif-label;
   display: inline-block;

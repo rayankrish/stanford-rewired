@@ -34,9 +34,9 @@ const ArticleTile = ({ article }) => {
                 <h1 id="article-title">
                     {article.title}
                 </h1>
-                {article.tags.nodes.map(tag_node => (
+                <div className="article-tags">{article.tags.nodes.map(tag_node => (
                     <span key={tag_node.name} id="tag">{tag_node.name}</span>
-                ))}
+                ))}</div>
                 <div id="article-description" ref={descriptionRef}>{stripHTML(article.excerpt)}</div>
                 </div>
             </div>
@@ -73,8 +73,8 @@ class Issue extends Component {
                     </div>, undefined, 0, 0)}
                     <div>
                         {/* We extract the first one since we want it to show above the fold to suggest the user to scroll down. */}
-                        {<ArticleTile article={articles.edges[0].node} />}
-                        {articles.edges.slice(1).map(({ node, i }) => <ArticleTile article={node} key={i} />)}
+                        {fadeInUp(<ArticleTile article={articles.edges[0].node} />, 0, 0, 0)}
+                        {articles.edges.slice(1).map(({ node, i }) => fadeInUp(<ArticleTile article={node} key={i} />, `article-${i}`, 0, 0))}
                     </div>
                 <SquiggleDivider />
                 <SubmitForm />
