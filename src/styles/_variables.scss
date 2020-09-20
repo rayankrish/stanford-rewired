@@ -12,6 +12,67 @@ $expanded: 'Inconsolata Expanded', monospace;
 $serif: 'Noto Serif', serif;
 $sans: 'Source Sans Pro', sans-serif;
 
+// Typography styles
+.sans-serif-header {
+  font-family: $sans; 
+  font-style: normal;
+  font-weight: normal;
+  font-size: 29px;
+  line-height: 140%;
+}
+
+.body {
+  font-family: $sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
+}
+
+.serif-header {
+  font-family: $serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.serif-header-2 {
+  font-family: $serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.monospace-header {
+  font-family: $monospace;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 140%;
+}
+
+.sans-serif-caps {
+  font-family: $sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 29px;
+  line-height: 36px;
+  font-variant: small-caps;
+}
+
+.sans-serif-label {
+  font-family: $sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  /* or 137% */
+
+  font-variant: small-caps;
+}
+
 @font-face {
   font-family: 'Inconsolata Expanded';
   src: url(../fonts/Inconsolata-ExpandedExtraBold.ttf);
