@@ -23,23 +23,7 @@
 }
 
 #navbar-brand-stanford {
-  position: static;
-
-  font-family: $serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 33px;
-
-  /* Black */
-
-  color: #434343;
-
-  /* Inside Auto Layout */
-
-  flex: none;
-  order: 0;
-  align-self: flex-start;
+  @extend .serif-header-2;
   margin: 0px 0px;
 }
 
@@ -50,19 +34,11 @@
   left: 0px;
   top: 24px;
 
-  font-family: $monospace;
+  font-family: $expanded;
   font-style: normal;
   font-weight: 900;
   font-size: 48px;
   line-height: 50%;
-  /* identical to box height, or 46px */
-
-  /* Black */
-
-  color: #434343;
-
-  /* Inside Auto Layout */
-
   flex: none;
   order: 1;
   align-self: flex-start;
