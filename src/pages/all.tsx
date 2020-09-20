@@ -33,7 +33,6 @@ const Articles = () => {
     return
   }
 
-  console.log(articles)
   const list = []
   var lastDate = ""
 

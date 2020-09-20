@@ -4,14 +4,12 @@
 #team {
   display: flex;
   flex-flow: row wrap;
-  @include responsive-sizing(font-size, $base/1.25);
   text-align: center;
 
   h3 {
-    font-family: $sans;
-    font-weight: 700;
-    @include responsive-sizing(font-size, $base/1.25);
-    @include responsive-sizing(margin-bottom, $base/4);
+    @extend .body;
+    margin-bottom: 0;
+    font-weight: 600;
   }
 
   .member {
@@ -86,12 +84,13 @@ form {
   }
 
   input[type=submit] {
+    @extend .body;
+    font-weight: 600;
     display: block;
     background-color: $text;
     border: 0;
     border-radius: $base/2;
     color: $background;
-    font: 700 $base/1 $sans;
     text-transform: uppercase;
     margin-top: $base*2/3;
     padding: $base*2/3 $base*2;
@@ -102,7 +101,6 @@ form {
     }
 
     @media screen and (min-width: $breakpoint) {
-      font-size: $base*$device-scaling;
       padding: $base $base*3;
     }
   }
@@ -128,7 +126,7 @@ form {
 
     path {
       stroke-width: 6;
-      stroke-linecap: round;
+      strokeLinecap: round;
     }
 
     @media screen and (min-width: $breakpoint) {

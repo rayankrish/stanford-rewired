@@ -33,7 +33,6 @@ export default class SubmitForm extends React.Component<
   submitForm(e) {
     addToMailchimp(this.state.email)
       .then(({ msg, result }) => {
-        console.log("msg", `${result}: ${msg}`)
         if (result !== "success") {
           this.setState({ err_msg: msg })
           throw msg

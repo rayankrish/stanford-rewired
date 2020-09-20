@@ -5,6 +5,7 @@ html {
 }
 body {
   margin: 0;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -114,7 +115,7 @@ textarea {
   margin: 0;
 }
 optgroup {
-  font-weight: 700;
+  font-weight: 600;
 }
 button,
 input {
