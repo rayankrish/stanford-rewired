@@ -9,20 +9,20 @@ import "../styles/squiggles.scss"
  * We alternate between the left and right sides, and the cadence for squiggles appearing
  * is once per window-height.
  */
-const Squiggles = (props: { dark?: boolean, offset?: number }) => {
+const Squiggles = (props: { dark?: boolean, offset?: number, cadenceMultiplier?: number }) => {
   const [numSquiggles, setNumSquiggles] = React.useState(0);
   const [offset, setOffset] = React.useState(props.offset || 0)
 
   useEffect(() => {
     !props.offset && setOffset(window.innerHeight / 10)
-    setNumSquiggles(Math.floor((document.body.clientHeight - offset) / window.innerHeight))
+    setNumSquiggles(Math.floor((document.body.clientHeight - offset) / ((props.cadenceMultiplier || 1) * window.innerHeight)))
   }, [window.innerHeight, document.body.clientHeight])
 
   const leftCol = []
   const rightCol = []
   for (let i = 0; i < numSquiggles; i++) {
     const style = {
-      top: `${i * window.innerHeight + offset}px`,
+      top: `${i * window.innerHeight * (props.cadenceMultiplier || 1) + offset}px`,
       stroke: props.dark ? "#434343" : "#FF4908",
     }
 

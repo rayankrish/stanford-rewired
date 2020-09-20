@@ -43,7 +43,7 @@ function Title() {
     }
     var title_variation = Math.floor(Math.random()*2)
 
-    return (
+    return fadeInUp(
         <div>
           <div className="landing-image-container">
             <div className="landing-image-decoration"><BoxX /></div>
@@ -75,12 +75,12 @@ function Articles() {
      //                                dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
     return (
           <div>
-               <div className="landing-columns">
+               {fadeInUp(<div className="landing-columns">
                     <h1 id="float-left">Recent Stories</h1>
                     <p id="float-right"><Link to="/all">See all &rarr;</Link></p>
-                </div>
+                </div>)}
               {data.allWpPost.edges.map(({ node }) => (
-                  <div key={node.slug}>
+                  fadeInUp(<div key={node.slug}>
                     <Link to={"/post/"+node.slug}>
                       <div className="landing-columns">
                           <div className="landing-col-a">
@@ -95,7 +95,7 @@ function Articles() {
                           </div>
                       </div>
                     </Link>
-                  </div>
+                  </div>)
               ))}
           </div>
     )

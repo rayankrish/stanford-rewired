@@ -13,7 +13,7 @@ import "./layout.css"
 import "../styles/main.scss"
 import Squiggles from "./squiggles"
 
-const Layout = ({ children, noSquiggles, useDarkSquiggles, squiggleTopOffset }) => {
+const Layout = ({ children, noSquiggles, useDarkSquiggles, squiggleTopOffset, squiggleCadence }) => {
   /*const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,7 +25,7 @@ const Layout = ({ children, noSquiggles, useDarkSquiggles, squiggleTopOffset }) 
   `)*/
   return (
     <div className="container">
-      { !noSquiggles && <Squiggles dark={useDarkSquiggles} offset={squiggleTopOffset} />}
+      { !noSquiggles && <Squiggles dark={useDarkSquiggles} offset={squiggleTopOffset} cadenceMultiplier={squiggleCadence} />}
       <main>{children}</main>
     </div>
   )
