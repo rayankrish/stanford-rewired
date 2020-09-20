@@ -32,8 +32,8 @@ class Issue extends Component {
                         <h1 id="issue-subtitle">
                             Issue One • {date_formatted}
                         </h1>
-			<div dangerouslySetInnerHTML={{ __html: this.props.pageContext.excerpt }}></div>
                         <p id="description">
+			<div dangerouslySetInnerHTML={{ __html: this.props.pageContext.excerpt }}></div>
 			    <Link to={"/post/"+this.props.pageContext.title.toLowerCase()}>
                                 Read the editor's note here &rarr;
 			    </Link>
@@ -51,7 +51,6 @@ class Issue extends Component {
 					<h1 id="article-title">
 					    {node.title}
 					</h1>
-					{console.log(node.tags.nodes)}
 					{node.tags.nodes.map(tag_node => (
 						<a id="tag">{tag_node.name}</a>
 					))}

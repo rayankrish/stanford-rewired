@@ -2,11 +2,9 @@
 @use 'mixins' as *;
 
 body {
-  background-color: $background;
-  color: $text;
-  font-family: $sans;
   @include responsive-sizing(font-size, $base);
-  line-height: $lh;
+  @extend .body;
+  background-color: $background;
 }
 
 .container {
@@ -57,7 +55,7 @@ div {
 }
 
 .monospace {
-  font-family: $monospace;
+  @extend .monospace-header;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -59,7 +59,9 @@ $sans: 'Source Sans Pro', sans-serif;
   font-weight: normal;
   font-size: 29px;
   line-height: 36px;
+  text-transform: lowercase;
   font-variant: small-caps;
+  font-variant-caps: all-small-caps;
 }
 
 .sans-serif-label {
@@ -68,9 +70,9 @@ $sans: 'Source Sans Pro', sans-serif;
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  /* or 137% */
-
+  text-transform: lowercase;
   font-variant: small-caps;
+  font-variant-caps: all-small-caps;
 }
 
 @font-face {
