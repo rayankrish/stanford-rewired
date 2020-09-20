@@ -47,7 +47,6 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  console.log(issue_result)
   const postTemplate = path.resolve(`./src/templates/post.js`)
   result.data.allWpPost.edges.forEach(edge => {
     createPage({
@@ -78,4 +77,3 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
-

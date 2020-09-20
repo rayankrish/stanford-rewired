@@ -11,13 +11,15 @@ function Navlink(props) {
 }
 
 function navbar() {
+    /*
+                    <div id="navbar-brand-stanford">
+                        Stanford
+                    </div>
+    */
     return (
         <div className="navbar">
             <Link to="/">
                 <div className="navbar-brand">
-                    <div id="navbar-brand-stanford">
-                        Stanford
-                    </div>
                     <div id="navbar-brand-rewired">
                         Rewired
                     </div>

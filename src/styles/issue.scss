@@ -9,6 +9,7 @@
 #issue-subtitle {
   @extend .sans-serif-caps;
   text-align: center;
+  text-transform: uppercase;
 }
 
 #description {
@@ -40,6 +41,13 @@
   padding-right: 10px;
   margin-right: 10px;
   vertical-align: middle;
+}
+
+.footer-links {
+  @extend .sans-serif-caps;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-align: center;
 }
 
 #issue-image {
