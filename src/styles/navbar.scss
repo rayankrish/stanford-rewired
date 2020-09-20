@@ -5,15 +5,21 @@
   display: flex;
   flex-wrap: wrap;
   position: fixed;
+  top: 0;
   width: 100%;
   box-sizing: border-box;
-  padding: 1rem 2rem;
+  padding: 2rem 1rem 2rem;
   justify-content: space-between;
   margin-bottom: 0px;
   z-index: 100;
 
   @media screen and (min-width: $breakpoint) {
-    padding: 1rem 6rem;
+    padding: 2rem 6rem 1rem;
+  }
+
+  & * {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -21,6 +27,7 @@
   display: flex;
   flex-direction: column;
   padding: 0px;
+  margin-bottom: 0;
 
   &:hover {
     #navbar-brand-rewired {
@@ -43,7 +50,6 @@
   font-style: normal;
   font-weight: 900;
   font-size: 48px;
-  line-height: 50%;
   flex: none;
   order: 1;
   align-self: flex-start;
