@@ -19,6 +19,16 @@ class Issue extends Component {
     	var months:string[];
     	months = ["none", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     	var date_formatted = months[Number(date[1])] + ", " + date[2] + " " + date[0]
+      var shorten_titles = true
+      var article_titles = {}
+      for (let i = 0; i < articles.edges.length; i++) {
+        if (shorten_titles) {
+          article_titles[articles.edges[i].node.title] = articles.edges[i].node.title.split(":")[0]
+        } else {
+          article_titles[articles.edges[i].node.title] = articles.edges[i].node.title
+        }
+      }
+      console.log(article_titles)
 
     	return (
                 <>
@@ -49,7 +59,7 @@ class Issue extends Component {
     				    </div>
     				    <div className="col-b">
     					<h1 id="article-title">
-    					    {node.title}
+    					    {article_titles[node.title]}
     					</h1>
     					{console.log(node.tags.nodes)}
     					{node.tags.nodes.map(tag_node => (
