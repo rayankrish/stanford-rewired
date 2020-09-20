@@ -2,10 +2,10 @@ import React from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 
 const teamArray = [
-  ["Jason Zhao", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/JasonZhao.jpg"],
-  ["Ben Esposito", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/BenEsposito.jpeg"],
-  ["Irene Han", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/IreneHan.jpg"],
-  ["Mark Gardiner", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/MarkGardiner.jpg"],
+  ["Jason Zhao", "Editor", "http://52.12.8.45/wp-content/uploads/2020/09/JasonZhao.jpg"],
+  ["Ben Esposito", "Editor", "http://52.12.8.45/wp-content/uploads/2020/09/BenEsposito.jpeg"],
+  ["Irene Han", "Editor", "http://52.12.8.45/wp-content/uploads/2020/09/IreneHan.jpg"],
+  ["Mark Gardiner", "Advisor", "http://52.12.8.45/wp-content/uploads/2020/09/MarkGardiner.jpg"],
   ["Enya Lu", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/EnyaLu.png"],
   ["Alessandro Vecchiato", "Content", "http://52.12.8.45/wp-content/uploads/2020/09/AlessandroVecchiato.jpg"],
   ["Emily Zhong", "Design", "http://52.12.8.45/wp-content/uploads/2020/09/EmilyZhong.png"],
