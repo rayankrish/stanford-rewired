@@ -19,6 +19,7 @@ $sans: 'Source Sans Pro', sans-serif;
   font-weight: normal;
   font-size: 29px;
   line-height: 140%;
+  color: $text;
 }
 
 .body {
@@ -27,6 +28,7 @@ $sans: 'Source Sans Pro', sans-serif;
   font-weight: normal;
   font-size: 20px;
   line-height: 140%;
+  color: $text;
 }
 
 .serif-header {
@@ -35,6 +37,7 @@ $sans: 'Source Sans Pro', sans-serif;
   font-weight: 800;
   font-size: 36px;
   line-height: 49px;
+  color: $text;
 }
 
 .serif-header-2 {
@@ -43,6 +46,7 @@ $sans: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   font-size: 24px;
   line-height: 33px;
+  color: $text;
 }
 
 .monospace-header {
@@ -51,6 +55,7 @@ $sans: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   font-size: 32px;
   line-height: 140%;
+  color: $text;
 }
 
 .sans-serif-caps {
@@ -62,6 +67,7 @@ $sans: 'Source Sans Pro', sans-serif;
   text-transform: lowercase;
   font-variant: small-caps;
   font-variant-caps: all-small-caps;
+  color: $text;
 }
 
 .sans-serif-label {
@@ -73,6 +79,7 @@ $sans: 'Source Sans Pro', sans-serif;
   text-transform: lowercase;
   font-variant: small-caps;
   font-variant-caps: all-small-caps;
+  color: $text;
 }
 
 @font-face {
