@@ -7,37 +7,44 @@ import Layout from "../components/layout";
 import Navbar from "../components/navbar"
 import SubmitForm from "../components/submitform"
 import { SquiggleDivider } from "../components/squiggles";
-import { fadeInUp } from "../components/util";
+import { ellipsis, fadeInUp, stripHTML } from "../components/util";
 
 import temp_article_thumbnail from '../images/temp_article_thumbnail.png'
 import temp_issue_cover from '../images/temp_issue_cover.jpg'
 import "../styles/issue.scss"
 
-class Issue extends Component {
-    renderArticleTile = (article) => {
-        return (
-            <div key={article.slug} className="issue-article-tile">
-				<Link to={"/post/"+article.slug}>
-				<div className="columns">
-				    <div className="col-a">
-					<img id="article-thumbnail" src={article.featuredImage ? article.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
-				    </div>
-				    <div className="col-b">
-					<h1 id="article-title">
-					    {article.title}
-					</h1>
-					{article.tags.nodes.map(tag_node => (
-						<span key={tag_node.name} id="tag">{tag_node.name}</span>
-					))}
-					<div dangerouslySetInnerHTML={{ __html: article.excerpt }}></div>
-				    </div>
-				</div>
-				</Link>
+const ArticleTile = ({ article }) => {
+    const descriptionRef = React.createRef<HTMLDivElement>();
+
+    React.useEffect(() => {
+        if (descriptionRef?.current) {
+            ellipsis(descriptionRef.current)
+        }
+    }, [descriptionRef?.current?.offsetHeight])
+
+    
+    return (
+        <div key={article.slug} className="issue-article-tile">
+            <Link to={"/post/"+article.slug}>
+            <div className="columns">
+                <div className="col-a">
+                <img id="article-thumbnail" src={article.featuredImage ? article.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+                </div>
+                <div className="col-b">
+                <h1 id="article-title">
+                    {article.title}
+                </h1>
+                {article.tags.nodes.map(tag_node => (
+                    <span key={tag_node.name} id="tag">{tag_node.name}</span>
+                ))}
+                <div id="article-description" ref={descriptionRef}>{stripHTML(article.excerpt)}</div>
+                </div>
             </div>
-        )
-
-    }
-
+            </Link>
+        </div>
+    )
+}
+class Issue extends Component {
     render() {
         const articles = this.props.data.allWpPost
         var date = this.props.pageContext.date.split("T")[0].split("-");
@@ -66,8 +73,8 @@ class Issue extends Component {
                     </div>, undefined, 0, 0)}
                     <div>
                         {/* We extract the first one since we want it to show above the fold to suggest the user to scroll down. */}
-                        {fadeInUp(this.renderArticleTile(articles.edges[0].node), -1, 0, 0)}
-                        {articles.edges.slice(1).map(({ node, i }) => fadeInUp(this.renderArticleTile(node), `article-${node.title}`))}
+                        {<ArticleTile article={articles.edges[0].node} />}
+                        {articles.edges.slice(1).map(({ node, i }) => <ArticleTile article={node} key={i} />)}
                     </div>
                 <SquiggleDivider />
                 <SubmitForm />
