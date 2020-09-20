@@ -24,6 +24,16 @@
   @extend .body;
 }
 
+.post-designer {
+  @extend .body;
+  margin: 0px 0px 1.45rem 0px;
+  text-transform: uppercase;
+}
+
+.post-img {
+  margin: 0px;
+}
+
 .post-excerpt {
   @extend .body;
   font-style: italic;
