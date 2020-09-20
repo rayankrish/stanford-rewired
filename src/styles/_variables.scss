@@ -15,7 +15,6 @@ $sans: 'Source Sans Pro', sans-serif;
 // Typography styles
 .sans-serif-header {
   font-family: $sans; 
-  font-style: normal;
   font-weight: normal;
   font-size: 29px;
   line-height: 140%;
@@ -24,7 +23,6 @@ $sans: 'Source Sans Pro', sans-serif;
 
 .body {
   font-family: $sans;
-  font-style: normal;
   font-weight: normal;
   font-size: 20px;
   line-height: 140%;
@@ -33,7 +31,6 @@ $sans: 'Source Sans Pro', sans-serif;
 
 .serif-header {
   font-family: $serif;
-  font-style: normal;
   font-weight: 800;
   font-size: 36px;
   line-height: 49px;
@@ -42,7 +39,6 @@ $sans: 'Source Sans Pro', sans-serif;
 
 .serif-header-2 {
   font-family: $serif;
-  font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 33px;
@@ -51,7 +47,6 @@ $sans: 'Source Sans Pro', sans-serif;
 
 .monospace-header {
   font-family: $monospace;
-  font-style: normal;
   font-weight: bold;
   font-size: 32px;
   line-height: 140%;
@@ -60,7 +55,6 @@ $sans: 'Source Sans Pro', sans-serif;
 
 .sans-serif-caps {
   font-family: $sans;
-  font-style: normal;
   font-weight: normal;
   font-size: 29px;
   line-height: 36px;
@@ -72,7 +66,6 @@ $sans: 'Source Sans Pro', sans-serif;
 
 .sans-serif-label {
   font-family: $sans;
-  font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;

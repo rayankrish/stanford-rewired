@@ -121,12 +121,12 @@ form {
     }
 
     line {
-      stroke-width: 3;
+      strokeWidth: 3;
     }
 
     path {
-      stroke-width: 6;
-      stroke-linecap: round;
+      strokeWidth: 6;
+      strokeLinecap: round;
     }
 
     @media screen and (min-width: $breakpoint) {
