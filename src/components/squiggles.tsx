@@ -248,7 +248,7 @@ export function SquiggleDivider() {
   return (
     <div className="squiggle-divider">
       <svg
-        width="520"
+        width="100%"
         max-width="100%"
         height="150"
         viewBox="0 0 520 150"

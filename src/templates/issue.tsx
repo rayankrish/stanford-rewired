@@ -16,7 +16,7 @@ import "../styles/issue.scss"
 class Issue extends Component {
     renderArticleTile = (article) => {
         return (
-            <div key={article.slug}>
+            <div key={article.slug} className="issue-article-tile">
 				<Link to={"/post/"+article.slug}>
 				<div className="columns">
 				    <div className="col-a">
