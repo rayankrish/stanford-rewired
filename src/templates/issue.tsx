@@ -27,7 +27,7 @@ class Issue extends Component {
 					    {article.title}
 					</h1>
 					{article.tags.nodes.map(tag_node => (
-						<a key={tag_node.name} id="tag">{tag_node.name}</a>
+						<span key={tag_node.name} id="tag">{tag_node.name}</span>
 					))}
 					<div dangerouslySetInnerHTML={{ __html: article.excerpt }}></div>
 				    </div>
@@ -63,11 +63,11 @@ class Issue extends Component {
                                             Read the editor's note here &rarr;
                             </Link>
                         </p>
-                    </div>, 0, 0)}
+                    </div>, undefined, 0, 0)}
                     <div>
                         {/* We extract the first one since we want it to show above the fold to suggest the user to scroll down. */}
-                        {fadeInUp(this.renderArticleTile(articles.edges[0].node), 0, 0)}
-                        {articles.edges.slice(1).map(({ node, i }) => fadeInUp(this.renderArticleTile(node), 0, i == 0 ? 0 : 200))}
+                        {fadeInUp(this.renderArticleTile(articles.edges[0].node), -1, 0, 0)}
+                        {articles.edges.slice(1).map(({ node, i }) => fadeInUp(this.renderArticleTile(node), `article-${node.title}`))}
                     </div>
                 <SquiggleDivider />
                 <SubmitForm />

@@ -79,7 +79,7 @@ function Articles() {
                     <h1 id="float-left">Recent Stories</h1>
                     <p id="float-right"><Link to="/all">See all &rarr;</Link></p>
                 </div>)}
-              {data.allWpPost.edges.map(({ node }) => (
+              {data.allWpPost.edges.map(({ node, i }) => (
                   fadeInUp(<div key={node.slug}>
                     <Link to={"/post/"+node.slug}>
                       <div className="landing-columns">
@@ -95,7 +95,7 @@ function Articles() {
                           </div>
                       </div>
                     </Link>
-                  </div>)
+                  </div>, i)
               ))}
           </div>
     )

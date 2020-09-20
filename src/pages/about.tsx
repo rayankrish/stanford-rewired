@@ -33,7 +33,7 @@ const AboutPage = () => {
 function Description() {
   return (
     <div>
-      {fadeInUp(<h1>About</h1>, 0, 0)}
+      {fadeInUp(<h1>About</h1>, undefined, 0, 0)}
       {fadeInUp(
         <p>
           Rewired is a digital magazine where technology and society meet. We’re committed to curating stories that amplify diverse perspectives and bridge disciplines.
