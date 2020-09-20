@@ -82,11 +82,13 @@ function Title() {
 
 function Articles() {
     const data = useStaticQuery(pageQuery); // graphql query, see below
+     //                                dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
     return (
         <Layout noSquiggles>
             <div>
-                <div>
-                    <h1>Recent Stories</h1>
+                <div className="landing-columns">
+                    <h1 id="float-left">Recent Stories</h1>
+                    <p id="float-right"><Link to="/all">See all &rarr;</Link></p>
                 </div>
                 {data.allWpPost.edges.map(({ node }) => (
                     <div key={node.slug}>
@@ -99,8 +101,8 @@ function Articles() {
                                 <h1 id="article-title">
                                     {node.title}
                                 </h1>
-                                <div className="landing-article-excerpt"
-                                     dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
+                                <p className="landing-article-excerpt">
+                                      {node.article_fields.articleAuthors}</p>
                             </div>
                         </div>
                       </Link>
@@ -209,6 +211,10 @@ export const pageQuery = graphql`
               }
             }
             excerpt
+            article_fields {
+              articleSubtitle
+              articleAuthors
+            }
             slug
           }
         }

@@ -12,60 +12,71 @@ import temp_issue_cover from '../images/temp_issue_cover.jpg'
 import "../styles/issue.scss"
 
 class Issue extends Component {
-    render() {
-        const articles = this.props.data.allWpPost
-        var date = this.props.pageContext.date.split("T")[0].split("-");
-	var months:string[];
-	months = ["none", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-	var date_formatted = months[Number(date[1])] + ", " + date[2] + " " + date[0]
+  render() {
+      const articles = this.props.data.allWpPost
+      var date = this.props.pageContext.date.split("T")[0].split("-");
+    	var months:string[];
+    	months = ["none", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    	var date_formatted = months[Number(date[1])] + ", " + date[2] + " " + date[0]
+      var shorten_titles = true
+      var article_titles = {}
+      for (let i = 0; i < articles.edges.length; i++) {
+        if (shorten_titles) {
+          article_titles[articles.edges[i].node.title] = articles.edges[i].node.title.split(":")[0]
+        } else {
+          article_titles[articles.edges[i].node.title] = articles.edges[i].node.title
+        }
+      }
 
-	return (
-            <>
-                <Navbar />
-                <Layout>
-                    <div>
-                        <img id="issue-image" src={this.props.pageContext.featuredImage ? this.props.pageContext.featuredImage.node.localFile.childImageSharp.fixed.src : temp_issue_cover} alt="issue cover image" />
-                        <h1 id="issue-title">
-                            {this.props.pageContext.title}
-                        </h1>
-                        <h1 id="issue-subtitle">
-                            Issue One • {date_formatted}
-                        </h1>
-                        <p id="description">
-			<div dangerouslySetInnerHTML={{ __html: this.props.pageContext.excerpt }}></div>
-			    <Link to={"/post/"+this.props.pageContext.title.toLowerCase()}>
-                                Read the editor's note here &rarr;
-			    </Link>
-                        </p>
-                    </div>
-                    <div>
-                        {articles.edges.map(({ node }) => (
-                            <div key={node.slug}>
-				<Link to={"/post/"+node.slug}>
-				<div className="columns">
-				    <div className="col-a">
-					<img id="article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
-				    </div>
-				    <div className="col-b">
-					<h1 id="article-title">
-					    {node.title}
-					</h1>
-					{node.tags.nodes.map(tag_node => (
-						<a id="tag">{tag_node.name}</a>
-					))}
-					<div dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
-				    </div>
-				</div>
-				</Link>
-                            </div>
-                        ))}
-                    </div>
-                <DividerBottom />
-                <SubmitForm />
-                </Layout>
-            </>
-        )
-    }
+    	return (
+                <>
+                    <Navbar />
+                    <Layout>
+                        <div>
+                            <img id="issue-image" src={this.props.pageContext.featuredImage ? this.props.pageContext.featuredImage.node.localFile.childImageSharp.fixed.src : temp_issue_cover} alt="issue cover image" />
+                            <h1 id="issue-title">
+                                {this.props.pageContext.title}
+                            </h1>
+                            <h1 id="issue-subtitle">
+                                Issue One • {date_formatted}
+                            </h1>
+    			<div dangerouslySetInnerHTML={{ __html: this.props.pageContext.excerpt }}></div>
+                            <p id="description">
+    			    <Link to={"/post/"+this.props.pageContext.title.toLowerCase()}>
+                                    Read the editor's note here &rarr;
+    			    </Link>
+                            </p>
+                        </div>
+                        <div>
+                            {articles.edges.map(({ node }) => (
+                                <div key={node.slug}>
+    				<Link to={"/post/"+node.slug}>
+    				<div className="columns">
+    				    <div className="col-a">
+    					<img id="article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+    				    </div>
+    				    <div className="col-b">
+    					<h1 id="article-title">
+    					    {article_titles[node.title]}
+    					</h1>
+    					{console.log(node.tags.nodes)}
+    					{node.tags.nodes.map(tag_node => (
+    						<a id="tag">{tag_node.name}</a>
+    					))}
+    					<div dangerouslySetInnerHTML={{ __html: "<p id=\"article-description\""+
+                node.excerpt.slice(2) }}></div>
+    				    </div>
+    				</div>
+    				</Link>
+                                </div>
+                            ))}
+                        </div>
+                    <DividerBottom />
+                    <SubmitForm />
+                    </Layout>
+                </>
+            )
+        }
 }
 
 function Title(title: string, date: string, excerpt: string) {

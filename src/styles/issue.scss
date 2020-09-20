@@ -92,6 +92,8 @@
 
   @media screen and (min-width: $breakpoint) {
     width: 400px;
+    height: 200px;
+    overflow: hidden;
   }
 }
 
