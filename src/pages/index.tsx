@@ -17,7 +17,7 @@ const LandingPage = () => {
     return (
         <>
             <Navbar />
-            <Layout squiggleTopOffset={1/3}> 
+            <Layout squiggleTopOffset={1/3}>
                 <SEO title="Landing" />
                 <Title />
                 <Articles />
@@ -90,8 +90,7 @@ function Articles() {
                               <h1 id="article-title">
                                   {node.title}
                               </h1>
-                              <div className="landing-article-excerpt"
-                                    dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
+                              <div className="landing-article-excerpt">{node.article_fields.articleAuthors}</div>
                           </div>
                       </div>
                     </Link>

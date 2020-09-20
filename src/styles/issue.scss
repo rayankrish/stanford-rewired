@@ -3,28 +3,50 @@
 
 #issue-title {
   @extend .serif-header;
-  text-align: center;
+  text-align: left;
+
+  @media screen and (min-width: $breakpoint) {
+    text-align: center;
+  }
 }
 
 #issue-subtitle {
   @extend .sans-serif-caps;
-  text-align: center;
   margin: 0;
+  text-align: left;
+
+  @media screen and (min-width: $breakpoint) {
+    text-align: center;
+  }
 }
 
 #description {
   @extend .body;
-  text-align: center;
   padding: 24px 0 48px;
+  text-align: left;
+
+  @media screen and (min-width: $breakpoint) {
+    text-align: center;
+  }
 }
 
 .issue-article-tile {
-  margin-bottom: 72px;
+  margin-bottom: 0px;
+
+  @media screen and (min-width: $breakpoint) {
+    margin-bottom: 72px;
+  }
 }
 
 #article-title {
   @extend .serif-header-2;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+
+  @media screen and (min-width: $breakpoint) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }
 
 #article-description {
@@ -46,18 +68,16 @@
   padding-right: 10px;
   margin-right: 10px;
   vertical-align: middle;
-}
+  margin-bottom: 10px;
 
-.footer-links {
-  @extend .sans-serif-caps;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  text-align: center;
+  @media screen and (min-width: $breakpoint) {
+    margin-bottom: 0px;
+  }
 }
 
 #issue-image {
-  width: 600px;
-  height: 300px;
+  width: 100%;
+  height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -101,13 +121,15 @@
 .col-b {
   width: 100%;
   margin-bottom: 0;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 
   @media screen and (min-width: $breakpoint) {
     width: 400px;
     height: 200px;
     overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 

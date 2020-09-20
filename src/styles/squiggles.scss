@@ -83,8 +83,9 @@
 
 .squiggle-divider {
     text-align: center;
+    margin-bottom: 0px;
 }
-  
+
 
 // Animation defintions
 @keyframes rotate {
@@ -94,14 +95,14 @@
       transform: rotate(360deg);
     }
   }
-  
+
   @keyframes dash {
     to {
       stroke-dashoffset: 0;
     }
   }
-  
-  
+
+
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -111,11 +112,11 @@
       transform: translateY(0);
     }
   }
-  
+
   .fadeInUp {
     animation: fadeInUp 0.5s ease-in-out forwards;
   }
-  
+
   .draw {
     animation: dash 1.4s linear forwards;
   }
@@ -125,10 +126,9 @@
     transform-box: fill-box;
     transform-origin: center;
   }
-  
+
   // react-animate-on-scroll adds an extra div around
   // elements, this removes the extra styling from that.
   .animated {
     margin: 0;
   }
-  
