@@ -1,6 +1,5 @@
-import React, { Component } from "react"
+import React from "react"
 import { graphql, Link } from "gatsby"
-import PropTypes from "prop-types"
 
 import Layout from "../components/layout"
 import Navbar from "../components/navbar"
@@ -43,7 +42,7 @@ const Post = (props: { data }) => {
             {category.toLowerCase()}
           </Link>
         </div>
-        {featuredImage && <img src={featuredImage}></img>}
+        {featuredImage && <img className="featured-img" src={featuredImage}></img>}
         <div
           className="post-excerpt"
           dangerouslySetInnerHTML={{ __html: post.excerpt }}
