@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import ScrollAnimation from "react-animate-on-scroll"
 import Layout from "../components/layout"
 import Navbar from "../components/navbar"
-import LandingSquiggles from "../components/landing-squiggles"
+import Squiggles from "../components/squiggles"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import temp_article_thumbnail from '../images/temp_article_thumbnail.png'
@@ -18,7 +18,7 @@ const LandingPage = () => {
             <Navbar />
                 <Layout noSquiggles>
                 <SEO title="Landing" />
-                <LandingSquiggles />
+                <Squiggles />
                 <Title />
                 <Articles />
                 <SubmitForm />

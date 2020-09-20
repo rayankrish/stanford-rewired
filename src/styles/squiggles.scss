@@ -1,0 +1,98 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+#squiggle-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    #left {
+        position: absolute;
+        left: calc(-1 * (100vw - 600px) / 4)
+    }
+
+    #right {
+        position: absolute;
+        right: calc(-1 * (100vw - 600px) / 4)
+    }
+
+    .svgContainer {
+        position: absolute;
+        transform: scale(.4) translateX(-50%);
+
+        line, path {
+            stroke: $poppy-red;
+        }
+
+        line {
+            stroke-width: 3;
+        }
+
+        path {
+            stroke-width: 6;
+            stroke-linecap: round;
+        }
+
+        @media screen and (min-width: $breakpoint) {
+            transform: scale(.7) translateX(-50%);
+        }
+
+        @media screen and (min-width: 1200px) {
+            transform: scale(1) translateX(-50%);
+        }
+
+        @media screen and (max-width: $breakpoint) {
+            display: none;
+        }
+    }
+
+    // Don't show squiggles on mobile.
+    @media screen and (max-width: $breakpoint) {
+        display: none;
+    }
+}
+
+// Animation defintions
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    } to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY($base);
+    } to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fadeInUp {
+    animation: fadeInUp 0.5s ease-in-out forwards;
+  }
+  
+  .draw {
+    animation: dash 1.4s linear forwards;
+  }
+
+  .rotate {
+    animation: rotate 6s linear infinite;
+  }
+  
+  // react-animate-on-scroll adds an extra div around
+  // elements, this removes the extra styling from that.
+  .animated {
+    margin: 0;
+  }
+  
