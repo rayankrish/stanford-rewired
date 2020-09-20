@@ -84,7 +84,7 @@
   object-fit: cover;
 }
 
-.columns {
+.landing-columns {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -125,6 +125,10 @@
   }
 }
 
+#first-info-text {
+  padding-top: 100px;
+}
+
 p a {
   text-decoration: underline;
 }
@@ -159,13 +163,13 @@ p a {
 }
 
 #group6 {
-  @include graphics(left, 606px, 606px, 260px);
-  @include graphics(top, 10px, 10px, -35px);
+  @include graphics(left, 606px, 260px, 260px);
+  @include graphics(top, 10px, -35px, -35px);
 }
 
 #group7 {
-  @include graphics(left, 606px, 606px, 0px);
-  @include graphics(top, 10px, 10px, 1211px);
+  @include graphics(left, 606px, 0px, 0px);
+  @include graphics(bottom, 10px, 470px, 470px);
 }
 
 #group5 {

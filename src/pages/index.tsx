@@ -91,7 +91,7 @@ function Articles() {
                 {data.allWpPost.edges.map(({ node }) => (
                     <div key={node.slug}>
                       <Link to={"/post/"+node.slug}>
-                        <div className="columns">
+                        <div className="landing-columns">
                             <div className="landing-col-a">
                                 <img id="landing-article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
                             </div>
@@ -143,7 +143,7 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
     if (!this.state.isSubmitted) {
       return fadeInUp(
         <div>
-          <p>
+          <p id="first-info-text">
           Rewired is a digital magazine where technology and society meet.
           We're committed to curating stories that amplify diverse perspectives
           and bridge disciplines. <Link to="/about">Learn more about us &rarr;</Link>

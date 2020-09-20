@@ -15,7 +15,8 @@ body {
   width: 70%;
 
   @media screen and (min-width: $breakpoint) {
-    margin: 178px auto;
+    margin: 0px auto;
+    /* was 156px auto */
     width: 600px;
   }
 
@@ -23,6 +24,7 @@ body {
     margin-left: 156px auto;
     margin-right: 156px auto;
     margin-top: 0px;
+    /* was 156px auto */
   }
 }
 
