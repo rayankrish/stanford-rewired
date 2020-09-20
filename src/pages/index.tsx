@@ -11,6 +11,7 @@ import temp_issue_cover from '../images/temp_issue_cover.jpg'
 import "../styles/landingV2.scss"
 import { useLandingQuery } from "../hooks/landing_top_query"
 import { BoxX } from "../components/squiggles"
+import { fadeInUp } from "../components/util"
 
 const LandingPage = () => {
     return (
@@ -25,20 +26,6 @@ const LandingPage = () => {
             </Layout>
         </>
     )
-}
-
-function fadeInUp(elem: JSX.Element, delay=0, offset=200): JSX.Element {
-  return (
-    <ScrollAnimation
-      animateIn="fadeInUp"
-      duration={0.5}
-      animateOnce={true}
-      offset={offset}
-      delay={delay}
-    >
-      {elem}
-    </ScrollAnimation>
-  )
 }
 
 function Title() {
@@ -87,32 +74,30 @@ function Articles() {
     const data = useStaticQuery(pageQuery); // graphql query, see below
      //                                dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
     return (
-        <Layout noSquiggles>
-            <div>
-                <div className="landing-columns">
+          <div>
+               <div className="landing-columns">
                     <h1 id="float-left">Recent Stories</h1>
                     <p id="float-right"><Link to="/all">See all &rarr;</Link></p>
                 </div>
-                {data.allWpPost.edges.map(({ node }) => (
-                    <div key={node.slug}>
-                      <Link to={"/post/"+node.slug}>
-                        <div className="landing-columns">
-                            <div className="landing-col-a">
-                                <img id="landing-article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
-                            </div>
-                            <div className="landing-col-b">
-                                <h1 id="article-title">
-                                    {node.title}
-                                </h1>
-                                <p className="landing-article-excerpt">
-                                      {node.article_fields.articleAuthors}</p>
-                            </div>
-                        </div>
-                      </Link>
-                    </div>
-                ))}
-            </div>
-        </Layout>
+              {data.allWpPost.edges.map(({ node }) => (
+                  <div key={node.slug}>
+                    <Link to={"/post/"+node.slug}>
+                      <div className="landing-columns">
+                          <div className="landing-col-a">
+                              <img id="landing-article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+                          </div>
+                          <div className="landing-col-b">
+                              <h1 id="article-title">
+                                  {node.title}
+                              </h1>
+                              <div className="landing-article-excerpt"
+                                    dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
+                          </div>
+                      </div>
+                    </Link>
+                  </div>
+              ))}
+          </div>
     )
 }
 

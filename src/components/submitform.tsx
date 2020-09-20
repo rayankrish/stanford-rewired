@@ -2,22 +2,9 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import ScrollAnimation from "react-animate-on-scroll"
 import addToMailchimp from "gatsby-plugin-mailchimp"
+import { fadeInUp } from "./util"
 
 import "../styles/submitform.scss"
-
-function fadeInUp(elem: JSX.Element, delay = 0): JSX.Element {
-  return (
-    <ScrollAnimation
-      animateIn="fadeInUp"
-      duration={0.5}
-      animateOnce={true}
-      offset={200}
-      delay={delay}
-    >
-      {elem}
-    </ScrollAnimation>
-  )
-}
 
 export default class SubmitForm extends React.Component<
   {},
