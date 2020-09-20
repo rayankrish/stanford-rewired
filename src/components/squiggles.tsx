@@ -10,27 +10,24 @@ import "../styles/squiggles.scss"
  */
 const Squiggles = (props: { dark?: boolean, offset?: number }) => {
   const [numSquiggles, setNumSquiggles] = React.useState(0);
+  const [offset, setOffset] = React.useState(props.offset || 0)
 
   useEffect(() => {
-    setNumSquiggles(Math.floor(document.body.clientHeight / window.innerHeight))
+    !props.offset && setOffset(window.innerHeight / 10)
+    setNumSquiggles(Math.floor((document.body.clientHeight - offset) / window.innerHeight))
   }, [window.innerHeight, document.body.clientHeight])
 
   const leftCol = []
   const rightCol = []
   for (let i = 0; i < numSquiggles; i++) {
     const style = {
-      top: `${i * window.innerHeight + (props.offset || window.innerHeight / 10)}px`,
+      top: `${i * window.innerHeight + offset}px`,
       stroke: props.dark ? "#434343" : "#FF4908",
     }
-    if (i % 2) {
-      // grab random element
-      const elem = RIGHT_COLUMN_SQUIGGLES[Math.floor(Math.random() * RIGHT_COLUMN_SQUIGGLES.length)]
-      rightCol.push(draw(style, elem(), i))
-    } else {
-      // grab random element
-      const elem = LEFT_COLUMN_SQUIGGLES[Math.floor(Math.random() * LEFT_COLUMN_SQUIGGLES.length)]
-      leftCol.push(draw(style, elem(), i))
-    }
+
+    const [sourceColumn, renderedColumn] = (i % 2) ? [RIGHT_COLUMN_SQUIGGLES, rightCol] : [LEFT_COLUMN_SQUIGGLES, leftCol]
+    const randomElement = sourceColumn[Math.floor(Math.random() * sourceColumn.length)]
+    renderedColumn.push(draw(style, randomElement(), i))
   }
 
   return (

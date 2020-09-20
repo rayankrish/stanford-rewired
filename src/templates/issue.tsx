@@ -31,7 +31,7 @@ class Issue extends Component {
     	return (
                 <>
                     <Navbar />
-                    <Layout>
+                    <Layout useDarkSquiggles={true} squiggleTopOffset={window.innerHeight}>
                         <div>
                             <img id="issue-image" src={this.props.pageContext.featuredImage ? this.props.pageContext.featuredImage.node.localFile.childImageSharp.fixed.src : temp_issue_cover} alt="issue cover image" />
                             <h1 id="issue-title">
@@ -40,8 +40,8 @@ class Issue extends Component {
                             <h1 id="issue-subtitle">
                                 Issue One • {date_formatted}
                             </h1>
-    			<div dangerouslySetInnerHTML={{ __html: this.props.pageContext.excerpt }}></div>
                             <p id="description">
+    			<span dangerouslySetInnerHTML={{ __html: this.props.pageContext.excerpt }}></span>
     			    <Link to={"/post/"+this.props.pageContext.title.toLowerCase()}>
                                     Read the editor's note here &rarr;
     			    </Link>
