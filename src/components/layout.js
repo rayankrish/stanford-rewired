@@ -25,7 +25,11 @@ const Layout = ({ children, noSquiggles, useDarkSquiggles, squiggleTopOffset, sq
   `)*/
   return (
     <div className="container">
-      { !noSquiggles && <Squiggles dark={useDarkSquiggles} offset={squiggleTopOffset} cadenceMultiplier={squiggleCadence} />}
+      { !noSquiggles && <Squiggles
+        dark={useDarkSquiggles}
+        offsetMultiplier={squiggleTopOffset}
+        cadenceMultiplier={squiggleCadence}
+      />}
       <main>{children}</main>
     </div>
   )

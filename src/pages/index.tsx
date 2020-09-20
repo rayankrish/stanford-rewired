@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 // eventually use gatsby-image
 import ScrollAnimation from "react-animate-on-scroll"
@@ -17,7 +17,7 @@ const LandingPage = () => {
     return (
         <>
             <Navbar />
-            <Layout squiggleTopOffset={window.innerHeight / 3}> 
+            <Layout squiggleTopOffset={1/3}> 
                 <SEO title="Landing" />
                 <Title />
                 <Articles />

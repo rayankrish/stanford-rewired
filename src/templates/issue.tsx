@@ -48,7 +48,7 @@ class Issue extends Component {
 	    return (
             <>
                 <Navbar />
-                <Layout useDarkSquiggles={true} squiggleTopOffset={window.innerHeight} squiggleCadence={1.5}>
+                <Layout useDarkSquiggles={true} squiggleTopOffset={1} squiggleCadence={1.5}>
                     {fadeInUp(<div>
                         <img id="issue-image" src={this.props.pageContext.featuredImage ? this.props.pageContext.featuredImage.node.localFile.childImageSharp.fixed.src : temp_issue_cover} alt="issue cover image" />
                         <h1 id="issue-title">

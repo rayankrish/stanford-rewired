@@ -9,20 +9,14 @@ import "../styles/squiggles.scss"
  * We alternate between the left and right sides, and the cadence for squiggles appearing
  * is once per window-height.
  */
-const Squiggles = (props: { dark?: boolean, offset?: number, cadenceMultiplier?: number }) => {
-  const [numSquiggles, setNumSquiggles] = React.useState(0);
-  const [offset, setOffset] = React.useState(props.offset || 0)
-
-  useEffect(() => {
-    !props.offset && setOffset(window.innerHeight / 10)
-    setNumSquiggles(Math.floor((document.body.clientHeight - offset) / ((props.cadenceMultiplier || 1) * window.innerHeight)))
-  }, [window.innerHeight, document.body.clientHeight])
+const Squiggles = (props: { dark?: boolean, offsetMultiplier?: number, cadenceMultiplier?: number }) => {
+  const {offset, spaceBetween, numSquiggles} = useSquiggleSettings(props.offsetMultiplier, props.cadenceMultiplier)
 
   const leftCol = []
   const rightCol = []
   for (let i = 0; i < numSquiggles; i++) {
     const style = {
-      top: `${i * window.innerHeight * (props.cadenceMultiplier || 1) + offset}px`,
+      top: `${i * spaceBetween + offset}px`,
       stroke: props.dark ? "#434343" : "#FF4908",
     }
 
@@ -54,6 +48,19 @@ function draw(id, elem, options: { duration?: number, delay?: number } = {}) {
       </ScrollAnimation>
     </div>
   )
+}
+
+function useSquiggleSettings(offsetMultiplier=0.1, cadenceMultiplier=1 ) {
+  const [settings, setSettings] = React.useState({ offset: 0, spaceBetween: 0, numSquiggles: 0 })
+  React.useLayoutEffect(() => {
+    const offset = window.innerHeight * offsetMultiplier
+    const spaceBetween = cadenceMultiplier * window.innerHeight
+    const numSquiggles = Math.floor((document.body.clientHeight - offset) / spaceBetween)
+
+    setSettings({ offset, spaceBetween, numSquiggles })
+  }, [])
+
+  return settings
 }
 
 
