@@ -16,7 +16,7 @@ const LandingPage = () => {
     return (
         <>
             <Navbar />
-            <Layout squiggleTopOffset={window.innerHeight / 4}> 
+            <Layout squiggleTopOffset={window.innerHeight / 3}> 
                 <SEO title="Landing" />
                 <Title />
                 <Articles />

@@ -49,26 +49,26 @@ class Issue extends Component {
                             </p>
                         </div>
                         <div>
-                            {articles.edges.map(({ node }) => (
-                                <div key={node.slug}>
-    				<Link to={"/post/"+node.slug}>
-    				<div className="columns">
-    				    <div className="col-a">
-    					<img id="article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
-    				    </div>
-    				    <div className="col-b">
-    					<h1 id="article-title">
-    					    {article_titles[node.title]}
-    					</h1>
-    					{node.tags.nodes.map(tag_node => (
-    						<a id="tag">{tag_node.name}</a>
-    					))}
-    					<div dangerouslySetInnerHTML={{ __html: "<p id=\"article-description\""+
-                node.excerpt.slice(2) }}></div>
-    				    </div>
-    				</div>
-    				</Link>
-                                </div>
+                        {articles.edges.map(({ node }) => (
+                            <div key={node.slug}>
+                                <Link to={"/post/"+node.slug}>
+                                    <div className="columns">
+                                        <div className="col-a">
+                                        <img id="article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+                                        </div>
+                                        <div className="col-b">
+                                        <h1 id="article-title">
+                                            {node.title}
+                                        </h1>
+                                        {node.tags.nodes.map(tag_node => (
+                                            <a id="tag">{tag_node.name}</a>
+                                        ))}
+                                        <div dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
+                                        </div>
+                                    </div>
+				                </Link>
+                            </div>
+                        ))}
                             ))}
                         </div>
                     <SquiggleDivider />
