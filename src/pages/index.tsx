@@ -73,7 +73,7 @@ function Title() {
             }
             <p id="landing-description">
                 Our latest issue, <i>{issue_name}</i>, is released on our website now,
-                and includes article such as {other_articles[0]}, {other_articles[1]}, and {other_articles[2]}. &nbsp;
+                and includes article such as "{other_articles[0]}," "{other_articles[1]}," and "{other_articles[2]}." &nbsp;
                 <Link to={"/issue/"+issue_name.toLowerCase()}>Read the issue here &rarr;</Link>
             </p>
         </div>
