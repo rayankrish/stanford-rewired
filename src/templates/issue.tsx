@@ -59,7 +59,6 @@ class Issue extends Component {
     					<h1 id="article-title">
     					    {article_titles[node.title]}
     					</h1>
-    					{console.log(node.tags.nodes)}
     					{node.tags.nodes.map(tag_node => (
     						<a id="tag">{tag_node.name}</a>
     					))}

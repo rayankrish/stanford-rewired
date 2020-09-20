@@ -216,11 +216,16 @@ class Post extends Component {
         <Layout>
           <h1 className="post-title">{post.title}</h1>
           {subtitle && <h2 className="post-subtitle">{subtitle}</h2>}
-          <div className="post-byline">
+          <p className="post-byline">
             by {`${author_list}`.toLowerCase()} • in{" "}
             <Link className="post-category" to={"/issue/"+category.toLowerCase()}>
               {category.toLowerCase()}
             </Link>
+          </p>
+          <div className="post-tag-container">
+            {post.tags.nodes.map(tag_node => (
+  						<a className="post-tag">{tag_node.name}</a>
+  					))}
           </div>
           {featuredImage && <img className="post-img" src={featuredImage}></img>}
           <p className="post-designer">Designed by {designer}</p>
@@ -275,6 +280,11 @@ export const postQuery = graphql`
           name
         }
       }
+  		tags {
+  		  nodes {
+  		      name
+  		  }
+		}
     }
     site {
       siteMetadata {
