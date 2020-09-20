@@ -17,6 +17,10 @@
         right: calc(-1 * (100vw - 600px) / 4)
     }
 
+    .svgPositioner {
+        position: absolute;
+    }
+
     .svgContainer {
         position: absolute;
         transform: scale(.4) translateX(-50%);
@@ -51,6 +55,30 @@
     @media screen and (max-width: $breakpoint) {
         display: none;
     }
+}
+
+#boxX {
+    @extend .rotate;
+}
+
+#squiggle1_1 {
+    stroke-dasharray: 983px;
+    stroke-dashoffset: 983px;
+}
+
+#squiggle1_2 {
+    stroke-dasharray: 550px;
+    stroke-dashoffset: 550px;
+}
+
+#squiggle3 {
+    stroke-dasharray: 1264px;
+    stroke-dashoffset: 1264px;
+}
+
+#squiggle4 {
+    stroke-dasharray: 1805px;
+    stroke-dashoffset: 1805px;
 }
 
 // Animation defintions
@@ -89,6 +117,8 @@
 
   .rotate {
     animation: rotate 6s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
   }
   
   // react-animate-on-scroll adds an extra div around
