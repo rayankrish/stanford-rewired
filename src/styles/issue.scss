@@ -42,6 +42,13 @@
   vertical-align: middle;
 }
 
+.footer-links {
+  @extend .sans-serif-caps;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
 #issue-image {
   width: 600px;
   height: 300px;

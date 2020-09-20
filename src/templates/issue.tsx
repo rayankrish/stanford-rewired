@@ -18,7 +18,7 @@ class Issue extends Component {
     	var months:string[];
     	months = ["none", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     	var date_formatted = months[Number(date[1])] + ", " + date[2] + " " + date[0]
-      var shorten_titles = true
+      var shorten_titles = false
       var article_titles = {}
       for (let i = 0; i < articles.edges.length; i++) {
         if (shorten_titles) {
@@ -148,7 +148,7 @@ function DividerBottom() {
             />
           </svg>
         </div>
-        <p className="post-byline"><Link to="/" style={{textDecoration: "none"}}>HOME</Link> &emsp;
+        <p className="footer-links"><Link to="/" style={{textDecoration: "none"}}>HOME</Link> &emsp;
           <Link to="/about/" style={{textDecoration: "none"}}>ABOUT</Link></p>
     </div>
   )
