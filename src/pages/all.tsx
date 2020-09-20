@@ -2,9 +2,9 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Navbar from "../components/navbar"
-import About from "../components/about" // TODO: squiggles
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import { ArticleTile } from "./index"
 
 import placeholder from "../images/issue_cover_placeholder.jpg"
 
@@ -36,15 +36,15 @@ const Articles = () => {
   const list = []
   var lastDate = ""
 
+  console.log(articles)
   for (var i = 0; i < articles.length; i++) {
     if (articles[i]?.node?.date.substring(0, 7) !== lastDate) {
       lastDate = (articles[i]?.node?.date || lastDate).substring(0, 7)
       list.push(DateHeader(lastDate))
     }
-    list.push(Article(articles[i]))
-  }
 
-  articles.map(article => Article(article))
+    list.push(<ArticleTile key={articles[i].node.title} node={articles[i].node} />)
+  }
 
   return <div>{list}</div>
 }
@@ -63,24 +63,6 @@ const DateHeader = date => {
   )
 }
 
-const Article = data => {
-  const node = data?.node
-  return (
-    <div className="all-articlebox" key={node.id}>
-      <img src={node?.featuredImage?.node?.sourceUrl || placeholder}></img>
-      <div>
-        <div className="all-articlebox-title">
-          <Link to={"/post/" + node.slug}>{node.title}</Link>
-        </div>
-        <span
-          className="all-articlebox-excerpt"
-          dangerouslySetInnerHTML={{ __html: node.excerpt }}
-        ></span>
-      </div>
-    </div>
-  )
-}
-
 export default AllPage
 
 const pageQuery = graphql`
@@ -95,7 +77,13 @@ const pageQuery = graphql`
           title
           featuredImage {
             node {
-              sourceUrl
+              localFile {
+                childImageSharp {
+                  fixed {
+                    src
+                  }
+                }
+              }
             }
           }
         }

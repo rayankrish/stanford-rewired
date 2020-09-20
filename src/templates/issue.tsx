@@ -16,15 +16,16 @@ import "../styles/issue.scss"
 const ArticleTile = ({ article }) => {
     const descriptionRef = React.createRef<HTMLDivElement>();
 
-    React.useEffect(() => {
+    const ellipsisize = () => {
         if (descriptionRef?.current) {
             ellipsis(descriptionRef.current)
         }
-    }, [descriptionRef?.current?.offsetHeight])
+    }
 
-    
+    React.useEffect(ellipsisize, [descriptionRef?.current?.clientHeight])
+
     return (
-        <div key={article.slug} className="issue-article-tile">
+        fadeInUp(<div key={article.slug} className="issue-article-tile">
             <Link to={"/post/"+article.slug}>
             <div className="columns">
                 <div className="col-a">
@@ -41,7 +42,7 @@ const ArticleTile = ({ article }) => {
                 </div>
             </div>
             </Link>
-        </div>
+        </div>)
     )
 }
 class Issue extends Component {
@@ -72,9 +73,7 @@ class Issue extends Component {
                         </p>
                     </div>, undefined, 0, 0)}
                     <div>
-                        {/* We extract the first one since we want it to show above the fold to suggest the user to scroll down. */}
-                        {fadeInUp(<ArticleTile article={articles.edges[0].node} />, 0, 0, 0)}
-                        {articles.edges.slice(1).map(({ node, i }) => fadeInUp(<ArticleTile article={node} key={i} />, `article-${i}`, 0, 0))}
+                        {articles.edges.map(({ node, i }) => <ArticleTile article={node} key={i} />)}
                     </div>
                 <SquiggleDivider />
                 <SubmitForm />
