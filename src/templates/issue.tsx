@@ -53,7 +53,7 @@ class Issue extends Component {
         var months:string[];
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         var date_formatted = months[Number(date[1])] + " " + date[2] + ", " + date[0]
-        var twitter_desc = this.props.pageContext.excerpt.slice(3, this.props.pageContext.excerpt.length-5).replace("<em>", "").replace("</em>")
+        var twitter_desc = this.props.pageContext.excerpt.slice(3, this.props.pageContext.excerpt.length-5).replace("<em>", "").replace("</em>", "")
 
       return (
             <>

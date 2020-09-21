@@ -31,7 +31,7 @@ const Post = (props: { data }) => {
   const subtitle = post?.article_fields?.articleSubtitle
   var author_list = post?.article_fields?.articleAuthors
   const designer = post?.article_fields?.designer
-  console.log(featuredImage_url)
+
   return (
     <>
       <Navbar />
