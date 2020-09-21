@@ -29,6 +29,7 @@ const Post = (props: { data }) => {
 
   const subtitle = post?.article_fields?.articleSubtitle
   var author_list = post?.article_fields?.articleAuthors
+  const designer = post?.article_fields?.designer
 
   return (
     <>
@@ -50,8 +51,14 @@ const Post = (props: { data }) => {
             {`${author_list}`.toLowerCase()}
             </div>
           }
+          <div className="post-tag-container">
+            {post.tags.nodes.map(tag_node => (
+              <a className="post-tag">{tag_node.name}</a>
+            ))}
+          </div>
         </div>
         {featuredImage && <img className="featured-img" src={featuredImage}></img>}
+        <p className="post-designer">Designed by {designer}</p>
         <div
           className="post-excerpt"
           dangerouslySetInnerHTML={{ __html: post.excerpt }}
@@ -79,6 +86,7 @@ export const postQuery = graphql`
       article_fields {
         articleSubtitle
         articleAuthors
+        designer
       }
       featuredImage {
         node {
@@ -96,6 +104,11 @@ export const postQuery = graphql`
           name
         }
       }
+    tags {
+      nodes {
+        name
+      }
+    }
     }
     site {
       siteMetadata {
