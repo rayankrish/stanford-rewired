@@ -21,6 +21,10 @@
   line-height: 1em;
 }
 
+.post-byline-outer {
+  margin-bottom: 32px;
+}
+
 .featured-img {
   margin: 0;
 }
@@ -39,9 +43,8 @@
 }
 
 .post-designer {
-  @extend .body;
+  @extend .sans-serif-caps;
   margin: 0px 0px 32px 0px;
-  text-transform: uppercase;
   text-align: right;
 }
 
@@ -60,11 +63,14 @@
   border-radius: 20px;
   align-items: flex-end;
   text-align: center;
-  padding-bottom: 0px;
+  padding-bottom: 0.2em;
   padding-left: 8px;
   padding-right: 8px;
   margin-right: 8px;
+  margin-top: -2px;
+  min-width: 48px;
   vertical-align: middle;
+  align-self: flex-start;
 }
 
 .post-img {

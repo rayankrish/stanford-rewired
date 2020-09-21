@@ -37,7 +37,7 @@ const Post = (props: { data }) => {
       <Layout useDarkSquiggles={true} squiggleTopOffset={1 / 2} squiggleCadence={1.7}>
         <h1 className="post-title">{post.title}</h1>
         {subtitle && <h2 className="post-subtitle">{subtitle}</h2>}
-        <div className="post-byline">
+        <div className="post-byline-outer">
           {category.toLowerCase() != "issue heading" &&
             <div className="post-byline">
             by {`${author_list}`.toLowerCase()} • in{" "}
