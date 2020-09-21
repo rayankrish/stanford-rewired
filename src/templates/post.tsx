@@ -29,6 +29,7 @@ const Post = (props: { data }) => {
 
   const subtitle = post?.article_fields?.articleSubtitle
   var author_list = post?.article_fields?.articleAuthors
+  const designer = post?.article_fields?.designer
 
   return (
     <>
@@ -52,6 +53,7 @@ const Post = (props: { data }) => {
           }
         </div>
         {featuredImage && <img className="featured-img" src={featuredImage}></img>}
+        <p className="post-designer">Designed by {designer}</p>
         <div
           className="post-excerpt"
           dangerouslySetInnerHTML={{ __html: post.excerpt }}
@@ -79,6 +81,7 @@ export const postQuery = graphql`
       article_fields {
         articleSubtitle
         articleAuthors
+        designer
       }
       featuredImage {
         node {
