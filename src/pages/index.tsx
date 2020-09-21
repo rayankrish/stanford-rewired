@@ -42,7 +42,7 @@ function Title() {
       }
     }
     var title_variation = Math.floor(Math.random()*2)
-
+    console.log(selected_article.allWpPost.edges[index].node.featuredImage.node.localFile.childImageSharp.fixed.src)
     return fadeInUp(
         <div>
           <div className="landing-image-container">
