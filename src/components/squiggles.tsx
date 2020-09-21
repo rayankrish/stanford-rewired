@@ -55,7 +55,7 @@ function useSquiggleSettings(offsetMultiplier=0.1, cadenceMultiplier=1 ) {
   React.useLayoutEffect(() => {
     const offset = window.innerHeight * offsetMultiplier
     const spaceBetween = cadenceMultiplier * window.innerHeight
-    const numSquiggles = Math.floor((document.body.clientHeight - offset) / spaceBetween)
+    const numSquiggles = window.innerWidth <= 850 ? 0 : Math.floor((document.body.clientHeight - offset) / spaceBetween)
 
     setSettings({ offset, spaceBetween, numSquiggles })
   }, [])
