@@ -15,30 +15,3 @@ export function fadeInUp(elem: JSX.Element, key=undefined, delay=0, offset=200):
     </ScrollAnimation>
   )
 }
-
-// This function does a best-attempt to ellipsis the text content with an element,
-// given a heuristic of how many characters of the expected font-style can fit into one line.
-// 
-// NOTE: THIS FUNCTION IS DESTRUCTIVE and will alter the element directly.
-export function ellipsis(el, charInOneLine=36, lineHeight=30) {
-  const charLines =  Math.floor(el.clientHeight / lineHeight)
-  const charCount = charInOneLine * charLines;
-  const originalText = el.innerHTML
-
-  if (el.innerHTML.length > charCount) {
-    el.innerHTML = el.innerHTML.trim().slice(0, charCount - 3).trim()
-  }
-
-  // Incremental cutting, if still overflowing.
-  while (el.scrollHeight > el.clientHeight + 4) {
-    el.innerHTML = el.innerHTML.slice(0, charCount - charInOneLine / 3).trim()
-  }
-
-  if (el.innerHTML.length != originalText.length && el.innerHTML.length) {
-    el.innerHTML += "..."
-  }
-}
-
-export function stripHTML(htmlString: string): string {
-  return htmlString.replace(/(&nbsp;|<([^>]+)>)/ig, "") 
-}

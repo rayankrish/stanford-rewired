@@ -11,7 +11,7 @@ import temp_issue_cover from '../images/temp_issue_cover.jpg'
 import "../styles/landingV2.scss"
 import { useLandingQuery } from "../hooks/landing_top_query"
 import { BoxX } from "../components/squiggles"
-import { ellipsis, fadeInUp, stripHTML } from "../components/util"
+import { fadeInUp } from "../components/util"
 
 const LandingPage = () => {
     return (
@@ -70,37 +70,6 @@ function Title() {
     )
 }
 
-// TODO: combine article tiles into one component that can take on various layouts
-// (See article tile in issue.tsx)
-export const ArticleTile = ({ node, img }) => {
-  const descriptionRef = React.createRef<HTMLDivElement>();
-
-  React.useEffect(() => {
-      if (descriptionRef?.current) {
-          ellipsis(descriptionRef.current, 48)
-      }
-  }, [descriptionRef?.current?.offsetHeight])
-
-  
-  return fadeInUp(
-    <div key={node.slug}>
-      <Link to={"/post/"+node.slug}>
-        <div className="landing-columns">
-            <div className="landing-col-a">
-                <img id="landing-article-thumbnail" src={img || node.featuredImage?.node.localFile.childImageSharp.fixed.src || temp_article_thumbnail} alt="article image" />
-            </div>
-            <div className="landing-col-b">
-                <h1 id="article-title">
-                    {node.title}
-                </h1>
-                {node.excerpt && <div className="landing-article-excerpt" ref={descriptionRef}>{stripHTML(node.excerpt)}</div>}
-            </div>
-        </div>
-      </Link>
-    </div>
-  )
-}
-
 function Articles() {
     const data = useStaticQuery(pageQuery); // graphql query, see below
      //                                dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
@@ -111,7 +80,22 @@ function Articles() {
                     <p id="float-right"><Link to="/all">See all &rarr;</Link></p>
                 </div>)}
               {data.allWpPost.edges.map(({ node, i }) => (
-                  <ArticleTile node={node} />
+                  fadeInUp(<div key={node.slug}>
+                    <Link to={"/post/"+node.slug}>
+                      <div className="landing-columns">
+                          <div className="landing-col-a">
+                              <img id="landing-article-thumbnail" src={node.featuredImage ? node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+                          </div>
+                          <div className="landing-col-b">
+                              <h1 id="article-title">
+                                  {node.title}
+                              </h1>
+                              <div className="landing-article-excerpt"
+                                    dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
+                          </div>
+                      </div>
+                    </Link>
+                  </div>, i)
               ))}
           </div>
     )
