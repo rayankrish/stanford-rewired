@@ -45,15 +45,6 @@
         @media screen and (min-width: 1200px) {
             transform: scale(1) translateX(-50%);
         }
-
-        @media screen and (max-width: $breakpoint) {
-            display: none;
-        }
-    }
-
-    // Don't show squiggles on mobile.
-    @media screen and (max-width: $breakpoint) {
-        display: none;
     }
 }
 
@@ -84,6 +75,9 @@
 .squiggle-divider {
     text-align: center;
     margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
