@@ -57,7 +57,7 @@ form {
   input[type=text] {
     background-color: $background;
     border: 2px solid $text;
-    margin-top: 12px;
+    margin-top: 0;
     color: $text;
     width: 100%;
     @include responsive-sizing(padding, $base/2);
@@ -74,6 +74,7 @@ form {
   a[type=warning] {
     color: $poppy-red;
     font-style: italic;
+    margin-bottom: 12px;
   }
 
   input[type=submit] {

@@ -20,7 +20,11 @@ export function fadeInUp(elem: JSX.Element, key=undefined, delay=0, offset=200):
 // given a heuristic of how many characters of the expected font-style can fit into one line.
 // 
 // NOTE: THIS FUNCTION IS DESTRUCTIVE and will alter the element directly.
-export function ellipsis(el, charInOneLine=36, lineHeight=30) {
+export function ellipsis(el, charInOneLine=46, lineHeight=30) {
+  if (typeof window !== 'undefined' && window.innerWidth < 850) { // We don't ellipsize on mobile
+    return
+  }
+
   const charLines =  Math.floor(el.clientHeight / lineHeight)
   const charCount = charInOneLine * charLines;
   const originalText = el.innerHTML
@@ -30,8 +34,8 @@ export function ellipsis(el, charInOneLine=36, lineHeight=30) {
   }
 
   // Incremental cutting, if still overflowing.
-  while (el.scrollHeight > el.clientHeight + 4) {
-    el.innerHTML = el.innerHTML.slice(0, charCount - charInOneLine / 3).trim()
+  while (el.scrollHeight > (el.clientHeight + 4)) {
+    el.innerHTML = el.innerHTML.slice(0, charCount - charInOneLine / 2).trim()
   }
 
   if (el.innerHTML.length != originalText.length && el.innerHTML.length) {

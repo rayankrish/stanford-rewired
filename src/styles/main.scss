@@ -10,7 +10,7 @@ body {
 .container {
   position: relative;
   /*margin: 120px auto 150px auto;*/
-  margin: 200px auto;
+  margin: 136px auto;
   width: 70%;
 
   @media screen and (min-width: $breakpoint) {
@@ -55,10 +55,6 @@ body {
   max-height: 2946px;
 }
 
-div {
-  @include responsive-sizing(margin-bottom, $base * 2);
-}
-
 .monospace {
   @extend .monospace-header;
 }
@@ -67,18 +63,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $serif;
 }
 
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+}
+
 h1 {
   @include responsive-sizing(font-size, $header);
-  @include responsive-sizing(margin-bottom, $base * 2/3);
 }
 
 h2 {
   @include responsive-sizing(font-size, $mono-header);
-  @include responsive-sizing(margin-bottom, $base/2);
-}
-
-p {
-  @include responsive-sizing(margin-bottom, $base * 1.5);
 }
 
 a {

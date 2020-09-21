@@ -51,7 +51,7 @@ class Issue extends Component {
         var date = this.props.pageContext.date.split("T")[0].split("-");
         var months:string[];
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        var date_formatted = months[Number(date[1])] + ", " + date[2] + " " + date[0]
+        var date_formatted = months[Number(date[1])] + " " + date[2] + ", " + date[0]
 
 	    return (
             <>
@@ -68,12 +68,12 @@ class Issue extends Component {
                         <p id="description">
                             <span dangerouslySetInnerHTML={{ __html: this.props.pageContext.excerpt }}></span>
                             <Link to={"/post/"+this.props.pageContext.title.toLowerCase()}>
-                                            Read the editor's note here &rarr;
+                                            Read the editor's note &rarr;
                             </Link>
                         </p>
                     </div>, undefined, 0, 0)}
                     <div>
-                        {articles.edges.map(({ node, i }) => <ArticleTile article={node} key={i} />)}
+                    <div className="issue-articles">{articles.edges.map(({ node, i }) => <ArticleTile article={node} key={i} />)}</div>
                     </div>
                 <SquiggleDivider />
                 <SubmitForm />
@@ -81,26 +81,6 @@ class Issue extends Component {
             </>
         )
     }
-}
-
-function Title(title: string, date: string, excerpt: string) {
-    return (
-        <div>
-            <img id="issue-image" src={temp_issue_cover} alt="issue cover image" />
-            <h1 id="issue-title">
-                {title}
-            </h1>
-            <h1 id="issue-subtitle">
-                Issue One &#9679; {date}
-            </h1>
-            <p id="description">
-                {excerpt}
-            </p>
-            <p id="description">
-                Read the editor's note here &rarr;
-            </p>
-        </div>
-    )
 }
 
 function Articles() {

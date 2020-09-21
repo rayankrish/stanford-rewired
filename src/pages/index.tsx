@@ -15,7 +15,7 @@ import { ellipsis, fadeInUp, stripHTML } from "../components/util"
 
 const LandingPage = () => {
     return (
-        <>
+        <div className="landing">
             <Navbar />
             <Layout squiggleTopOffset={1/3}>
                 <SEO title="Landing" />
@@ -24,7 +24,7 @@ const LandingPage = () => {
                 <div className="boxX-divider"><BoxX /></div>
                 <SubmitForm />
             </Layout>
-        </>
+        </div>
     )
 }
 
@@ -51,20 +51,19 @@ function Title() {
                 <img id="landing-image" src={selected_article.allWpPost.edges[index].node.featuredImage ? selected_article.allWpPost.edges[index].node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
               </Link>
             </div>
-            {title_variation == 0 &&
+            {/* {title_variation == 0 && */}
               <h1 id="landing-title">
                   Read about <Link to={selected_article_slug} style={{textDecoration: "underline"}}>{selected_article_name}</Link> in our {issue_name} issue
               </h1>
-            }
+            {/* }
             {title_variation == 1 &&
               <h1 id="landing-title">
                   <Link to={selected_article_slug} style={{textDecoration: "underline"}}>{selected_article_name}</Link> is a story in our {issue_name} issue
               </h1>
-            }
+            } */}
             <p id="landing-description">
                 Our latest issue, <i>{issue_name}</i>, is released on our website now,
-                and includes article such as "{other_articles[0]}," "{other_articles[1]}," and "{other_articles[2]}." &nbsp;
-                <Link to={"/issue/"+issue_name.toLowerCase()}>Read the issue here &rarr;</Link>
+                and includes article such as "{other_articles[0]}," "{other_articles[1]}," and "{other_articles[2]}." <Link to={"/issue/"+issue_name.toLowerCase()}>Read the issue &rarr;</Link>
             </p>
         </div>
     )
@@ -77,13 +76,12 @@ export const ArticleTile = ({ node, img }) => {
 
   React.useEffect(() => {
       if (descriptionRef?.current) {
-          ellipsis(descriptionRef.current, 48)
+          ellipsis(descriptionRef.current, 50)
       }
-  }, [descriptionRef?.current?.offsetHeight])
-
+  }, [descriptionRef?.current?.clientHeight])
 
   return fadeInUp(
-    <div key={node.slug}>
+    <div className="small-article-tile" key={node.slug}>
       <Link to={"/post/"+node.slug}>
         <div className="landing-columns">
             <div className="landing-col-a">
@@ -93,7 +91,7 @@ export const ArticleTile = ({ node, img }) => {
                 <h1 id="article-title">
                     {node.title}
                 </h1>
-                {node.excerpt && <div className="landing-article-excerpt" ref={descriptionRef}>{stripHTML(node.excerpt)}</div>}
+                {node.excerpt?.length > 0 && <div className="landing-article-excerpt" ref={descriptionRef}>{stripHTML(node.excerpt)}</div>}
             </div>
         </div>
       </Link>
@@ -106,12 +104,12 @@ function Articles() {
      //                                dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
     return (
           <div>
-               {fadeInUp(<div className="landing-columns">
+               {fadeInUp(<div className="landing-columns landing-recent-stories-header">
                     <h1 id="float-left">Recent Stories</h1>
                     <p id="float-right"><Link to="/all">See all &rarr;</Link></p>
                 </div>)}
               {data.allWpPost.edges.map(({ node, i }) => (
-                  <ArticleTile node={node} />
+                  <ArticleTile key={i} node={node} />
               ))}
           </div>
     )

@@ -36,7 +36,6 @@ const Articles = () => {
   const list = []
   var lastDate = ""
 
-  console.log(articles)
   for (var i = 0; i < articles.length; i++) {
     if (articles[i]?.node?.date.substring(0, 7) !== lastDate) {
       lastDate = (articles[i]?.node?.date || lastDate).substring(0, 7)

@@ -3,10 +3,18 @@
 
 .all-header {
   @extend .serif-header;
+  margin-bottom: 32px;
 }
 
 .all-datestring {
   @extend .sans-serif-caps;
+  text-align: left;
+  margin-bottom: 32px;
+  margin-top: 60px;
+
+  &:first-child {
+    margin-top: 32px;
+  }
 }
 
 .all-articlebox {

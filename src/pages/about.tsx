@@ -3,10 +3,8 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import { fadeInUp } from "../components/util";
 
-import About from "../components/about"
 import Team from "../components/team"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 import "../styles/about.scss"
@@ -32,7 +30,7 @@ const AboutPage = () => {
 
 function Description() {
   return (
-    <div>
+    <div className="about-section">
       {fadeInUp(<h1>About</h1>, undefined, 0, 0)}
       {fadeInUp(
         <p>
@@ -69,7 +67,7 @@ function Description() {
 
 function GetInvolved() {
   return (
-    <div>
+    <div className="about-section">
       {fadeInUp(<h1>Get Involved</h1>)}
       <div className="columns">
         {fadeInUp(
@@ -113,7 +111,7 @@ function GetInvolved() {
 
 function Sponsors() {
   return (
-    <div>
+    <div className="about-section">
       {fadeInUp(<h1>Our Sponsors</h1>)}
       {fadeInUp(
         <p>
@@ -148,8 +146,7 @@ function Sponsors() {
       </div>
       {fadeInUp(
         <p>
-        If you’re interested in becoming a sponsor, send us an email at &nbsp;
-        <a href="mailto:business@stanfordrewired.com">business@stanfordrewired.com</a>.
+        If you’re interested in becoming a sponsor, send us an email at <a href="mailto:business@stanfordrewired.com">business@stanfordrewired.com</a>.
         </p>
       )}
     </div>
@@ -186,9 +183,9 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
   render() {
     if (!this.state.isSubmitted) {
       return fadeInUp(
-        <div>
+        <div className="about-section">
           <h1>Keep In Touch</h1>
-          <p>You can reach us by email at &nbsp;
+          <p className="about-email">You can reach us by email at &nbsp;
             <a href="mailto:hello@stanfordrewired.com">hello@stanfordrewired.com</a>.</p>
           <p>
             Sign up to receive updates about upcoming issues and submission
@@ -208,7 +205,7 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
       )
     } else {
       return fadeInUp(
-        <div>
+        <div className="about-section">
           <h1>&#10004; Thanks for signing up</h1>
           <p>
             We’re excited for news about our publication to hit your inbox soon.
