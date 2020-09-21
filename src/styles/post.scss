@@ -1,0 +1,79 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.post-title {
+  @extend .serif-header;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.post-subtitle {
+  @extend .serif-header-2;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.post-byline {
+  @extend .sans-serif-caps;
+  padding-bottom: 0px;
+  margin-bottom: 24px;
+  text-align: center;
+  line-height: 1em;
+}
+
+.featured-img {
+  margin: 32px 0;
+}
+
+.post-category {
+  text-decoration: underline;
+}
+
+.post-body {
+  @extend .body;
+  margin-top: 60px;
+
+  & p {
+    margin-bottom: 1.4em;
+  }
+}
+
+.post-designer {
+  @extend .body;
+  margin: 0px 0px 1.45rem 0px;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.post-tag-container {
+  display: flex;
+  padding-top: 8px;
+  justify-content: center;
+}
+
+.post-tag {
+  @extend .sans-serif-label;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $text;
+  border-radius: 20px;
+  align-items: flex-end;
+  text-align: center;
+  padding-bottom: 0px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.post-img {
+  margin: 0px;
+}
+
+.post-excerpt {
+  @extend .body;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 60px;
+}

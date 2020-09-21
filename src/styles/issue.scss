@@ -1,0 +1,164 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+#issue-title {
+  @extend .serif-header;
+  text-align: left;
+  margin-bottom: 4px;
+
+  @media screen and (min-width: $breakpoint) {
+    text-align: center;
+  }
+}
+
+#issue-subtitle {
+  @extend .sans-serif-caps;
+  margin: 0;
+  text-align: left;
+
+  @media screen and (min-width: $breakpoint) {
+    text-align: center;
+  }
+}
+
+#description {
+  @extend .body;
+  padding: 24px 0 48px;
+  text-align: left;
+
+  @media screen and (min-width: $breakpoint) {
+    text-align: center;
+  }
+}
+
+.issue-articles {
+  margin-top: 60px;
+}
+
+.issue-article-tile {
+  margin-bottom: 60px;
+
+  .col-a {
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: $breakpoint) {
+    margin-bottom: 72px;
+
+    .col-a {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#article-title {
+  @extend .serif-header-2;
+  margin-bottom: 12px;
+
+  @media screen and (min-width: $breakpoint) {
+    margin-bottom: 0px;
+    margin-bottom: 8px;
+  }
+}
+
+#article-description {
+  @extend .body;
+  margin-bottom: 0;
+  padding: 0;
+  flex-shrink: 1;
+  flex-grow: 1;
+  min-height: 0;
+}
+
+.article-tags {
+  margin-bottom: 8px;
+
+  @media screen and (max-width: $breakpoint) {
+    margin-bottom: 12px;
+  }
+}
+
+#tag {
+  @extend .sans-serif-label;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $text;
+  border-radius: 20px;
+  align-items: flex-end;
+  text-align: center;
+  padding-bottom: 0.2em;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+  margin-top: -2px;
+  min-width: 48px;
+  vertical-align: middle;
+  align-self: flex-start;
+
+  @media screen and (min-width: $breakpoint) {
+    margin-bottom: 0px;
+  }
+}
+
+#issue-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px;
+}
+
+#article-thumbnail {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.columns {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin-bottom: $base/2;
+
+  @media screen and (min-width: $breakpoint) {
+    flex-flow: row nowrap;
+  }
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col-a {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 0;
+
+  @media screen and (min-width: $breakpoint) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.col-b {
+  width: 100%;
+  margin-bottom: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $breakpoint) {
+    width: 400px;
+    height: 200px;
+    padding-left: 32px;
+  }
+}
+
+p a {
+  text-decoration: underline;
+}

@@ -9,7 +9,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // query content for WordPress posts
   const result = await graphql(`
     query {
-      allWordpressPost {
+      allWpPost {
         edges {
           node {
             id
@@ -20,11 +20,38 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  const postTemplate = path.resolve(`./src/templates/post.js`)
-  result.data.allWordpressPost.edges.forEach(edge => {
+  // hard coded the "Issue Heading" as category applied for Issue Pages
+  const issue_result = await graphql(`
+    query {
+      allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Issue Heading"}}}}}) {
+        edges {
+          node {
+            id
+            slug
+            title
+            excerpt
+            date
+            featuredImage {
+              node {
+                localFile {
+                  childImageSharp {
+                    fixed {
+                      src
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  const postTemplate = path.resolve(`./src/templates/post.tsx`)
+  result.data.allWpPost.edges.forEach(edge => {
     createPage({
       // will be the url for the page
-      path: edge.node.slug,
+      path: `/post/${edge.node.slug}`,
       // specify the component template of your choice
       component: slash(postTemplate),
       // In the ^template's GraphQL query, 'id' will be available
@@ -32,6 +59,21 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         id: edge.node.id,
       },
+    })
+  })
+
+  const issueTemplate = path.resolve(`./src/templates/issue.tsx`)
+  issue_result.data.allWpPost.edges.forEach(edge => {
+    createPage({
+      path: `/issue/${edge.node.slug}`,
+      component: slash(issueTemplate),
+      context: {
+        id: edge.node.id,
+        title: edge.node.title,
+        excerpt: edge.node.excerpt,
+        date: edge.node.date,
+        featuredImage: edge.node.featuredImage
+      }
     })
   })
 }

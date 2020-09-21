@@ -6,11 +6,21 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `limelight`,
+          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
+    {
       resolve: `gatsby-plugin-gtag`,
       options: {
-	trackingId: `UA-171298201-1`, // should this be on the repo?
-	head: false,
-	anonymize: true,
+        trackingId: `UA-171298201-1`, // should this be on the repo?
+        head: false,
+        anonymize: true,
       },
     },
     {
@@ -60,6 +70,12 @@ module.exports = {
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
         useACF: false,
+      },
+    },
+    {
+      resolve: `gatsby-source-wordpress-experimental`,
+      options: {
+        url: `http://52.12.8.45/graphql`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

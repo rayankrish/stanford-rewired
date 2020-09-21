@@ -1,0 +1,46 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.all-header {
+  @extend .serif-header;
+  margin-bottom: 32px;
+}
+
+.all-datestring {
+  @extend .sans-serif-caps;
+  text-align: left;
+  margin-bottom: 32px;
+  margin-top: 60px;
+
+  &:first-child {
+    margin-top: 32px;
+  }
+}
+
+.all-articlebox {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  height: 96px;
+
+  position: static;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    margin-right: 32px;
+  }
+}
+
+.all-articlebox-title {
+  @extend .serif-header-2;
+  margin-bottom: 4px;
+}
+
+.all-articlebox-excerpt {
+  @extend .body;
+  text-overflow: ellipsis;
+}

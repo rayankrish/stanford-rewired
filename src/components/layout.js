@@ -11,8 +11,9 @@ import PropTypes from "prop-types"
 
 import "./layout.css"
 import "../styles/main.scss"
+import Squiggles from "./squiggles"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, noSquiggles, useDarkSquiggles, squiggleTopOffset, squiggleCadence }) => {
   /*const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -22,9 +23,13 @@ const Layout = ({ children }) => {
       }
     }
   `)*/
-
   return (
     <div className="container">
+      { !noSquiggles && <Squiggles
+        dark={useDarkSquiggles}
+        offsetMultiplier={squiggleTopOffset}
+        cadenceMultiplier={squiggleCadence}
+      />}
       <main>{children}</main>
     </div>
   )

@@ -1,0 +1,82 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem 1rem 1rem;
+  justify-content: space-between;
+  margin-bottom: 0px;
+  z-index: 100;
+  background: $background;
+
+  @media screen and (min-width: $breakpoint) {
+    padding: 2rem 6rem 1rem;
+  }
+
+  & * {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  margin-bottom: 0;
+
+  &:hover {
+    #navbar-brand-rewired {
+      color: $poppy-red;
+    }
+  }
+}
+
+#navbar-brand-stanford {
+  @extend .serif-header-2;
+  margin: 0px 0px;
+}
+
+#navbar-brand-rewired {
+  position: static;
+  left: 0px;
+  top: 24px;
+
+  font-family: $expanded;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  flex: none;
+  order: 1;
+  align-self: flex-start;
+  margin: 0px 0px;
+}
+
+.navbar-element-wrap {
+  display: flex;
+  margin-top: 16px;
+
+  @media screen and (min-width: $breakpoint) {
+    margin-top: 0px;
+  }
+}
+
+.navbar-elements {
+  float: right;
+  align-self: flex-end;
+}
+
+.navbar-link {
+  @extend .sans-serif-caps;
+  font-variant: small-caps;
+  margin-right: 2rem;
+
+  &.active {
+    font-weight: 600;
+  }
+}

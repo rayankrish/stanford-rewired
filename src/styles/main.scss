@@ -2,50 +2,85 @@
 @use 'mixins' as *;
 
 body {
-  background-color: $background;
-  color: $text;
-  font-family: $sans;
   @include responsive-sizing(font-size, $base);
-  line-height: $lh;
+  @extend .body;
+  background-color: $background;
 }
 
 .container {
   position: relative;
-  margin: 120px auto 150px auto;
+  /*margin: 120px auto 150px auto;*/
+  margin: 136px auto;
   width: 70%;
 
   @media screen and (min-width: $breakpoint) {
-    margin: 178px auto;
+    margin: 156px auto;
+    /* was 156px auto */
     width: 600px;
   }
 
   @media screen and (min-width: 1200px) {
-    margin: 156px auto;
+    margin-left: 156px auto;
+    margin-right: 156px auto;
+    margin-top: 0px;
+    top: 164px;
+    /* was 156px auto */
   }
 
 }
 
-div {
-  @include responsive-sizing(margin-bottom, $base*2);
+.page-wrapper {
+  display: flex;
+}
+
+.side-col {
+  @media screen and (max-width: $breakpoint) {
+    display: none;
+  }
+  text-align: center;
+  flex: 1;
+}
+
+.right-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-squiggle {
+  margin-top: 850px;
+}
+
+.right-squiggle-pad {
+  flex: 1;
+  max-height: 2946px;
+}
+
+.monospace {
+  @extend .monospace-header;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
 }
 
 h1 {
-  font-family: $serif;
   @include responsive-sizing(font-size, $header);
-  @include responsive-sizing(margin-bottom, $base*2/3);
 }
 
 h2 {
-  font-family: $monospace;
   @include responsive-sizing(font-size, $mono-header);
-  @include responsive-sizing(margin-bottom, $base/2);
-}
-
-p {
-  @include responsive-sizing(margin-bottom, $base*1.5);
 }
 
 a {
   color: $text;
   text-decoration: none;
+
+  // Personally conflicted about this lol - Emily
+  // &:hover {
+  //   color: $poppy-red;
+  // }
 }

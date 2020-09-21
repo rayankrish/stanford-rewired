@@ -11,6 +11,7 @@
 
   @media screen and (min-width: $breakpoint) {
     font-size: $base*3;
+    margin-top: 156px;
 
     span {
       font-size: $base*6;
@@ -56,7 +57,7 @@ form {
   input[type=text] {
     background-color: $background;
     border: 2px solid $text;
-    margin-top: 12px;
+    margin-top: 0;
     color: $text;
     width: 100%;
     @include responsive-sizing(padding, $base/2);
@@ -73,6 +74,7 @@ form {
   a[type=warning] {
     color: $poppy-red;
     font-style: italic;
+    margin-bottom: 12px;
   }
 
   input[type=submit] {
@@ -98,7 +100,7 @@ form {
   }
 }
 
-#graphics {
+#landing-graphics {
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -131,56 +133,56 @@ form {
 }
 
 #dots1 {
-  @include landing-graphics(left, -200px, -170px, -270px);
-  @include landing-graphics(top, -150px, -195px, -204px);
+  @include graphics(left, -200px, -170px, -270px);
+  @include graphics(top, -150px, -195px, -204px);
 }
 
 #squiggles1 {
-  @include landing-graphics(left, -110px, -138px, -17.5vw);
-  @include landing-graphics(top, -140px, -146px, -115px);
+  @include graphics(left, -110px, -138px, -17.5vw);
+  @include graphics(top, -140px, -146px, -115px);
 
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
 }
 
 #dots2 {
-  @include landing-graphics(right, -50px, -80px, -15vw);
-  @include landing-graphics(top, -100px, -120px, -50px);
+  @include graphics(right, -50px, -80px, -15vw);
+  @include graphics(top, -100px, -120px, -50px);
 }
 
 #dots3 {
-  @include landing-graphics(left, -77px, -110px, -142px);
-  @include landing-graphics(top, 300px, 534px, 112px);
+  @include graphics(left, -77px, -110px, -142px);
+  @include graphics(top, 300px, 534px, 112px);
 }
 
 #squiggles2 {
-  @include landing-graphics(left, -110px, -138px, -17.5vw);
-  @include landing-graphics(top, 35px, 105px, 224px);
+  @include graphics(left, -110px, -138px, -17.5vw);
+  @include graphics(top, 35px, 105px, 224px);
 
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
 }
 
 #squiggles3 {
-  @include landing-graphics(right, -76px, -124px, -20vw);
-  @include landing-graphics(bottom, -70px, 200px, 520px);
+  @include graphics(right, -76px, -124px, -20vw);
+  @include graphics(bottom, -70px, 200px, 520px);
   stroke-dasharray: 1300;
   stroke-dashoffset: 1300;
 }
 
 #dots4 {
-  @include landing-graphics(right, -20px, -30px, -10vw);
-  @include landing-graphics(bottom, -150px, -30px, 147px);
+  @include graphics(right, -20px, -30px, -10vw);
+  @include graphics(bottom, -150px, -30px, 147px);
 }
 
 #dots5 {
-  @include landing-graphics(right, -70px, -117px, -20vw);
-  @include landing-graphics(bottom, 7px, 161px, 372px);
+  @include graphics(right, -70px, -117px, -20vw);
+  @include graphics(bottom, 7px, 161px, 372px);
 }
 
 #squiggles4 {
-  @include landing-graphics(right, -124px, -150px, -20vw);
-  @include landing-graphics(bottom, -220px, -162px, -46px);
+  @include graphics(right, -124px, -150px, -20vw);
+  @include graphics(bottom, -220px, -162px, -46px);
   stroke-dasharray: 1820;
   stroke-dashoffset: 1820;
 }
@@ -210,7 +212,7 @@ form {
   animation: dash 1.4s linear forwards;
 }
 
-// react-animate-on-scroll adds an extra div around 
+// react-animate-on-scroll adds an extra div around
 // elements, this removes the extra styling from that.
 .animated {
   margin: 0;

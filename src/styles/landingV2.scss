@@ -1,0 +1,198 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.landing {
+  @media screen and (max-width: $breakpoint) {
+    position: relative;
+    top: 48px;
+  }
+}
+
+#landing-title {
+  @extend .serif-header;
+  text-align: left;
+  margin-bottom: 12px;
+
+  @media screen and (min-width: $breakpoint) {
+    padding-top: 0px;
+  }
+
+  & a:hover {
+    color: $poppy-red;
+  }
+}
+
+#landing-description {
+  @extend .body;
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+#article-title {
+  @extend .serif-header-2;
+  margin-top: -8px; /* Visual alignment */
+
+  @media screen and (max-width: $breakpoint) {
+    margin-left: -1px;
+  }
+}
+
+.landing-article-excerpt {
+  @extend .body;
+  flex-shrink: 1;
+  flex-grow: 1;
+  min-height: 0;
+  margin-bottom: 0;
+}
+
+.landing-recent-stories-header {
+  margin-bottom: 32px;
+  
+  @media screen and (max-width: $breakpoint) {
+    #float-left {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+#tag {
+  @extend .sans-serif-label;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $text;
+  border-radius: 20px;
+  align-items: flex-end;
+  text-align: center;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
+}
+
+.landing-image-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin-bottom: 24px;
+
+}
+
+.landing-image-decoration {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+  z-index: 3;
+  stroke: $poppy-red;
+
+  * {
+    animation-duration: 20s !important;
+    animation-direction: reverse !important;
+  }
+}
+
+#landing-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+}
+
+.landing-article-tile {
+  margin-bottom: 24px;
+}
+
+#landing-article-thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.landing-columns {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  @media screen and (min-width: $breakpoint) {
+    flex-flow: row nowrap;
+  }
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.landing-col-a {
+  width: 100px;
+  height:100px;
+  margin-bottom: 0;
+
+  @media screen and (min-width: $breakpoint) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.landing-col-b {
+  width: 100%;
+  margin-bottom: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $breakpoint) {
+    width: 500px;
+    height: 100px;
+    padding-left: 32px;
+  }
+}
+
+#left-float {
+  width: 50%;
+  float: left;
+}
+
+#right-float {
+  width: 50%;
+  float: right;
+}
+
+.landing-form {
+  padding-bottom: 48px;
+
+  & > p {
+    margin-bottom: 24px;
+  }
+}
+
+#first-info-text {
+  padding-top: 60px;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+.boxX-divider {
+  stroke: $poppy-red;
+  margin-top: 60px;
+  margin-bottom: 0;
+}
+
+.small-article-tile {
+  margin-bottom: 32px;
+
+  @media screen and (max-width: $breakpoint) {
+    margin-bottom: 60px;
+
+    .landing-col-a, .col-a {
+      margin-bottom: 32px;
+    }
+  }
+}
