@@ -1,6 +1,13 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+.landing {
+  @media screen and (max-width: $breakpoint) {
+    position: relative;
+    top: 48px;
+  }
+}
+
 #landing-title {
   @extend .serif-header;
   text-align: left;
@@ -24,6 +31,10 @@
 #article-title {
   @extend .serif-header-2;
   margin-top: -8px; /* Visual alignment */
+
+  @media screen and (max-width: $breakpoint) {
+    margin-left: -1px;
+  }
 }
 
 .landing-article-excerpt {
@@ -36,6 +47,12 @@
 
 .landing-recent-stories-header {
   margin-bottom: 32px;
+  
+  @media screen and (max-width: $breakpoint) {
+    #float-left {
+      margin-bottom: 8px;
+    }
+  }
 }
 
 #tag {
@@ -58,6 +75,7 @@
   height: 300px;
   position: relative;
   margin-bottom: 24px;
+
 }
 
 .landing-image-decoration {
@@ -169,4 +187,8 @@ p a {
 
 .small-article-tile {
   margin-bottom: 32px;
+
+  @media screen and (max-width: $breakpoint) {
+    margin-bottom: 60px;
+  }
 }

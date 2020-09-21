@@ -21,6 +21,10 @@ export function fadeInUp(elem: JSX.Element, key=undefined, delay=0, offset=200):
 // 
 // NOTE: THIS FUNCTION IS DESTRUCTIVE and will alter the element directly.
 export function ellipsis(el, charInOneLine=46, lineHeight=30) {
+  if (typeof window !== 'undefined' && window.innerWidth < 850) { // We don't ellipsize on mobile
+    return
+  }
+
   const charLines =  Math.floor(el.clientHeight / lineHeight)
   const charCount = charInOneLine * charLines;
   const originalText = el.innerHTML

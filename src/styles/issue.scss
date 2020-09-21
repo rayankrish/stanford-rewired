@@ -36,21 +36,28 @@
 }
 
 .issue-article-tile {
-  margin-bottom: 0px;
+  margin-bottom: 60px;
+
+  .col-a {
+    margin-bottom: 32px;
+  }
 
   @media screen and (min-width: $breakpoint) {
     margin-bottom: 72px;
+
+    .col-a {
+      margin-bottom: 0;
+    }
   }
 }
 
 #article-title {
   @extend .serif-header-2;
-  margin-top: 24px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 
   @media screen and (min-width: $breakpoint) {
-    margin-top: 0px;
     margin-bottom: 0px;
+    margin-bottom: 8px;
   }
 }
 
@@ -65,6 +72,10 @@
 
 .article-tags {
   margin-bottom: 8px;
+
+  @media screen and (max-width: $breakpoint) {
+    margin-bottom: 12px;
+  }
 }
 
 #tag {
@@ -83,7 +94,6 @@
   margin-top: -2px;
   min-width: 48px;
   vertical-align: middle;
-  margin-bottom: 10px;
   align-self: flex-start;
 
   @media screen and (min-width: $breakpoint) {

@@ -15,7 +15,7 @@ import { ellipsis, fadeInUp, stripHTML } from "../components/util"
 
 const LandingPage = () => {
     return (
-        <>
+        <div className="landing">
             <Navbar />
             <Layout squiggleTopOffset={1/3}>
                 <SEO title="Landing" />
@@ -24,7 +24,7 @@ const LandingPage = () => {
                 <div className="boxX-divider"><BoxX /></div>
                 <SubmitForm />
             </Layout>
-        </>
+        </div>
     )
 }
 
