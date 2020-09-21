@@ -53,7 +53,7 @@ function Title() {
             </div>
             {/* {title_variation == 0 && */}
               <h1 id="landing-title">
-                  Read about <Link to={selected_article_slug} style={{textDecoration: "underline"}}>{selected_article_name}</Link> in our {issue_name} issue
+                  Read <Link to={selected_article_slug} style={{textDecoration: "underline"}}>{selected_article_name}</Link> in our {issue_name} issue
               </h1>
             {/* }
             {title_variation == 1 &&
@@ -62,8 +62,8 @@ function Title() {
               </h1>
             } */}
             <p id="landing-description">
-                Our latest issue, <i>{issue_name}</i>, is released on our website now,
-                and includes article such as "{other_articles[0]}," "{other_articles[1]}," and "{other_articles[2]}." <Link to={"/issue/"+issue_name.toLowerCase()}>Read the issue &rarr;</Link>
+                Our latest issue, <i>{issue_name}</i>,
+                includes article such as "{other_articles[0]}," "{other_articles[1]}," and "{other_articles[2]}." <Link to={"/issue/"+issue_name.toLowerCase()}>Read the issue &rarr;</Link>
             </p>
         </div>
     )
