@@ -60,7 +60,7 @@ class Issue extends Component {
                 <SEO title={this.props.pageContext.title} />
                 <TwitterMetas title={this.props.pageContext.title}
                   description={this.props.pageContext.excerpt.slice(3, this.props.pageContext.excerpt.length-5)}
-                  description={this.props.pageContext.featuredImage.node.localFile.childImageSharp.fixed.src} />
+                  description={this.props.pageContext.featuredImage.node.localFile.url} />
                 <Layout useDarkSquiggles={true} squiggleTopOffset={1} squiggleCadence={1.5}>
                     {fadeInUp(<div>
                         <img id="issue-image" src={this.props.pageContext.featuredImage ? this.props.pageContext.featuredImage.node.localFile.childImageSharp.fixed.src : temp_issue_cover} alt="issue cover image" />
@@ -161,6 +161,7 @@ export const issueQuery = graphql`
                                     src
                                 }
                             }
+                            url
                         }
                     }
                 }

@@ -26,16 +26,17 @@ const Post = (props: { data }) => {
     ? props.data.wpPost?.categories?.nodes[0].name
     : "uncategorized"
   const featuredImage = post?.featuredImage?.node?.localFile.childImageSharp.fixed.src
+  const featuredImage_url = post?.featuredImage?.node?.localFile.url
 
   const subtitle = post?.article_fields?.articleSubtitle
   var author_list = post?.article_fields?.articleAuthors
   const designer = post?.article_fields?.designer
-
+  console.log(featuredImage_url)
   return (
     <>
       <Navbar />
       <SEO title={post.title} />
-      <TwitterMetas title={post.title} description={post.excerpt.slice(3, post.excerpt.length-5)} image={featuredImage}/>
+      <TwitterMetas title={post.title} description={post.excerpt.slice(3, post.excerpt.length-5)} image={featuredImage_url}/>
       <Layout useDarkSquiggles={true} squiggleTopOffset={1 / 2} squiggleCadence={1.7}>
         <h1 className="post-title">{post.title}</h1>
         {subtitle && <h2 className="post-subtitle">{subtitle}</h2>}
@@ -110,6 +111,7 @@ export const postQuery = graphql`
                 src
               }
             }
+            url
           }
         }
       }

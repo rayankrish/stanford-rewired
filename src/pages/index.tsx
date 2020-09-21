@@ -34,7 +34,7 @@ const TwitterMetas = () => {
       <meta name="twitter:site" content="@stanfordrewired" />
       <meta name="twitter:title" content="Stanford Rewired" />
       <meta name="twitter:description" content="Rewired is a digital magazine where technology and society meet. We're committed to curating stories that amplify diverse perspectives and bridge disciplines." />
-      <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
+      <meta name="twitter:image" content="http://52.12.8.45/wp-content/uploads/2020/09/Facebook-Profile-Pic.png" />
     </div>
   )
 }
