@@ -190,5 +190,9 @@ p a {
 
   @media screen and (max-width: $breakpoint) {
     margin-bottom: 60px;
+
+    .landing-col-a, .col-a {
+      margin-bottom: 32px;
+    }
   }
 }
