@@ -50,7 +50,7 @@ class Issue extends Component {
         const articles = this.props.data.allWpPost
         var date = this.props.pageContext.date.split("T")[0].split("-");
         var months:string[];
-        months = ["none", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         var date_formatted = months[Number(date[1])] + ", " + date[2] + " " + date[0]
 
 	    return (
