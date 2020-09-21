@@ -59,7 +59,7 @@ class Issue extends Component {
                 <Navbar />
                 <SEO title={this.props.pageContext.title} />
                 <TwitterMetas title={this.props.pageContext.title}
-                  description={this.props.pageContext.excerpt.slice(3, post.excerpt.length-5)}
+                  description={this.props.pageContext.excerpt.slice(3, this.props.pageContext.excerpt.length-5)}
                   description={this.props.pageContext.featuredImage.node.localFile.childImageSharp.fixed.src} />
                 <Layout useDarkSquiggles={true} squiggleTopOffset={1} squiggleCadence={1.5}>
                     {fadeInUp(<div>
