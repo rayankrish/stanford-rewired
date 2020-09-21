@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 import Navbar from "../components/navbar"
 import SubmitForm from "../components/submitform"
 import { SquiggleDivider } from "../components/squiggles";
+import SEO from "../components/seo"
 import { ellipsis, fadeInUp, stripHTML } from "../components/util";
 
 import temp_article_thumbnail from '../images/temp_article_thumbnail.png'
@@ -56,6 +57,7 @@ class Issue extends Component {
 	    return (
             <>
                 <Navbar />
+                <SEO title={this.props.pageContext.title} />
                 <Layout useDarkSquiggles={true} squiggleTopOffset={1} squiggleCadence={1.5}>
                     {fadeInUp(<div>
                         <img id="issue-image" src={this.props.pageContext.featuredImage ? this.props.pageContext.featuredImage.node.localFile.childImageSharp.fixed.src : temp_issue_cover} alt="issue cover image" />

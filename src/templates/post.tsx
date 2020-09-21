@@ -4,13 +4,13 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Navbar from "../components/navbar"
 import SubmitForm from "../components/submitform"
+import SEO from "../components/seo"
 import { SquiggleDivider, XDivider } from "../components/squiggles"
 
 import "../styles/post.scss"
 
 // VERY BASIC WP POST example
 // TODO: make it better in every way
-// TODO: include SEO
 
 const Post = (props: { data }) => {
   const post = props.data.wpPost
@@ -34,6 +34,7 @@ const Post = (props: { data }) => {
   return (
     <>
       <Navbar />
+      <SEO title={post.title} />
       <Layout useDarkSquiggles={true} squiggleTopOffset={1 / 2} squiggleCadence={1.7}>
         <h1 className="post-title">{post.title}</h1>
         {subtitle && <h2 className="post-subtitle">{subtitle}</h2>}
