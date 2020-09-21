@@ -17,7 +17,7 @@ const LandingPage = () => {
     return (
         <>
             <Navbar />
-            <Layout squiggleTopOffset={1/3}> 
+            <Layout squiggleTopOffset={1/3}>
                 <SEO title="Landing" />
                 <Title />
                 <Articles />
@@ -81,7 +81,7 @@ export const ArticleTile = ({ node, img }) => {
       }
   }, [descriptionRef?.current?.offsetHeight])
 
-  
+
   return fadeInUp(
     <div key={node.slug}>
       <Link to={"/post/"+node.slug}>

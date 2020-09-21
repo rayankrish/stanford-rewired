@@ -40,6 +40,8 @@ export default class SubmitForm extends React.Component<
     if (!this.state.isSubmitted) {
       return fadeInUp(
         <div className="submitform-body">
+          <p className="footer-links"><Link to="/" style={{textDecoration: "none"}}>HOME</Link> &emsp;
+            <Link to="/about/" style={{textDecoration: "none"}}>ABOUT</Link></p>
           <div>
             Rewired is a digital magazine where technology and society
             meet. We’re committed to curating stories that amplify diverse

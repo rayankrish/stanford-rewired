@@ -116,14 +116,16 @@
 .landing-col-b {
   width: 100%;
   margin-bottom: 0;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 0px;
+  padding-right: 0px;
   display: flex;
   flex-direction: column;
 
   @media screen and (min-width: $breakpoint) {
     width: 500px;
     height: 100px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 

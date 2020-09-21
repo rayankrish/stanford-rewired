@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .submitform-body {
   font-family: Inconsolata;
   font-style: normal;
@@ -5,7 +7,7 @@
   font-size: 28px;
   line-height: 140%;
   /* or 45px */
-  margin-top: 36px;
+  margin-top: 0px;
   text-align: center;
 
   /* Black */
@@ -16,4 +18,11 @@
 .submitform-button {
   margin: 0 auto;
   margin-top: 36px;
+}
+
+.footer-links {
+  @extend .sans-serif-caps;
+  padding-bottom: 0px;
+  margin-bottom: 30px;
+  text-align: center;
 }
