@@ -1,18 +1,17 @@
 @use 'variables' as *;
 
 .submitform-body {
-  font-family: Inconsolata;
-  font-style: normal;
+  @extend .monospace-header;
   font-weight: bold;
   font-size: 28px;
-  line-height: 140%;
-  /* or 45px */
-  margin-top: 0px;
+  margin-top: 36px;
   text-align: center;
 
   /* Black */
 
-  color: #434343;
+  & > div {
+    margin-bottom: 32px;
+  }
 }
 
 .submitform-button {

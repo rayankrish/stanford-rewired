@@ -106,7 +106,7 @@ function Articles() {
      //                                dangerouslySetInnerHTML={{ __html: node.excerpt }}></div>
     return (
           <div>
-               {fadeInUp(<div className="landing-columns">
+               {fadeInUp(<div className="landing-columns landing-recent-stories-header">
                     <h1 id="float-left">Recent Stories</h1>
                     <p id="float-right"><Link to="/all">See all &rarr;</Link></p>
                 </div>)}

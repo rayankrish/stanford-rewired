@@ -4,17 +4,19 @@
 .post-title {
   @extend .serif-header;
   text-align: center;
+  margin-bottom: 24px;
 }
 
 .post-subtitle {
   @extend .serif-header-2;
   text-align: center;
+  margin-bottom: 24px;
 }
 
 .post-byline {
   @extend .sans-serif-caps;
   padding-bottom: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 24px;
   text-align: center;
 }
 
@@ -28,6 +30,10 @@
 
 .post-body {
   @extend .body;
+
+  & p {
+    margin-bottom: 2em;
+  }
 }
 
 .post-designer {
@@ -39,7 +45,7 @@
 
 .post-tag-container {
   display: flex;
-  padding-top: 10px;
+  padding-top: 8px;
   justify-content: center;
 }
 
@@ -53,9 +59,9 @@
   align-items: flex-end;
   text-align: center;
   padding-bottom: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
   vertical-align: middle;
 }
 

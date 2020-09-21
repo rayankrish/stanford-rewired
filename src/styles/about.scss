@@ -1,6 +1,10 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+.about-section {
+  margin-bottom: 72px;
+}
+
 #team {
   display: flex;
   flex-flow: row wrap;
@@ -105,92 +109,4 @@ form {
       padding: $base $base*3;
     }
   }
-}
-
-#about-graphics {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  .svgContainer {
-    position: absolute;
-    transform: scale(.4);
-
-    line, path {
-      stroke: $poppy-red;
-    }
-
-    line {
-      stroke-width: 3;
-    }
-
-    path {
-      stroke-width: 6;
-      stroke-linecap: round;
-    }
-
-    @media screen and (min-width: $breakpoint) {
-      transform: scale(.7);
-    }
-
-    @media screen and (min-width: 1200px) {
-      transform: scale(1);
-    }
-  }
-}
-
-#group1 {
-  @include graphics(left, -170px, -212px, -270px);
-  @include graphics(top, -220px, -100px, 10px);
-}
-
-#group2 {
-  @include graphics(right, -50px, -124px, -15vw);
-  @include graphics(top, 100px, 100px, 100px);
-}
-
-#group3 {
-  @include graphics(right, -50px, -124px, -15vw);
-  @include graphics(top, 840px, 640px, 800px);
-}
-
-#group4 {
-  @include graphics(left, -60px, -80px, -10vw);
-  @include graphics(bottom, 750px, 770px, 765px);
-}
-
-#group5 {
-  @include graphics(right, -130px, -170px, -20vw);
-  @include graphics(bottom, -300px, -80px, 0px);
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY($base);
-  } to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fadeInUp {
-  animation: fadeInUp 0.5s ease-in-out forwards;
-}
-
-.draw {
-  animation: dash 1.4s linear forwards;
-}
-
-// react-animate-on-scroll adds an extra div around
-// elements, this removes the extra styling from that.
-.animated {
-  margin: 0;
 }

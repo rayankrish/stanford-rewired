@@ -29,7 +29,7 @@ function Team() {
   }
 
   return (
-    <div>
+    <div className="about-section">
       {fadeInUp(<h1>Our Team</h1>)}
       {fadeInUp(<div id="team">
         {team}

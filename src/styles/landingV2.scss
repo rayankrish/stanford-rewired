@@ -4,6 +4,7 @@
 #landing-title {
   @extend .serif-header;
   text-align: left;
+  margin-bottom: 12px;
 
   @media screen and (min-width: $breakpoint) {
     padding-top: 0px;
@@ -20,12 +21,6 @@
   margin-top: -8px; /* Visual alignment */
 }
 
-#article-description {
-  @extend .body;
-  line-height: 140%;
-  padding-top: 5px;
-}
-
 .landing-article-excerpt {
   @extend .body;
   flex-shrink: 1;
@@ -33,6 +28,10 @@
   min-height: 0;
   margin-top: 8px;
   margin-bottom: 0;
+}
+
+.landing-recent-stories-header {
+  margin-bottom: 24px !important;
 }
 
 #tag {
@@ -45,15 +44,16 @@
   align-items: flex-end;
   text-align: center;
   padding-bottom: 2px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-right: 8px;
 }
 
 .landing-image-container {
   width: 300px;
   height: 300px;
   position: relative;
+  margin-bottom: 24px;
 }
 
 .landing-image-decoration {
@@ -75,8 +75,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  margin-left: 0px;
-  margin-right: auto;
+  margin: 0;
+}
+
+.landing-article-tile {
+  margin-bottom: 24px;
 }
 
 #landing-article-thumbnail {
@@ -89,7 +92,6 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  margin-bottom: $base/4;
 
   @media screen and (min-width: $breakpoint) {
     flex-flow: row nowrap;
@@ -141,6 +143,10 @@
 
 .landing-form {
   padding-bottom: 48px;
+
+  & > p {
+    margin-bottom: 24px;
+  }
 }
 
 #first-info-text {
@@ -155,8 +161,4 @@ p a {
   stroke: $poppy-red;
   margin-top: 60px;
   margin-bottom: 0;
-
-  * {
-    animation: none !important;
-  }
 }
