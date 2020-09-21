@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 // eventually use gatsby-image
-import ScrollAnimation from "react-animate-on-scroll"
 import Layout from "../components/layout"
 import Navbar from "../components/navbar"
 import Image from "../components/image"
@@ -18,7 +17,7 @@ const LandingPage = () => {
         <div className="landing">
             <Navbar />
             <Layout squiggleTopOffset={1/3}>
-                <SEO title="Landing" />
+                <SEO title="Stanford Rewired" />
                 <Title />
                 <Articles />
                 <div className="boxX-divider"><BoxX /></div>
