@@ -63,8 +63,7 @@ function Title() {
             }
             <p id="landing-description">
                 Our latest issue, <i>{issue_name}</i>, is released on our website now,
-                and includes article such as "{other_articles[0]}," "{other_articles[1]}," and "{other_articles[2]}." &nbsp;
-                <Link to={"/issue/"+issue_name.toLowerCase()}>Read the issue here &rarr;</Link>
+                and includes article such as "{other_articles[0]}," "{other_articles[1]}," and "{other_articles[2]}." <Link to={"/issue/"+issue_name.toLowerCase()}>Read the issue &rarr;</Link>
             </p>
         </div>
     )
@@ -77,13 +76,12 @@ export const ArticleTile = ({ node, img }) => {
 
   React.useEffect(() => {
       if (descriptionRef?.current) {
-          ellipsis(descriptionRef.current, 48)
+          ellipsis(descriptionRef.current, 50)
       }
-  }, [descriptionRef?.current?.offsetHeight])
-
+  }, [descriptionRef?.current?.clientHeight])
 
   return fadeInUp(
-    <div key={node.slug}>
+    <div className="small-article-tile" key={node.slug}>
       <Link to={"/post/"+node.slug}>
         <div className="landing-columns">
             <div className="landing-col-a">
@@ -93,7 +91,7 @@ export const ArticleTile = ({ node, img }) => {
                 <h1 id="article-title">
                     {node.title}
                 </h1>
-                {node.excerpt && <div className="landing-article-excerpt" ref={descriptionRef}>{stripHTML(node.excerpt)}</div>}
+                {node.excerpt?.length > 0 && <div className="landing-article-excerpt" ref={descriptionRef}>{stripHTML(node.excerpt)}</div>}
             </div>
         </div>
       </Link>
@@ -111,7 +109,7 @@ function Articles() {
                     <p id="float-right"><Link to="/all">See all &rarr;</Link></p>
                 </div>)}
               {data.allWpPost.edges.map(({ node, i }) => (
-                  <ArticleTile node={node} />
+                  <ArticleTile key={i} node={node} />
               ))}
           </div>
     )

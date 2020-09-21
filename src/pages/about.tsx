@@ -185,7 +185,7 @@ class SubmitForm extends React.Component<{}, { isSubmitted: boolean; email: stri
       return fadeInUp(
         <div className="about-section">
           <h1>Keep In Touch</h1>
-          <p>You can reach us by email at &nbsp;
+          <p className="about-email">You can reach us by email at &nbsp;
             <a href="mailto:hello@stanfordrewired.com">hello@stanfordrewired.com</a>.</p>
           <p>
             Sign up to receive updates about upcoming issues and submission

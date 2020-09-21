@@ -3,6 +3,18 @@
 
 .about-section {
   margin-bottom: 72px;
+
+  h1 {
+    margin-bottom: 16px;
+  }
+
+  p {
+    margin-bottom: 1.4em;
+  }
+
+  .about-email {
+    margin-bottom: 12px;
+  }
 }
 
 #team {
@@ -43,7 +55,6 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  margin-bottom: $base/2;
 
   @media screen and (min-width: $breakpoint) {
     flex-flow: row nowrap;

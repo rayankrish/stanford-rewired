@@ -9,11 +9,16 @@
   @media screen and (min-width: $breakpoint) {
     padding-top: 0px;
   }
+
+  & a:hover {
+    color: $poppy-red;
+  }
 }
 
 #landing-description {
   @extend .body;
   text-align: left;
+  margin-bottom: 60px;
 }
 
 #article-title {
@@ -26,12 +31,11 @@
   flex-shrink: 1;
   flex-grow: 1;
   min-height: 0;
-  margin-top: 8px;
   margin-bottom: 0;
 }
 
 .landing-recent-stories-header {
-  margin-bottom: 24px !important;
+  margin-bottom: 32px;
 }
 
 #tag {
@@ -65,7 +69,8 @@
   stroke: $poppy-red;
 
   * {
-    animation: none !important;
+    animation-duration: 20s !important;
+    animation-direction: reverse !important;
   }
 }
 
@@ -127,7 +132,6 @@
     width: 500px;
     height: 100px;
     padding-left: 32px;
-    padding-right: 32px;
   }
 }
 
@@ -161,4 +165,8 @@ p a {
   stroke: $poppy-red;
   margin-top: 60px;
   margin-bottom: 0;
+}
+
+.small-article-tile {
+  margin-bottom: 32px;
 }
