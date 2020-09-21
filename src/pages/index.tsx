@@ -48,7 +48,7 @@ function Title() {
           <div className="landing-image-container">
             <div className="landing-image-decoration"><BoxX /></div>
               <Link to={selected_article_slug}>
-                <img id="landing-image" src={selected_article.allWpPost.edges[index].node.featuredImage ? selected_article.allWpPost.edges[index].node.featuredImage.node.localFile.childImageSharp.fixed.src + "?80172489074": temp_article_thumbnail} alt="article image" />
+                <img id="landing-image" src={selected_article.allWpPost.edges[index].node.featuredImage ? selected_article.allWpPost.edges[index].node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
               </Link>
             </div>
             {title_variation == 0 &&

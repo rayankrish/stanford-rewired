@@ -37,10 +37,19 @@ const Post = (props: { data }) => {
         <h1 className="post-title">{post.title}</h1>
         {subtitle && <h2 className="post-subtitle">{subtitle}</h2>}
         <div className="post-byline">
-          by {`${author_list}`.toLowerCase()} • in{" "}
-          <Link className="post-category" to={"/issue/"+category.toLowerCase()}>
-            {category.toLowerCase()}
-          </Link>
+          {category.toLowerCase() != "issue heading" &&
+            <div className="post-byline">
+            by {`${author_list}`.toLowerCase()} • in{" "}
+            <Link className="post-category" to={"/issue/"+category.toLowerCase()}>
+              {category.toLowerCase()}
+            </Link>
+            </div>
+          }
+          {category.toLowerCase() === "issue heading" &&
+            <div className="post-byline">
+            by {`${author_list}`.toLowerCase()}
+            </div>
+          }
         </div>
         {featuredImage && <img className="featured-img" src={featuredImage}></img>}
         <div
