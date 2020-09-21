@@ -51,6 +51,11 @@ const Post = (props: { data }) => {
             {`${author_list}`.toLowerCase()}
             </div>
           }
+          <div className="post-tag-container">
+            {post.tags.nodes.map(tag_node => (
+              <a className="post-tag">{tag_node.name}</a>
+            ))}
+          </div>
         </div>
         {featuredImage && <img className="featured-img" src={featuredImage}></img>}
         <p className="post-designer">Designed by {designer}</p>
@@ -99,6 +104,11 @@ export const postQuery = graphql`
           name
         }
       }
+    tags {
+      nodes {
+        name
+      }
+    }
     }
     site {
       siteMetadata {
