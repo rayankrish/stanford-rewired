@@ -25,7 +25,7 @@ const Post = (props: { data }) => {
   const category = props.data.wpPost?.categories?.nodes?.length
     ? props.data.wpPost?.categories?.nodes[0].name
     : "uncategorized"
-  const featuredImage = post?.featuredImage?.node?.sourceUrl
+  const featuredImage = post?.featuredImage?.node?.localFile.childImageSharp.fixed.src
 
   const subtitle = post?.article_fields?.articleSubtitle
   var author_list = post?.article_fields?.articleAuthors
@@ -90,7 +90,13 @@ export const postQuery = graphql`
       }
       featuredImage {
         node {
-          sourceUrl
+          localFile {
+            childImageSharp {
+              fixed {
+                src
+              }
+            }
+          }
         }
       }
       author {
