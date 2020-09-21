@@ -47,7 +47,7 @@ const Post = (props: { data }) => {
           }
           {category.toLowerCase() === "issue heading" &&
             <div className="post-byline">
-            by {`${author_list}`.toLowerCase()}
+            {`${author_list}`.toLowerCase()}
             </div>
           }
         </div>
