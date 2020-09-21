@@ -18,7 +18,7 @@ const LandingPage = () => {
             <Navbar />
             <Layout squiggleTopOffset={1/3}>
                 <SEO title="Stanford Rewired" />
-                <Title />
+                <Title/>
                 <Articles />
                 <div className="boxX-divider"><BoxX /></div>
                 <SubmitForm />
@@ -27,17 +27,24 @@ const LandingPage = () => {
     )
 }
 
-function Title() {
-    const selected_article = useLandingQuery()
-    var num_articles = selected_article.allWpPost.edges.length
-    var index = Math.floor(Math.random()*num_articles)
-    var selected_article_name = selected_article.allWpPost.edges[index].node.title
-    var selected_article_slug = "/post/" + selected_article.allWpPost.edges[index].node.slug
-    var issue_name = selected_article.allWpPost.edges[index].node.categories.nodes[0].name
+const Title = () => {
+    const selected_articles = useLandingQuery()
+    const [index, setIndex] = React.useState(0)
+
+    useEffect(() => {
+      const num_articles = selected_articles.allWpPost.edges.length
+      setIndex(Math.floor(Math.random()*num_articles))
+    }, [selected_articles])
+
+    const selected_article = selected_articles.allWpPost.edges[index].node
+    const selected_article_name = selected_article.title
+    const selected_article_slug = "/post/" + selected_article.slug
+    const selected_article_img = selected_article.featuredImage.node.localFile.childImageSharp.fixed.src
+    var issue_name = selected_articles.allWpPost.edges[index].node.categories.nodes[0].name
     var other_articles = []
     for (let i = 0; i <= 3; i++) {
       if (i != index) {
-        other_articles.push(selected_article.allWpPost.edges[i].node.title)
+        other_articles.push(selected_articles.allWpPost.edges[i].node.title)
       }
     }
     var title_variation = Math.floor(Math.random()*2)
@@ -47,7 +54,7 @@ function Title() {
           <div className="landing-image-container">
             <div className="landing-image-decoration"><BoxX /></div>
               <Link to={selected_article_slug}>
-                <img id="landing-image" src={selected_article.allWpPost.edges[index].node.featuredImage ? selected_article.allWpPost.edges[index].node.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+                <img id="landing-image" src={selected_article_img} alt="article image" />
               </Link>
             </div>
             {/* {title_variation == 0 && */}
