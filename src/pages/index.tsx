@@ -16,11 +16,6 @@ const LandingPage = () => {
     return (
         <div className="landing">
             <Navbar />
-            <meta name="twitter:card" content="summary" />
-            <meta name="twitter:site" content="@stanfordrewired" />
-            <meta name="twitter:title" content="Stanford Rewired" />
-            <meta name="twitter:description" content="Rewired is a digital magazine where technology and society meet." />
-            <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
             <Layout squiggleTopOffset={1/3}>
                 <SEO title="Stanford Rewired" />
                 <Title/>
@@ -30,6 +25,18 @@ const LandingPage = () => {
             </Layout>
         </div>
     )
+}
+
+const TwitterMetas = () => {
+  return (
+    <div>
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@stanfordrewired" />
+      <meta name="twitter:title" content="Stanford Rewired" />
+      <meta name="twitter:description" content="Rewired is a digital magazine where technology and society meet. We're committed to curating stories that amplify diverse perspectives and bridge disciplines." />
+      <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
+    </div>
+  )
 }
 
 const Title = () => {

@@ -58,6 +58,9 @@ class Issue extends Component {
             <>
                 <Navbar />
                 <SEO title={this.props.pageContext.title} />
+                <TwitterMetas title={this.props.pageContext.title}
+                  description={this.props.pageContext.excerpt.slice(3, post.excerpt.length-5)}
+                  description={this.props.pageContext.featuredImage.node.localFile.childImageSharp.fixed.src} />
                 <Layout useDarkSquiggles={true} squiggleTopOffset={1} squiggleCadence={1.5}>
                     {fadeInUp(<div>
                         <img id="issue-image" src={this.props.pageContext.featuredImage ? this.props.pageContext.featuredImage.node.localFile.childImageSharp.fixed.src : temp_issue_cover} alt="issue cover image" />
@@ -83,6 +86,18 @@ class Issue extends Component {
             </>
         )
     }
+}
+
+const TwitterMetas = ({title, description, image}) => {
+  return (
+    <div>
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@stanfordrewired" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+    </div>
+  )
 }
 
 function Articles() {

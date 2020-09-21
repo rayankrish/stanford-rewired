@@ -35,6 +35,7 @@ const Post = (props: { data }) => {
     <>
       <Navbar />
       <SEO title={post.title} />
+      <TwitterMetas title={post.title} description={post.excerpt.slice(3, post.excerpt.length-5)} image={featuredImage}/>
       <Layout useDarkSquiggles={true} squiggleTopOffset={1 / 2} squiggleCadence={1.7}>
         <h1 className="post-title">{post.title}</h1>
         {subtitle && <h2 className="post-subtitle">{subtitle}</h2>}
@@ -73,6 +74,18 @@ const Post = (props: { data }) => {
         <SubmitForm />
       </Layout>
     </>
+  )
+}
+
+const TwitterMetas = ({title, description, image}) => {
+  return (
+    <div>
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@stanfordrewired" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+    </div>
   )
 }
 
