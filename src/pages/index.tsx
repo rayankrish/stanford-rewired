@@ -82,7 +82,7 @@ const Title = () => {
             } */}
             <p id="landing-description">
                 Our latest issue, <i>{issue_name}</i>,
-                includes article such as "{other_articles[0]}," "{other_articles[1]}," and "{other_articles[2]}." <Link to={"/issue/"+issue_name.toLowerCase()}>Read the issue &rarr;</Link>
+                includes articles such as "{other_articles[0]}," "{other_articles[1]}," and "{other_articles[2]}." <Link to={"/issue/"+issue_name.toLowerCase()}>Read the issue &rarr;</Link>
             </p>
         </div>
     )
