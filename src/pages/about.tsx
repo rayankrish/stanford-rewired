@@ -123,10 +123,10 @@ function Sponsors() {
           <div className="col">
             <p>
               <a
-                href="https://ethicsinsociety.stanford.edu/ethics-society-technology-hub/current-projects/undergraduate-collaborative-projects"
+                href="https://ethicsinsociety.stanford.edu"
                 target="_blank"
               >
-                McCoy Center &rarr;
+                McCoy Family Center for Ethics in Society &rarr;
               </a>
             </p>
           </div>
@@ -135,7 +135,7 @@ function Sponsors() {
         <div className="col">
           <p>
             <a
-              href="https://ethicsinsociety.stanford.edu/ethics-society-technology-hub"
+              href="https://ethicsinsociety.stanford.edu/ethics-society-technology-hub/current-projects/undergraduate-collaborative-projects"
               target="_blank"
             >
               EST &rarr;
