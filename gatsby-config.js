@@ -64,18 +64,18 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // WordPress source
-        baseUrl: `52.12.8.45/`,
-        protocol: `http`, // TODO: change to https? (or is that necessary since we're building to static?)
+        baseUrl: `rwcdn.katz.lol/`,
+        protocol: `https`, // TODO: change to https? (or is that necessary since we're building to static?)
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
-        useACF: false,
+        useACF: true,
       },
     },
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: `http://52.12.8.45/graphql`,
+        url: `https://rwcdn.katz.lol/graphql`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
