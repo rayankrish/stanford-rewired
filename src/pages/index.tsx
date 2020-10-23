@@ -11,6 +11,7 @@ import "../styles/landingV2.scss"
 import { useLandingQuery } from "../hooks/landing_top_query"
 import { BoxX } from "../components/squiggles"
 import { ellipsis, fadeInUp, stripHTML } from "../components/util"
+import addToMailchimp from "gatsby-plugin-mailchimp"
 
 const LandingPage = () => {
     return (
