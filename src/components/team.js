@@ -2,18 +2,18 @@ import React from "react";
 import { fadeInUp } from "./util";
 
 const teamArray = [
-  ["Jason Zhao", "Editor", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/JasonZhao.jpg"],
-  ["Ben Esposito", "Editor", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/BenEsposito.jpeg"],
-  ["Irene Han", "Editor", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/IreneHan.jpg"],
-  ["Mark Gardiner", "Advisor", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/MarkGardiner.jpg"],
-  ["Enya Lu", "Content", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/EnyaLu.png"],
+  ["Jason Zhao", "Editor in Chief", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/JasonZhao.jpg"],
+  ["Irene Han", "Managing Editor", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/IreneHan.jpg"],
+  ["Ben Esposito", "Managing Editor", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/BenEsposito.jpeg"],
   ["Alessandro Vecchiato", "Content", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/AlessandroVecchiato.jpg"],
-  ["Emily Zhong", "Design", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/EmilyZhong.png"],
+  ["Enya Lu", "Business (Lead)", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/EnyaLu.png"],
+  ["Crystal Nattoo", "Design (Lead)", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/CrystalNattoo.jpg"],
   ["Kaylie Mings", "Design", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/KaylieMings.jpg"],
-  ["Crystal Nattoo", "Design", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/CrystalNattoo.jpg"],
-  ["Rayan Krishnan", "Tech", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/RayanKrishnan.jpg"],
+  ["Emily Zhong", "Design (Fmr Lead)", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/EmilyZhong.png"],
+  ["Rayan Krishnan", "Tech (Lead)", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/RayanKrishnan.jpg"],
   ["Matthew Katz", "Tech", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/MatthewKatz.jpg"],
-  ["Chris Tan", "Tech", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/ChrisTan-scaled.jpeg"]
+  ["Chris Tan", "Tech", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/ChrisTan-scaled.jpeg"],
+  ["Mark Gardiner", "Advisor", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/MarkGardiner.jpg"],
 ];
 
 function Team() {
