@@ -67,7 +67,7 @@ export default class SubmitForm extends React.Component<
       )
     } else {
       return fadeInUp(
-        <div>
+        <div className="submitted">
           <h1>&#10004; Thanks for signing up</h1>
           <p>
             We’re excited for news about our publication to hit your inbox soon.

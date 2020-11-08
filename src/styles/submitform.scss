@@ -24,6 +24,17 @@
 
 }
 
+.submitted {
+  margin-top: 55px;
+  h1, p {
+    margin-bottom: 32px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  padding-bottom: 270px;
+}
+
 .footer-links {
   @extend .sans-serif-caps;
   padding-bottom: 0px;
