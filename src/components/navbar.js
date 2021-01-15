@@ -31,10 +31,10 @@ function navbar() {
       <div className="navbar-element-wrap">
         <div className="navbar-elements">
           <Navlink bold to="/issue/governance">
-            Issue One - Governance
+            Issue One
           </Navlink>
-          <Navlink bold to="/issue/governance">
-            Issue Two - Viral
+          <Navlink bold to="/issue/viral">
+            Issue Two
           </Navlink>
           <Navlink to="/about">About</Navlink>
         </div>
