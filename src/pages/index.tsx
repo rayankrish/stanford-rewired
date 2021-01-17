@@ -53,7 +53,7 @@ const Title = () => {
     const selected_article = selected_articles.allWpPost.edges[index].node
     const selected_article_name = selected_article.title
     const selected_article_slug = "/post/" + selected_article.slug
-    const selected_article_img = selected_article.featuredImage.node.localFile.childImageSharp.fixed.src
+    const selected_article_img = selected_article.featuredImage.node.sourceUrl
     var issue_name = selected_articles.allWpPost.edges[index].node.categories.nodes[0].name
     var other_articles = []
     for (let i = 0; i <= 3; i++) {
@@ -105,7 +105,7 @@ export const ArticleTile = ({ node, img }) => {
       <Link to={"/post/"+node.slug}>
         <div className="landing-columns">
             <div className="landing-col-a">
-                <img id="landing-article-thumbnail" src={img || node.featuredImage?.node.localFile.childImageSharp.fixed.src || temp_article_thumbnail} alt="article image" />
+                <img id="landing-article-thumbnail" src={img || node.featuredImage?.node.sourceUrl || temp_article_thumbnail} alt="article image" />
             </div>
             <div className="landing-col-b">
                 <h1 id="article-title">
@@ -231,6 +231,7 @@ export const pageQuery = graphql`
                   }
                 }
                 date
+		sourceUrl
               }
             }
             excerpt
