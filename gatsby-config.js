@@ -64,7 +64,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // WordPress source
-        baseUrl: `rwcdn.katz.lol/`,
+        baseUrl: `cdn.stanfordrewired.com/`,
         protocol: `https`, // TODO: change to https? (or is that necessary since we're building to static?)
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
@@ -75,7 +75,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: `https://rwcdn.katz.lol/graphql`,
+        url: `https://cdn.stanfordrewired.com/graphql`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

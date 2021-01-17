@@ -2,18 +2,18 @@ import React from "react";
 import { fadeInUp } from "./util";
 
 const teamArray = [
-  ["Jason Zhao", "Editor in Chief", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/JasonZhao.jpg"],
-  ["Irene Han", "Managing Editor", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/IreneHan.jpg"],
-  ["Ben Esposito", "Managing Editor", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/BenEsposito.jpeg"],
-  ["Alessandro Vecchiato", "Content", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/AlessandroVecchiato.jpg"],
-  ["Enya Lu", "Business (Lead)", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/EnyaLu.png"],
-  ["Crystal Nattoo", "Design (Lead)", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/CrystalNattoo.jpg"],
-  ["Kaylie Mings", "Design", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/KaylieMings.jpg"],
-  ["Emily Zhong", "Design (Fmr Lead)", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/EmilyZhong.png"],
-  ["Rayan Krishnan", "Tech (Lead)", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/RayanKrishnan.jpg"],
-  ["Matthew Katz", "Tech", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/MatthewKatz.jpg"],
-  ["Chris Tan", "Tech", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/ChrisTan-scaled.jpeg"],
-  ["Mark Gardiner", "Advisor", "https://rwcdn.katz.lol/wp-content/uploads/2020/09/MarkGardiner.jpg"],
+  ["Jason Zhao", "Editor in Chief", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/JasonZhao.jpg"],
+  ["Irene Han", "Managing Editor", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/IreneHan.jpg"],
+  ["Ben Esposito", "Managing Editor", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/BenEsposito.jpeg"],
+  ["Alessandro Vecchiato", "Content", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/AlessandroVecchiato.jpg"],
+  ["Enya Lu", "Business (Lead)", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/EnyaLu.png"],
+  ["Crystal Nattoo", "Design (Lead)", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/CrystalNattoo.jpg"],
+  ["Kaylie Mings", "Design", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/KaylieMings.jpg"],
+  ["Emily Zhong", "Design (Fmr Lead)", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/EmilyZhong.png"],
+  ["Rayan Krishnan", "Tech (Lead)", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/RayanKrishnan.jpg"],
+  ["Matthew Katz", "Tech", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/MatthewKatz.jpg"],
+  ["Chris Tan", "Tech", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/ChrisTan-scaled.jpeg"],
+  ["Mark Gardiner", "Advisor", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/MarkGardiner.jpg"],
 ];
 
 function Team() {

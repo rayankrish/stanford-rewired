@@ -52,7 +52,7 @@ class Issue extends Component {
         var date = this.props.pageContext.date.split("T")[0].split("-");
         var months:string[];
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        var date_formatted = months[Number(date[1])] + " " + date[2] + ", " + date[0]
+        var date_formatted = months[Number(date[1])-1] + " " + date[2] + ", " + date[0]
         var twitter_desc = this.props.pageContext.excerpt.slice(3, this.props.pageContext.excerpt.length-5).replace("<em>", "").replace("</em>", "")
 
       return (
@@ -69,7 +69,7 @@ class Issue extends Component {
                             {this.props.pageContext.title}
                         </h1>
                         <h1 id="issue-subtitle">
-                            Issue One • {date_formatted}
+                            Issue {this.props.pageContext.issueNumber} • {date_formatted}
                         </h1>
                         <p id="description">
                             <span dangerouslySetInnerHTML={{ __html: this.props.pageContext.excerpt }}></span>

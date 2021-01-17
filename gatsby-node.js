@@ -30,6 +30,9 @@ exports.createPages = async ({ graphql, actions }) => {
             slug
             title
             excerpt
+	    article_fields {
+	      issueNumber
+      	    }
             date
             featuredImage {
               node {
@@ -72,6 +75,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         id: edge.node.id,
         title: edge.node.title,
+	issueNumber: edge.node.article_fields.issueNumber,
         excerpt: edge.node.excerpt,
         date: edge.node.date,
         featuredImage: edge.node.featuredImage
