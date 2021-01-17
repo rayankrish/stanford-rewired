@@ -25,7 +25,7 @@ const Post = (props: { data }) => {
   const category = props.data.wpPost?.categories?.nodes?.length
     ? props.data.wpPost?.categories?.nodes[0].name
     : "uncategorized"
-  const featuredImage = post?.featuredImage?.node?.localFile?.childImageSharp?.fixed?.src
+  const featuredImage = post?.featuredImage?.node?.sourceUrl
   const featuredImage_url = post?.featuredImage?.node?.localFile.url
 
   const subtitle = post?.article_fields?.articleSubtitle
@@ -113,6 +113,7 @@ export const postQuery = graphql`
             }
             url
           }
+          sourceUrl
         }
       }
       author {

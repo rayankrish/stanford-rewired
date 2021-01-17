@@ -30,7 +30,7 @@ const ArticleTile = ({ article }) => {
             <Link to={"/post/"+article.slug}>
             <div className="columns">
                 <div className="col-a">
-                <img id="article-thumbnail" src={article.featuredImage ? article.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+                <img id="article-thumbnail" src={article.featuredImage ? article.featuredImage.node.sourceUrl : temp_article_thumbnail} alt="article image" />
                 </div>
                 <div className="col-b">
                 <h1 id="article-title">
@@ -64,7 +64,7 @@ class Issue extends Component {
                   image={this.props.pageContext.featuredImage.node.localFile.url} />
                 <Layout useDarkSquiggles={true} squiggleTopOffset={1} squiggleCadence={1.5}>
                     {fadeInUp(<div>
-                        <img id="issue-image" src={this.props.pageContext.featuredImage ? this.props.pageContext.featuredImage.node.localFile.childImageSharp.fixed.src : temp_issue_cover} alt="issue cover image" />
+                        <img id="issue-image" src={this.props.pageContext.featuredImage ? this.props.pageContext.featuredImage.node.localFile.url : temp_issue_cover} alt="issue cover image" />
                         <h1 id="issue-title">
                             {this.props.pageContext.title}
                         </h1>
@@ -163,6 +163,7 @@ export const issueQuery = graphql`
                                 }
                             }
                         }
+			sourceUrl
                     }
                 }
 		tags {

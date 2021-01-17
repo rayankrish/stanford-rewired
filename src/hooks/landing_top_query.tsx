@@ -20,6 +20,7 @@ export const useLandingQuery = () => {
                         }
                       }
                     }
+		    sourceUrl
                   }
                 }
                 date

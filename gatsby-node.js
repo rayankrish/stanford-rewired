@@ -33,6 +33,7 @@ exports.createPages = async ({ graphql, actions }) => {
             date
             featuredImage {
               node {
+		sourceUrl
                 localFile {
                   childImageSharp {
                     fixed {
