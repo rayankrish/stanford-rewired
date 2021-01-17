@@ -44,17 +44,16 @@ const Articles = () => {
 
     list.push(<ArticleTile key={articles[i].node.title} node={articles[i].node} />)
   }
+  console.log(list)
 
   return <div>{list}</div>
 }
 
 const DateHeader = date => {
-  var str = new Date(date)
-    .toLocaleString("default", {
-      month: "long",
-      year: "numeric",
-    })
-    .toUpperCase()
+  var _date = date.split("-");
+  var months:string[];
+  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  var str = (months[Number(_date[1])-1] + " " + _date[0]).toUpperCase()
   return (
     <div key={date} className="all-datestring">
       {str}
@@ -66,7 +65,7 @@ export default AllPage
 
 const pageQuery = graphql`
   query {
-    allWpPost {
+    allWpPost(sort: {order: DESC, fields: date}) {
       edges {
         node {
           id
@@ -83,6 +82,7 @@ const pageQuery = graphql`
                   }
                 }
               }
+	      sourceUrl
             }
           }
         }
