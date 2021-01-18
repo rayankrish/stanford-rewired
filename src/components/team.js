@@ -5,7 +5,7 @@ const teamArray = [
   ["Jason Zhao", "Editor in Chief", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/JasonZhao.jpg"],
   ["Irene Han", "Managing Editor", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/IreneHan.jpg"],
   ["Ben Esposito", "Managing Editor", "https://cdn.stanfordrewired.com/wp-content/uploads/2020/09/BenEsposito.jpeg"],
-  ["Nic Becker", "Content", "https://cdn.stanfordrewired.com/wp-content/uploads/2021/01/becker_nic.jpg"],
+  ["Nic Becker", "Content", "https://cdn.stanfordrewired.com/wp-content/uploads/2021/01/NicBecker.jpg"],
   ["Sam Catania", "Content", "https://cdn.stanfordrewired.com/wp-content/uploads/2021/01/SamCatania.jpg"],
   ["Tanvi Gupta Dutta", "Content", "https://cdn.stanfordrewired.com/wp-content/uploads/2021/01/TanviDuttaGupta-1-scaled.jpeg"],
   ["Shana Hadi", "Content", "https://cdn.stanfordrewired.com/wp-content/uploads/2021/01/ShanaHadi.jpg"],
