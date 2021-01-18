@@ -30,7 +30,7 @@ const ArticleTile = ({ article }) => {
             <Link to={"/post/"+article.slug}>
             <div className="columns">
                 <div className="col-a">
-                <img id="article-thumbnail" src={article.featuredImage ? article.featuredImage.node.localFile.childImageSharp.fixed.src : temp_article_thumbnail} alt="article image" />
+                <img id="article-thumbnail" src={article.featuredImage ? article.featuredImage.node.sourceUrl : temp_article_thumbnail} alt="article image" />
                 </div>
                 <div className="col-b">
                 <h1 id="article-title">
@@ -52,7 +52,7 @@ class Issue extends Component {
         var date = this.props.pageContext.date.split("T")[0].split("-");
         var months:string[];
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        var date_formatted = months[Number(date[1])] + " " + date[2] + ", " + date[0]
+        var date_formatted = months[Number(date[1])-1] + " " + date[2] + ", " + date[0]
         var twitter_desc = this.props.pageContext.excerpt.slice(3, this.props.pageContext.excerpt.length-5).replace("<em>", "").replace("</em>", "")
 
       return (
@@ -64,12 +64,12 @@ class Issue extends Component {
                   image={this.props.pageContext.featuredImage.node.localFile.url} />
                 <Layout useDarkSquiggles={true} squiggleTopOffset={1} squiggleCadence={1.5}>
                     {fadeInUp(<div>
-                        <img id="issue-image" src={this.props.pageContext.featuredImage ? this.props.pageContext.featuredImage.node.localFile.childImageSharp.fixed.src : temp_issue_cover} alt="issue cover image" />
+                        <img id="issue-image" src={this.props.pageContext.featuredImage ? this.props.pageContext.featuredImage.node.localFile.url : temp_issue_cover} alt="issue cover image" />
                         <h1 id="issue-title">
                             {this.props.pageContext.title}
                         </h1>
                         <h1 id="issue-subtitle">
-                            Issue One • {date_formatted}
+                            Issue {this.props.pageContext.issueNumber} • {date_formatted}
                         </h1>
                         <p id="description">
                             <span dangerouslySetInnerHTML={{ __html: this.props.pageContext.excerpt }}></span>
@@ -163,6 +163,7 @@ export const issueQuery = graphql`
                                 }
                             }
                         }
+			sourceUrl
                     }
                 }
 		tags {

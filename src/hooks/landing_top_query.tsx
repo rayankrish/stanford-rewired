@@ -5,7 +5,7 @@ export const useLandingQuery = () => {
   const selected_article = useStaticQuery (
     graphql`
       query {
-          allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Governance"}}}}}) {
+          allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Viral"}}}}}) {
             edges {
               node {
                 slug
@@ -20,6 +20,7 @@ export const useLandingQuery = () => {
                         }
                       }
                     }
+		    sourceUrl
                   }
                 }
                 date
