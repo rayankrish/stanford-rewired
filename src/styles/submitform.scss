@@ -16,11 +16,23 @@
   @media screen and (max-width: $breakpoint) {
     font-size: 1.4em;
   }
+
+  .submitform-button {
+    margin: 0 auto;
+    margin-top: 36px;
+  }
+
 }
 
-.submitform-button {
-  margin: 0 auto;
-  margin-top: 36px;
+.submitted {
+  margin-top: 55px;
+  h1, p {
+    margin-bottom: 32px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  padding-bottom: 270px;
 }
 
 .footer-links {

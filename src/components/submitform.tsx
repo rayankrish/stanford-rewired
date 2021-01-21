@@ -7,7 +7,7 @@ import { fadeInUp } from "./util"
 import "../styles/submitform.scss"
 
 export default class SubmitForm extends React.Component<
-  {},
+  { includeLinks: boolean; scss: string },
   { isSubmitted: boolean; email: string; err_msg: string }
 > {
   constructor(props) {
@@ -39,18 +39,12 @@ export default class SubmitForm extends React.Component<
   render() {
     if (!this.state.isSubmitted) {
       return fadeInUp(
-        <div className="submitform-body">
-          <p className="footer-links"><Link to="/" style={{textDecoration: "none"}}>HOME</Link> &emsp;
+        <div className={this.props.scss} style={{paddingBottom: "48px"}}>
+          { this.props.includeLinks &&
+            <p className="footer-links"><Link to="/" style={{textDecoration: "none"}}>HOME</Link> &emsp;
             <Link to="/about/" style={{textDecoration: "none"}}>ABOUT</Link></p>
-          <div>
-            Rewired is a digital magazine where technology and society
-            meet. We’re committed to curating stories that amplify diverse
-            perspectives and bridge disciplines.
-          </div>
-          <div>
-            Sign up to receive updates about upcoming issues and submission
-            openings via email.
-          </div>
+          }
+          {this.props.children}
           <form
             onSubmit={e => {
               e.preventDefault()
@@ -73,7 +67,7 @@ export default class SubmitForm extends React.Component<
       )
     } else {
       return fadeInUp(
-        <div>
+        <div className="submitted">
           <h1>&#10004; Thanks for signing up</h1>
           <p>
             We’re excited for news about our publication to hit your inbox soon.

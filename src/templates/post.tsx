@@ -72,7 +72,17 @@ const Post = (props: { data }) => {
           dangerouslySetInnerHTML={{ __html: post.content }}
         ></div>
         <SquiggleDivider/>
-        <SubmitForm />
+        <SubmitForm includeLinks={true} scss="submitform-body">
+          <div>
+              Rewired is a digital magazine where technology and society
+              meet. We’re committed to curating stories that amplify diverse
+              perspectives and bridge disciplines.
+          </div>
+          <div>
+              Sign up to receive updates about upcoming issues and submission
+              openings via email.
+          </div>
+        </SubmitForm>
       </Layout>
     </>
   )
