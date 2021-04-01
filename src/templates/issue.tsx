@@ -156,6 +156,7 @@ export const issueQuery = graphql`
                 }
                 featuredImage {
                     node {
+                        altText
                         localFile {
                             childImageSharp {
                                 fixed {
@@ -163,7 +164,7 @@ export const issueQuery = graphql`
                                 }
                             }
                         }
-			sourceUrl
+			            sourceUrl
                     }
                 }
 		tags {

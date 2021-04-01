@@ -224,6 +224,7 @@ export const pageQuery = graphql`
             title
             featuredImage {
               node {
+                altText
                 localFile {
                   childImageSharp {
                     fixed {
@@ -232,7 +233,7 @@ export const pageQuery = graphql`
                   }
                 }
                 date
-		sourceUrl
+		            sourceUrl
               }
             }
             excerpt
