@@ -34,7 +34,7 @@ function Team() {
   for (let i in teamArray) {
     team.push(
       <div className="member" key={i}>
-        <img src={teamArray[i][2]} />
+        <img src={teamArray[i][2]} alt={teamArray[i][0]} />
         <h3>{teamArray[i][0]}</h3>
         {teamArray[i][1]}
       </div>

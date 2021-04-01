@@ -26,6 +26,7 @@ const Post = (props: { data }) => {
     ? props.data.wpPost?.categories?.nodes[0].name
     : "uncategorized"
   const featuredImage = post?.featuredImage?.node?.sourceUrl
+  const featuredImage_alt = post?.featuredImage?.node?.altText
   const featuredImage_url = post?.featuredImage?.node?.localFile.url
 
   const subtitle = post?.article_fields?.articleSubtitle
@@ -60,7 +61,7 @@ const Post = (props: { data }) => {
             ))}
           </div>
         </div>
-        {featuredImage && <img className="featured-img" src={featuredImage}></img>}
+        {featuredImage && <img className="featured-img" src={featuredImage} alt={featuredImage_alt}></img>}
         <p className="post-designer">Designed by {designer}</p>
         <div
           className="post-excerpt"
@@ -105,6 +106,7 @@ export const postQuery = graphql`
       }
       featuredImage {
         node {
+          altText
           localFile {
             childImageSharp {
               fixed {
