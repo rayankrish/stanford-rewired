@@ -44,7 +44,7 @@ const Post = (props: { data }) => {
           {category.toLowerCase() != "issue heading" &&
             <div className="post-byline">
             by {`${author_list}`.toLowerCase()} • in{" "}
-            <Link className="post-category" to={"/issue/"+category.toLowerCase()}>
+            <Link className="post-category" to={"/issue/"+category.toLowerCase().replace("(", "").replace(")", "")}>
               {category.toLowerCase()}
             </Link>
             </div>
