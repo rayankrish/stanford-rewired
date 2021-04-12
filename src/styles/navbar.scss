@@ -80,3 +80,29 @@
     font-weight: 600;
   }
 }
+
+.navbar-link-sub {
+  @extend .sans-serif-caps;
+  font-variant: small-caps;
+  margin-right: 2rem;
+  display: block;
+
+  &.active {
+    font-weight: 600;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: $background;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown:hover .dropdown-content{display: block;}
+
+

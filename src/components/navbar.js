@@ -15,6 +15,18 @@ function Navlink(props) {
   )
 }
 
+function NavlinkSub(props) {
+  return (
+    <Link
+      to={props.to}
+      className={"navbar-link-sub"}
+      activeClassName={"navbar-link-sub active"}
+    >
+      {props.children.toLowerCase()}
+    </Link>
+  )
+}
+
 function navbar() {
   /*
                     <div id="navbar-brand-stanford">
@@ -30,12 +42,22 @@ function navbar() {
       </Link>
       <div className="navbar-element-wrap">
         <div className="navbar-elements">
-          <Navlink bold to="/issue/governance">
-            Issue One
+          <Navlink bold to="/issue/antitrust">
+            Issue Three
           </Navlink>
-          <Navlink bold to="/issue/viral">
-            Issue Two
-          </Navlink>
+
+	  <div className="dropdown">
+          <a className="navbar-link">Past Issues</a>
+	  <div className="dropdown-content">
+            <NavlinkSub bold to="/issue/governance">
+              Issue One
+            </NavlinkSub>
+            <NavlinkSub bold to="/issue/viral">
+              Issue Two 
+            </NavlinkSub>
+          </div>
+          </div>
+
           <Navlink to="/about">About</Navlink>
         </div>
       </div>

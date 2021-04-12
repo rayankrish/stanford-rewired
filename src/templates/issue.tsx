@@ -73,7 +73,7 @@ class Issue extends Component {
                         </h1>
                         <p id="description">
                             <span dangerouslySetInnerHTML={{ __html: this.props.pageContext.excerpt }}></span>
-                            <Link to={"/post/"+this.props.pageContext.title.toLowerCase()}>
+                            <Link to={"/post/"+this.props.pageContext.title.toLowerCase().replace("(", "").replace(")", "")}>
                                             Read the editor's note &rarr;
                             </Link>
                         </p>
