@@ -91,7 +91,7 @@ function GetInvolved() {
             </a>
             <p>
               We’re currently looking for designers, developers, writers,
-              and marketing gurus to join our team.{" "}
+              and operations gurus to join our team.{" "}
               <a
                 href="http://stanfordrewired.com/apply"
                 target="_blank"
@@ -107,11 +107,8 @@ function GetInvolved() {
             <h2 className="monospace">learn about us &rarr;</h2>
           </a>
           <p>
-            Have more questions? We’re hosting an info session on Monday,
-            9/28 at 5pm PT and we’d love to meet you.{" "}
-            <a href="http://stanfordrewired.com/rsvp" target="_blank">
-                RSVP here.
-            </a>
+            Have more questions? Email <a href="mailto:hello@stanfordrewired.com">hello@stanfordrewired.com</a> to learn
+            how you can get involved, submit an article, or how to partner with Rewired!
           </p>
         </div>
       , 500)}
