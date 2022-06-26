@@ -42,8 +42,8 @@ function navbar() {
       </Link>
       <div className="navbar-element-wrap">
         <div className="navbar-elements">
-          <Navlink bold to="/issue/refresh">
-            Issue Four
+          <Navlink bold to="/issue/connection">
+            Issue Five
           </Navlink>
 
 	  <div className="dropdown">
@@ -57,6 +57,9 @@ function navbar() {
             </NavlinkSub>
             <NavlinkSub bold to="/issue/antitrust">
               Issue Three
+            </NavlinkSub>
+            <NavlinkSub bold to="/issue/refresh">
+              Issue Four
             </NavlinkSub>
           </div>
           </div>

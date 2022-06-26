@@ -5,7 +5,7 @@ export const useLandingQuery = () => {
   const selected_article = useStaticQuery (
     graphql`
       query {
-          allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Refresh"}}}}}) {
+          allWpPost(filter: {categories: {nodes: {elemMatch: {name: {eq: "Connection"}}}}}) {
             edges {
               node {
                 slug
